@@ -65,7 +65,7 @@ public class SetEnemyType : Action
         //patrol
         patrolType = enemyType.patrolType;
         patrolSpeed.Value = enemyType.patrolSpeed;
-        Debug.Log(patrolSpeed + " set");
+        //Debug.Log(patrolSpeed + " set");
         extraGroundCheckDistance.Value = enemyType.extraGroundCheckDistance;
         scanRange.Value = enemyType.scanRange;
 

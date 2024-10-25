@@ -35,7 +35,7 @@ MonoBehaviour:
   attackType: 0
   attackSpeed: 0.5
   attackRange: 1
-  attackTime: 0
+  attackTime: 1
   attackDmg: 0
   attacks: 
   agroRange: 0

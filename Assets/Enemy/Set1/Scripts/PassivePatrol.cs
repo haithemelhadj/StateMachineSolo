@@ -37,7 +37,7 @@ public class PassivePatrol : Action
 
             Flip();
         }
-        Debug.Log(patrolSpeed + " used");
+        //Debug.Log(patrolSpeed + " used");
         selfRb.velocity = Vector3.MoveTowards(selfRb.velocity, new Vector3(transform.localScale.x * patrolSpeed.Value, selfRb.velocity.y, 0f), patrolSpeed.Value * 0.3f);
         return TaskStatus.Running;
     }
