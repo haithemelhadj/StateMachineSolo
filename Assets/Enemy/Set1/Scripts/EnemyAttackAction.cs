@@ -1,10 +1,12 @@
-
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+//using System.Diagnostics;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class EnemyAttackAction : Action
 {
+    
 
     //attack refrences
     public GameObject atkObj;
@@ -20,22 +22,21 @@ public class EnemyAttackAction : Action
     public SharedCapsulCollider2D mobCollider;
     public SharedFloat mobHeight;
     public SharedFloat mobWidth;
+    //
+    public float cd;
+    public bool isAttacking;
 
     public override void OnAwake()
     {
-        mobCollider = GetComponent<CapsuleCollider2D>();
+        
 
     }
+    #region Attack
     public override void OnStart()
     {
-        #region
-        //Debug.Log("attack2");
-        //base.OnStart();
+        Debug.Log("starts attack 0");
         mobCollider = GetComponent<CapsuleCollider2D>();
-        //collider.Value = mobCollider;
-        //mobWidth = mobCollider.Value.size.x;
-        //mobHeight = mobCollider.size.y;
-        //attack horizontally
+        // attack horizontally
         float atkDistance = Mathf.Sign(transform.localScale.x) * (mobWidth.Value / 2 + atkRange.Value);
         atkPosition = new Vector2(transform.position.x + atkDistance, transform.position.y);
         atkRotation = 0f;
@@ -45,18 +46,36 @@ public class EnemyAttackAction : Action
         //attack and disable attack after attackTime
         atkObj.SetActive(true);
         atkAnimator.SetBool("Attack", true);
-        //MonoBehaviour.Invoke(nameof(StopAttacking), atkTime);
-        cd = atkTime.Value;
+        //MonoBehaviour.Invoke(nameof(StopAttacking), 0.5f);// atkTime);
+
+    }
+    #endregion
+    /**/
+    /*
+    public override void OnStart()
+    {
+        #region
+        //Debug.Log("attack2");
+        //base.OnStart();
+        mobCollider = GetComponent<CapsuleCollider2D>();
+        //collider.Value = mobCollider;
+        //mobWidth = mobCollider.Value.size.x;
+        //mobHeight = mobCollider.size.y;
+        /
+        
+        
+        
+        Debug.Log("onstart");
+        //cd = atkTime.Value;
         #endregion
     }
 
-    public float cd;
-    public bool isAttacking;
     public override TaskStatus OnUpdate()
     {
         #region
-
-        if (Vector3.SqrMagnitude(transform.position - target.Value.position) > 0.1f && !isAttacking)
+        //if close enough
+        //set attacking true
+        if (Vector3.SqrMagnitude(transform.position - target.Value.position) > 0.1f && !isAttacking && cd<=0)
         {
             Debug.Log("start atk");
             isAttacking = true;
@@ -65,6 +84,7 @@ public class EnemyAttackAction : Action
             //collider.Value = mobCollider;
             //mobWidth = mobCollider.Value.size.x;
             //mobHeight = mobCollider.size.y;
+
             //attack horizontally
             float atkDistance = Mathf.Sign(transform.localScale.x) * (mobWidth.Value / 2 + atkRange.Value);
             atkPosition = new Vector2(transform.position.x + atkDistance, transform.position.y);
@@ -90,7 +110,7 @@ public class EnemyAttackAction : Action
         cd -= Time.deltaTime;
         if (cd < 0f)
         {
-
+            Debug.Log("cd reset");
             cd = 0f;
             isAttacking = false;
             atkAnimator.SetBool("Attack", false);
@@ -104,15 +124,17 @@ public class EnemyAttackAction : Action
     }
 
 
+    /**/
+
     public void StopAttacking()
     {
+        Debug.Log("stop atk0");
         atkAnimator.SetBool("Attack", false);
         atkObj.SetActive(false);
 
     }
-    #region Attack
 
-    #endregion
+
 
 
 }

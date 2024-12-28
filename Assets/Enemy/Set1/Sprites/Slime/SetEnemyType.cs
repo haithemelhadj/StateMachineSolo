@@ -48,6 +48,7 @@ public class SetEnemyType : Action
     //public SharedFloat Intelligence;//
     public override void OnAwake()
     {
+        //Debug.Log("setting mob params");
         //components
         selfGameobject.Value = gameObject;
         mobAnimator = gameObject.GetComponent<Animator>();//.mobAnimator;

@@ -20,6 +20,7 @@ public class JumpScript : MonoBehaviour
     private void Update()
     {
         if (ActionsScript.isDashing) return; //if dashing stop movement
+        WallCheck();
         VariableJump();
         CyoteTime();
         JumpBuffer();
@@ -29,10 +30,10 @@ public class JumpScript : MonoBehaviour
 
 
 
-    #region Jump 
+     #region  Jump 
     [Header("Jump")]
     public float jumpForce;
-    public bool jumpConditions;
+    //public bool jumpConditions;
     public bool jumpInputConfirmed;
     public bool jumpReset;
     [Header("wall Jump")]
@@ -43,7 +44,6 @@ public class JumpScript : MonoBehaviour
     public Vector2 wallJumpDirection;
     public void JumpInput()
     {
-        bool isHuggingWall = false;
         //if (isWallJumping) isWallJumping = Time.time - wallJumpPressTime < wallJumpDuration;
         // get jump input and set values 
         if (inputsScript.jumpInputDown)
@@ -51,7 +51,7 @@ public class JumpScript : MonoBehaviour
             jumpPressTime = Time.time;
             willJump = true;
             //put jump direction based on player state
-            isHuggingWall = wallSlideScript.WallDetectionUpper() || wallSlideScript.WallDetectionMiddle() || wallSlideScript.WallDetectionLower();//wallSlideScript.isWallSliding
+            //isHuggingWall = wallSlideScript.WallDetectionUpper() || wallSlideScript.WallDetectionMiddle() || wallSlideScript.WallDetectionLower();//wallSlideScript.isWallSliding
             if (isHuggingWall)
             {
                 wallJumpPressTime = Time.time;
@@ -78,7 +78,7 @@ public class JumpScript : MonoBehaviour
             //check if the player can jump
             if (inputsScript.isGrounded || canJump || isHuggingWall)
             {
-                jumpTimeCounter = jumpTime;
+                jumpTimeCounter = jumpTime;  
                 isJumping = true;
                 //set jumping animation
                 inputsScript.playerAnimator.SetBool("isJumping", isJumping);
@@ -163,9 +163,25 @@ public class JumpScript : MonoBehaviour
     public bool canJump;
     public void CyoteTime()
     {
-        if (Time.time - LastGrounded > cyoteTime)
+        //if (!canJump) return;
+        if (Time.time - LastGrounded > cyoteTime || Time.time - LastWalled > cyoteTime)
         {
             canJump = false;
+        }
+    }
+    #endregion
+
+    #region WallCheck
+    public float LastWalled;
+    bool isHuggingWall = false;
+
+    public void WallCheck()
+    {
+        isHuggingWall = wallSlideScript.WallDetectionUpper() || wallSlideScript.WallDetectionMiddle() || wallSlideScript.WallDetectionLower();//wallSlideScript.isWallSliding
+        if (isHuggingWall)
+        {
+            canJump = true;
+            LastWalled = Time.time;
         }
     }
     #endregion
