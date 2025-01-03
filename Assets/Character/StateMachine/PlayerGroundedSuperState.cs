@@ -19,8 +19,7 @@ namespace StateMachine
 
         }
         public override void UpdateState()
-        {
-            
+        {            
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -28,14 +27,14 @@ namespace StateMachine
 
         }
         public override void CheckSwitchState()
-        {
+        {            
             if(_cntx.jumpInputDown || _cntx.willBufferJump)
             {
-                SwitchState(_factory.Jump());                
+                SetSubState(_factory.Jump());                
             }
             if(!_cntx.isGrounded)
             {
-                SwitchState(_factory.Fall());                
+                SetSubState(_factory.Fall());                
             }
         }
         public override void InitiliseSubState()

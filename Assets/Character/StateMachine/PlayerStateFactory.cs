@@ -38,6 +38,11 @@ namespace StateMachine
         {
             return new PlayerIdleState(context, this);
         }
+        public PlayerBaseState Movement()
+        {
+            return new PlayerMovementSuperState(context, this);
+        }
+
         public PlayerBaseState Walk()
         {
             return new PlayerWalkState(context, this);

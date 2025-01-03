@@ -126,29 +126,18 @@ TextureImporter:
       name: walk anim_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 3
-        width: 13
-        height: 22
+        x: 0
+        y: 0
+        width: 32
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -4.5, y: 11}
-        - {x: -6.5, y: 9}
-        - {x: -6.5, y: 1}
-        - {x: -5.5, y: 1}
-        - {x: -5.5, y: -11}
-        - {x: 4.5, y: -11}
-        - {x: 4.5, y: 2}
-        - {x: 6.5, y: 2}
-        - {x: 6.5, y: 4}
-        - {x: 4.5, y: 8}
-        - {x: 0.5, y: 11}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3c43e7d5b3f0f4d810403abb87ddf7
+      spriteID: a0587cdc353936348bc0f2aedce86119
       internalID: 1039420431
       vertices: []
       indices: 
@@ -158,29 +147,18 @@ TextureImporter:
       name: walk anim_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 3
-        width: 13
-        height: 22
+        x: 32
+        y: 0
+        width: 32
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 0.5, y: 11}
-        - {x: -4.5, y: 11}
-        - {x: -6.5, y: 9}
-        - {x: -6.5, y: 1.0862846}
-        - {x: -5.5, y: 1}
-        - {x: -5.5, y: -11}
-        - {x: 4.6249924, y: -11}
-        - {x: 4.5, y: 2}
-        - {x: 6.5, y: 2}
-        - {x: 6.5, y: 4}
-        - {x: 4.5, y: 8}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc4c77916c3f09c4eb909601353fd046
+      spriteID: 8749b172ccfbe364fbe4f402e7810748
       internalID: -1297833937
       vertices: []
       indices: 
@@ -190,29 +168,18 @@ TextureImporter:
       name: walk anim_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 3
-        width: 13
-        height: 20
+        x: 64
+        y: 0
+        width: 32
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 0.5, y: 10}
-        - {x: -4.5, y: 10}
-        - {x: -6.5, y: 8}
-        - {x: -6.5, y: 0.8989277}
-        - {x: -5.5, y: 1}
-        - {x: -5.5, y: -10}
-        - {x: 4.5, y: -10}
-        - {x: 4.5, y: 2}
-        - {x: 6.5, y: 2}
-        - {x: 6.5, y: 4.363907}
-        - {x: 4.5, y: 7}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3c0d5962185db4ba2b381ad8beb4d9
+      spriteID: 337153a757546db4980fbcec94e8349e
       internalID: 1441500476
       vertices: []
       indices: 
@@ -222,29 +189,18 @@ TextureImporter:
       name: walk anim_3
       rect:
         serializedVersion: 2
-        x: 106
-        y: 3
-        width: 13
-        height: 20
+        x: 96
+        y: 0
+        width: 32
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 6.5, y: 4}
-        - {x: 4.5, y: 7}
-        - {x: 0.5, y: 10}
-        - {x: -4.5, y: 10}
-        - {x: -6.5, y: 8}
-        - {x: -6.4999924, y: 0.8989277}
-        - {x: -5.5, y: 1}
-        - {x: -5.5, y: -10}
-        - {x: 4.5, y: -10}
-        - {x: 4.5, y: 2}
-        - {x: 6.5, y: 2}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2ab511aa327543498a1134c4ceef2ff
+      spriteID: 02cad187e9542464fb24e10ba04234d0
       internalID: -1647419268
       vertices: []
       indices: 
@@ -254,29 +210,18 @@ TextureImporter:
       name: walk anim_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 3
-        width: 13
-        height: 22
+        x: 128
+        y: 0
+        width: 32
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 0.5, y: 11}
-        - {x: -4.5, y: 11}
-        - {x: -6.5, y: 9}
-        - {x: -6.5, y: 1}
-        - {x: -5.5, y: 1}
-        - {x: -5.5, y: -11}
-        - {x: 4.5, y: -11}
-        - {x: 4.5, y: 2}
-        - {x: 6.5, y: 2}
-        - {x: 6.5, y: 4}
-        - {x: 4.5, y: 8}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e5087980a773cc4686b6550e5b9f4eb
+      spriteID: ab6c19a7c81bd174fb880e220a528d2f
       internalID: -830987218
       vertices: []
       indices: 

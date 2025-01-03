@@ -5,18 +5,18 @@ namespace StateMachine
     public class PlayerWalkState : PlayerBaseState
     {
         public PlayerWalkState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+            : base(currentContext, playerStateFactory) { InitiliseSubState(); }
         public override void EnterState()
         {
 
         }
         public override void UpdateState()
         {
+            Move();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
         {
-            //Move();
 
         }
         public override void ExitState()
@@ -29,7 +29,18 @@ namespace StateMachine
         }
         public override void InitiliseSubState()
         {
-
+            if (_cntx.isGrounded)
+            {
+                SetSubState(_factory.Grounded());
+            }
+            else if ((_cntx.jumpInputUp || _cntx.jumpTimeCounter < 0))
+            {
+                SetSubState(_factory.Fall());
+            }
+            else
+            {
+                SetSubState(_factory.Jump());
+            }
         }
 
         public void Move()
@@ -38,16 +49,10 @@ namespace StateMachine
             if (_cntx.horizontalInput != 0f)
             {
                 _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration);                
-            }
-            else //slow player to stop
-                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);
-
-            //flip character and keep it that way when no inputs        
-            if (_cntx.horizontalInput != 0)
-            {
                 Flip();
             }
-
+            else //slow player to stop
+                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);            
         }
 
         public void Flip()

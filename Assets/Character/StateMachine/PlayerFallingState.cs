@@ -14,11 +14,8 @@ namespace StateMachine
         public override void UpdateState()
         {
             
-            
             CyoteTime();
             Fall();
-            //FallControl();
-            //FasterFall();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -42,24 +39,6 @@ namespace StateMachine
         public override void InitiliseSubState()
         {
 
-        }
-
-        public void FallControl()
-        {
-            if(_cntx.playerRb.velocity.y < _cntx.maxFallSpeed)
-            {
-                _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, _cntx.maxFallSpeed);
-            }
-        }
-        public void FasterFall()
-        {
-            //make fall speed faster
-            if (_cntx.playerRb.velocity.y < 0 && _cntx.playerRb.velocity.y > -_cntx.maxFallSpeed)
-            {
-                //avoid *0 situation
-                if (_cntx.fasterFallMultiplier == 0f) _cntx.fasterFallMultiplier = 1f;                
-                _cntx.playerRb.velocity += Vector2.up * Physics2D.gravity.y * _cntx.fasterFallMultiplier * Time.deltaTime;
-            }
         }
 
         public void Fall()

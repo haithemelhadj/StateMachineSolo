@@ -1,15 +1,26 @@
+
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace StateMachine
 {
-    public class PlayerStateMachine : MonoBehaviour
+    public class _PlayerStateMachine : MonoBehaviour
     {
-        public PlayerBaseState _currentState;
-        //public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
+        public _PlayerBaseState _currentState;
 
-        PlayerStateFactory _states;
+        _PlayerStateFactory _states;
 
-        //current
+        public string currentSuperState;
+        public string currentSubState;
+        
+        //Awake
+        private void InitializeState()
+        {
+            _states = new _PlayerStateFactory(this);
+            Debug.Log("SM awake mvt");
+            _currentState = _states.Movement();            
+            _currentState.EnterState();
+        }
 
         private void Awake()
         {
@@ -18,12 +29,12 @@ namespace StateMachine
             //max falling speed is always negative
             maxFallSpeed = -Mathf.Abs(maxFallSpeed);
         }
-
-
+        //Update
         private void Update()
         {
             //rays casts
-            GroundCheck();
+            if (!isLedgeBumping)            
+                GroundCheck();
             HeadCheck();
             WallCheck();
             //inputs
@@ -31,24 +42,30 @@ namespace StateMachine
             GetVInputs();
             GetJumpInput();
             //actions
-            //Move();
+            GetDashInput();
+            GetAttackInput();
+            GetInterractionInput();
 
             //
-            JumpBuffer();
+            //JumpBuffer();
             //logic
-            _currentState.UpdateState();
+            _currentState.UpdateStates();
         }
 
         private void FixedUpdate()
         {
             _currentState.FixedUpdateState();
         }
-        //Awake
+
+
+
+
+        //Get Componenets
         #region Get Components
         [Header("Components")]
         public Rigidbody2D playerRb;
         public CapsuleCollider2D capsuleCollider;
-        //public Animator playerAnimator;
+        public Animator playerAnimator;
         public float playerHeight;
         public float playerWidth;
         public void GetComponents()
@@ -60,12 +77,6 @@ namespace StateMachine
             playerHeight = capsuleCollider.size.y * transform.localScale.y;
         }
         #endregion
-        private void InitializeState()
-        {
-            _states = new PlayerStateFactory(this);
-            _currentState = _states.Walk();
-            _currentState.EnterState();
-        }
 
         //Movement
         #region Movement Input
@@ -80,35 +91,6 @@ namespace StateMachine
         public void GetVInputs()
         {
             verticalInput = Input.GetAxisRaw("Vertical");
-        }
-        #endregion
-        #region Movement
-        public void Move()
-        {
-            //move player
-            if (horizontalInput != 0f)
-            {
-                playerRb.velocity = Vector3.MoveTowards(playerRb.velocity, new Vector3(horizontalInput * c_MaxHSpeed, playerRb.velocity.y, 0f), c_Acceleration);
-                //Vector3.Lerp(playerRb.velocity, new Vector3(horizontalInput * c_MaxHSpeed, playerRb.velocity.y, 0f), c_Acceleration);
-                //Debug.Log("velocity= " + playerRb.velocity);
-                //flip character and keep it that way when no inputs        
-                Flip();
-            }
-            else //slow player to stop
-                playerRb.velocity = Vector3.MoveTowards(playerRb.velocity, new Vector3(0f, playerRb.velocity.y, 0f), c_Deceleration);
-            //Vector3.Lerp(playerRb.velocity, new Vector3(0f, playerRb.velocity.y, 0f), c_Deceleration);
-
-            //if (horizontalInput != 0)
-            //{
-            //}
-
-        }
-
-        public void Flip()
-        {
-            Vector3 currentScale = transform.localScale;
-            currentScale.x = Mathf.Sign(horizontalInput) * Mathf.Abs(transform.localScale.x);
-            transform.localScale = currentScale;
         }
         #endregion
 
@@ -182,14 +164,12 @@ namespace StateMachine
         public LayerMask whatIsWall;
         public bool isHuggingWall = false;
         public float LastTimeWalled;
-
-
         public void WallCheck()
         {
-            isHuggingWall = WallDetectionUpper() || WallDetectionMiddle() || WallDetectionLower();//wallSlideScript.isWallSliding
+            isHuggingWall = WallDetectionUpper() || WallDetectionMiddle() || WallDetectionLower();
             if (isHuggingWall)
             {
-                canJump = true;
+                //canCyoteJump = true;
                 LastTimeWalled = Time.time;
             }
         }
@@ -205,8 +185,10 @@ namespace StateMachine
         {
             return Physics2D.Raycast(transform.position - new Vector3(0, playerHeight / 2, 0), new Vector2(transform.localScale.x, 0f), playerWidth / 2 + extraGroundCheckDistance, whatIsWall);
         }
-
         #endregion
+
+
+
 
         //AirBorne Movement
         #region  Air Movement 
@@ -231,16 +213,16 @@ namespace StateMachine
         public bool jumpInput;
         public bool jumpInputDown;
         public bool jumpInputUp;
+        public bool isJumping;
 
         public void GetJumpInput()
         {
             jumpInput = Input.GetKey(jumpKey);
             jumpInputDown = Input.GetKeyDown(jumpKey);
-            jumpInputUp = Input.GetKeyUp(jumpKey);
-            if (jumpInputDown)
+            jumpInputUp = Input.GetKeyUp(jumpKey);            
+            if (jumpInputUp)
             {
-                jumpPressTime = Time.time;
-                willBufferJump = true;
+                willBufferJump = false;
             }
         }
         #endregion
@@ -256,17 +238,6 @@ namespace StateMachine
         [Header("Variable Jump")]
         public float jumpTimeCounter;
         public float jumpTime;
-        //public bool isJumping;
-        public void VariableJump()
-        {
-            if (jumpInputUp)
-            {
-                //isJumping = false;
-                //set jumping animation
-                //playerAnimator.SetBool("isJumping", isJumping);
-                isWallJumping = false;
-            }
-        }
         #endregion
 
         #region Jump Buffer
@@ -276,10 +247,12 @@ namespace StateMachine
         public bool willBufferJump;
         public void JumpBuffer()
         {
-            if (Time.time - jumpPressTime > jumpBufferTime)
+            /*
+            if (Time.time - jumpPressTime > jumpBufferTime || jumpInputUp)
             {
                 willBufferJump = false;
             }
+            /**/
         }
         #endregion
 
@@ -287,10 +260,11 @@ namespace StateMachine
         [Header("Cyote Time")]
         public float LastGrounded;
         public float cyoteTime;
-        public bool canJump;
+        public bool canCyoteJump;
 
         #endregion
 
+        //Wall
         #region wall Jump
         [Header("wall Jump")]
         public float wallJumpDuration;
@@ -301,18 +275,118 @@ namespace StateMachine
 
         #endregion
 
+        #region Wall Slide
+
+        [Header("Wall Slide")]
+        public bool isWallSliding;
+        public float wallSlidingSpeed;
+        #endregion
 
         //fall 
         #region Fall Controll
         [Header("Fall Controll")]
         public float maxFallSpeed;
         public float fasterFallMultiplier;
-        public float jumpApexThreshhold;
-        public float jumpApexGravityMultiplier;
+        //public float jumpApexThreshhold;
+        //public float jumpApexGravityMultiplier;
+        //public float fallMultiplier;
         #endregion
-        //Actions
 
-    
+        //Actions        
+
+        #region Dash
+        [Header("Dash")]
+        public float dashForce;
+        public float dashTime;
+        public bool canDash;
+        public bool isDashing;
+        public float dashDirection;
+        public KeyCode dashKey;
+        public bool dashInputDown;
+        public void GetDashInput()
+        {
+            dashInputDown = Input.GetKeyDown(dashKey);
+        }
+        #endregion
+
+        #region Attack
+        [Header("Attack")]
+        public KeyCode attackKey;
+        public bool AttackInput;
+        //attack refrences
+        public GameObject atkObj;
+        public Animator atkAnimator;
+        //attack variables
+        public float atkRange;
+        public float atkTime;
+        [HideInInspector] public float atkDistance;
+        [HideInInspector] public Vector2 atkPosition;
+        [HideInInspector] public float atkRotation;
+        public void GetAttackInput()
+        {
+            AttackInput = Input.GetKeyDown(attackKey);
+        }
+        /*
+        public void AttackInput()
+        {
+            if (AttackInput)
+            {
+                if (verticalInput != 0)
+                {
+                    //attack vertically
+                    atkDistance = Mathf.Sign(verticalInput) * (playerHeight / 2 + atkRange);
+                    atkPosition = new Vector2(transform.position.x, transform.position.y + atkDistance);
+                    atkRotation = 90f * Mathf.Sign(verticalInput) * Mathf.Sign(transform.localScale.x);//rotation is based on localScale.x
+                }
+                else
+                {
+                    //attack horizontally
+                    atkDistance = Mathf.Sign(transform.localScale.x) * (playerWidth / 2 + atkRange);
+                    atkPosition = new Vector2(transform.position.x + atkDistance, transform.position.y);
+                    atkRotation = 0f;
+                }
+                //set position and rotation
+                atkObj.transform.position = atkPosition;
+                atkObj.transform.eulerAngles = new Vector3(0f, 0f, atkRotation);
+                //attack and disable attack after attackTime
+                atkObj.SetActive(true);
+                atkAnimator.SetBool("Attack", true);
+                Invoke(nameof(StopAttacking), atkTime);
+            }
+        }
+        public void StopAttacking()
+        {
+            atkAnimator.SetBool("Attack", false);
+            atkObj.SetActive(false);
+
+        }
+        /**/
+
+        #endregion
+
+        #region Interract
+        [Header("Interract")]
+        public KeyCode InterractionKey;
+        
+        public void GetInterractionInput()
+        {
+
+        }
+        #endregion
+
+        #region Ledge Bump
+        [Header("Ledge Bump")]
+        public float bumpForce;
+        public bool isLedgeBumping;
+        public float bumpTime;        
+        #endregion
+
+
+
+
+
+
+
         #region
         #endregion
     }
@@ -323,3 +397,7 @@ namespace StateMachine
  * add actions 
  * add animations
  */
+
+//make wall jump on the same wall can go higher like HK = make player can move during jump and can jump heigher 
+//add new mechanic to wall slide is that the player can run to the wall and gain extra hight and jump distance 
+//wall jump doesnt continue jumping like a normal jump = wall jumping only adds X force and player jumps normally

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe06399efdc18ed41a3f810d4f73d546, type: 3}
+  m_Name: PlayerV1
+  m_EditorClassIdentifier: 
+  c_MaxHSpeed: 0
+  c_Acceleration: 0
+  c_Deceleration: 0
+  g_MaxHSpeed: 12
+  g_Acceleration: 2
+  g_Deceleration: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  extraGroundCheckDistance: 0.01
+  isHeadBumped: 0
+  extraHeadCheckDistance: 0.01
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 192
+  isHuggingWall: 0
+  LastTimeWalled: 0
+  a_MaxHSpeed: 10
+  a_Acceleration: 1
+  a_Deceleration: 1
+  j_MaxHSpeed: 12
+  j_Acceleration: 3
+  j_Deceleration: 5
+  jumpKey: 32
+  jumpInput: 0
+  jumpInputDown: 0
+  jumpInputUp: 0
+  jumpForce: 15
+  jumpInputConfirmed: 0
+  jumpReset: 0
+  jumpTimeCounter: 0
+  jumpTime: 0.3
+  jumpPressTime: 0
+  jumpBufferTime: 0.1
+  willBufferJump: 0
+  LastGrounded: 0
+  cyoteTime: 0.05
+  canJump: 0
+  wallJumpDuration: 0
+  wallJumpPressTime: 0.8
+  isWallJumping: 0
+  jumpDirection: {x: 0, y: 0}
+  wallJumpDirection: {x: 8, y: 16}
+  maxFallSpeed: 0
+  fasterFallMultiplier: 0
+  jumpApexThreshhold: 0
+  jumpApexGravityMultiplier: 0
+  dashForce: 25
+  dashTime: 0.17
+  dashDirection: 0
+  canDash: 0
+  isDashing: 0
+  dashInput: 0
+  dashKey: 304
+  attackKey: 120
+  AttackInput: 0
+  InterractionKey: 101

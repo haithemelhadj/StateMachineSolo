@@ -43,15 +43,13 @@ public class JumpScript : MonoBehaviour
     public Vector2 jumpDirection;
     public Vector2 wallJumpDirection;
     public void JumpInput()
-    {
-        //if (isWallJumping) isWallJumping = Time.time - wallJumpPressTime < wallJumpDuration;
+    {        
         // get jump input and set values 
         if (inputsScript.jumpInputDown)
         {
             jumpPressTime = Time.time;
             willJump = true;
             //put jump direction based on player state
-            //isHuggingWall = wallSlideScript.WallDetectionUpper() || wallSlideScript.WallDetectionMiddle() || wallSlideScript.WallDetectionLower();//wallSlideScript.isWallSliding
             if (isHuggingWall)
             {
                 wallJumpPressTime = Time.time;
