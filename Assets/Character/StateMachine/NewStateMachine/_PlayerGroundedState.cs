@@ -1,13 +1,13 @@
 using UnityEngine;
 namespace StateMachine
 {
-    public class _PlayerGroundedState : _PlayerBaseState
+    public class _PlayerGroundedState : _PlayerMovementState
     {
         public _PlayerGroundedState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
-            
+            base.EnterState();
             _cntx.c_MaxHSpeed = _cntx.g_MaxHSpeed;
             _cntx.c_Acceleration = _cntx.g_Acceleration;
             _cntx.c_Deceleration = _cntx.g_Deceleration;
@@ -21,6 +21,7 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
+            base .UpdateState();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -33,6 +34,7 @@ namespace StateMachine
         }
         public override void CheckSwitchState()
         {
+            base.CheckSwitchState();
             if (_cntx.jumpInputDown || _cntx.willBufferJump)
             {
                 SwitchState(_factory.Jump());

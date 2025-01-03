@@ -19,7 +19,8 @@ namespace StateMachine
         {
             _states = new _PlayerStateFactory(this);
             //Debug.Log("SM awake mvt");
-            _currentState = _states.Movement();            
+            //_currentState = _states.Movement();            
+            _currentState = _states.Grounded();            
             _currentState.EnterState();
         }
 

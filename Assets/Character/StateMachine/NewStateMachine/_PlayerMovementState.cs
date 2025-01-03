@@ -13,7 +13,7 @@ namespace StateMachine
         public override void EnterState()
         {
 
-            InitiliseSubState();
+            //InitiliseSubState();
             //Debug.Log("Enter Movement");
             //_cntx.currentSuperState = this.ToString();
         }
@@ -21,7 +21,7 @@ namespace StateMachine
         {
             ////Debug.Log("Movement");
             Move();
-            CheckSwitchState();
+            //CheckSwitchState();
             //LedgeBump();
         }
         public override void FixedUpdateState()
@@ -38,7 +38,7 @@ namespace StateMachine
         {
             if(_cntx.dashInputDown)// && _cntx.canDash)
             {
-                SwitchState(_factory.Action());
+                SwitchState(_factory.Dash());
                 //Debug.Log("switch to super action");
             }
         }

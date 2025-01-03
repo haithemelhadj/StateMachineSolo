@@ -5,17 +5,19 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class _PlayerFallingState : _PlayerBaseState
+    public class _PlayerFallingState : _PlayerMovementState
     {
         public _PlayerFallingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
+            base.EnterState();
             _cntx.canCyoteJump = true;
             if (_cntx.fasterFallMultiplier == 0f) _cntx.fasterFallMultiplier = 1f;
         }
         public override void UpdateState()
         {
+            base.UpdateState();
             if (_cntx.jumpInputDown)
             {
                 _cntx.jumpPressTime = Time.time;
@@ -35,6 +37,7 @@ namespace StateMachine
         }
         public override void CheckSwitchState()
         {
+            base.CheckSwitchState();
             if (_cntx.isGrounded)
             {
                 SwitchState(_factory.Grounded());

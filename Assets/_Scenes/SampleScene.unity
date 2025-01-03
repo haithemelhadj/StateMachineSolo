@@ -1014,7 +1014,6 @@ MonoBehaviour:
   currentSubState: 
   playerRb: {fileID: 0}
   capsuleCollider: {fileID: 0}
-  playerAnimator: {fileID: 0}
   playerHeight: 0
   playerWidth: 0
   horizontalInput: 0
@@ -1054,7 +1053,7 @@ MonoBehaviour:
   jumpTimeCounter: 0
   jumpTime: 0.3
   jumpPressTime: 0
-  jumpBufferTime: 0.1
+  jumpBufferTime: 0.15
   willBufferJump: 0
   LastGrounded: 0
   cyoteTime: 0.05
@@ -1069,7 +1068,7 @@ MonoBehaviour:
   maxFallSpeed: 30
   fasterFallMultiplier: 1.2
   dashForce: 30
-  dashTime: 1
+  dashTime: 0.1
   canDash: 0
   isDashing: 0
   dashDirection: 0

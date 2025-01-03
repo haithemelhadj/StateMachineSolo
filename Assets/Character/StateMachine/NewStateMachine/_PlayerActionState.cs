@@ -12,13 +12,13 @@ namespace StateMachine
         }
         public override void EnterState()
         {
-            InitiliseSubState();
+            //InitiliseSubState();
             //Debug.Log("Enter action");
         }
         public override void UpdateState()
         {
             //Debug.Log("Action");
-            CheckSwitchState();
+            //CheckSwitchState();
         }
         public override void FixedUpdateState()
         {
@@ -31,6 +31,7 @@ namespace StateMachine
         }
         public override void CheckSwitchState()
         {
+            
             //if (!_cntx.isDashing)
             //{
             //    SwitchState(_factory.Movement());

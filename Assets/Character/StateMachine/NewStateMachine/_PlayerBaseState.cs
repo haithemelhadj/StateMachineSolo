@@ -30,6 +30,10 @@ namespace StateMachine
             {
                 _cuurentSubState.UpdateStates();
             }
+            else
+            {
+                Debug.Log("_cuurentSubState is null");
+            }
         }
         public void ExitStates()
         {
@@ -42,7 +46,7 @@ namespace StateMachine
 
         protected void SwitchState(_PlayerBaseState newState)
         {
-            Debug.Log("switch states: "+newState.ToString() );
+            Debug.Log("switch states: " + newState.ToString());
             //exit current state
             ExitState();
             //ExitStates();

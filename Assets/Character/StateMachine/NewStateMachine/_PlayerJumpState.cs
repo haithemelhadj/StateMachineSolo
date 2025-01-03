@@ -3,12 +3,13 @@
 
 namespace StateMachine
 {
-    public class _PlayerJumpState : _PlayerBaseState
+    public class _PlayerJumpState : _PlayerMovementState
     {
         public _PlayerJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
+            base.EnterState();
             //
             _cntx.willBufferJump = false;
             //null y velocity
@@ -22,6 +23,7 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
+            base.UpdateState();
             _cntx.jumpTimeCounter -= Time.deltaTime;
             _cntx.jumpDirection = new Vector2(_cntx.playerRb.velocity.x, _cntx.jumpForce);
             Jumping(_cntx.jumpDirection);
@@ -37,6 +39,7 @@ namespace StateMachine
         }
         public override void CheckSwitchState()
         {
+            base.CheckSwitchState();
             if ((_cntx.jumpInputUp || _cntx.jumpTimeCounter < 0))
             {
                 SwitchState(_factory.Fall());

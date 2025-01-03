@@ -5,19 +5,21 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace StateMachine
 {
-    public class _PlayerDashState : _PlayerBaseState
+    public class _PlayerDashState : _PlayerActionState
     {
         public _PlayerDashState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
+            base.EnterState();
             Debug.Log("Enter dash");
             _cntx.isDashing = true;
-            Debug.Log("Dashing start");
+            //Debug.Log("Dashing start");
             DashInput();
         }
         public override void UpdateState()
         {
+            base.UpdateState();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -33,6 +35,7 @@ namespace StateMachine
             if (!_cntx.isDashing)
             {
                 SwitchState(_factory.Movement());
+                SwitchState(_factory.Fall());
             }
         }
 

@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class _PlayerWallSlidingState : _PlayerBaseState
+    public class _PlayerWallSlidingState : _PlayerMovementState
     {
         public _PlayerWallSlidingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
-
+            base.EnterState();
         }
         public override void UpdateState()
         {
