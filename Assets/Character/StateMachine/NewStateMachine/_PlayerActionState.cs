@@ -9,11 +9,11 @@ namespace StateMachine
         {
             _isRootState = true;
             //Debug.Log("action rt: " + _isRootState);
-            InitiliseSubState();
         }
         public override void EnterState()
         {
-            Debug.Log("Enter action");
+            InitiliseSubState();
+            //Debug.Log("Enter action");
         }
         public override void UpdateState()
         {
@@ -26,16 +26,19 @@ namespace StateMachine
         }
         public override void ExitState()
         {
-            Debug.Log("Exit action");
+            //Debug.Log("Exit action");
 
         }
         public override void CheckSwitchState()
         {
-
+            //if (!_cntx.isDashing)
+            //{
+            //    SwitchState(_factory.Movement());
+            //}
         }
         public override void InitiliseSubState()
         {
-            Debug.Log("action InitiliseSubState");
+            //Debug.Log("action InitiliseSubState");
             if (_cntx.dashInputDown)
             {
                 SetSubState(_factory.Dash());

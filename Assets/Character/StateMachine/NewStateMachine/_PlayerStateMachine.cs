@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 namespace StateMachine
@@ -17,7 +18,7 @@ namespace StateMachine
         private void InitializeState()
         {
             _states = new _PlayerStateFactory(this);
-            Debug.Log("SM awake mvt");
+            //Debug.Log("SM awake mvt");
             _currentState = _states.Movement();            
             _currentState.EnterState();
         }
@@ -65,7 +66,7 @@ namespace StateMachine
         [Header("Components")]
         public Rigidbody2D playerRb;
         public CapsuleCollider2D capsuleCollider;
-        public Animator playerAnimator;
+        //public Animator playerAnimator;
         public float playerHeight;
         public float playerWidth;
         public void GetComponents()
@@ -306,6 +307,45 @@ namespace StateMachine
         public void GetDashInput()
         {
             dashInputDown = Input.GetKeyDown(dashKey);
+        }
+        public IEnumerator Dash()
+        {
+            Debug.Log("starting dash");
+            //set vars
+            canDash = false;
+            isDashing = true;
+            //playerAnimator.SetBool("Dashing", isDashing);
+            //save gravity
+            float originalGravity = playerRb.gravityScale;
+            playerRb.gravityScale = 0f;
+            playerRb.constraints.Equals(RigidbodyConstraints2D.FreezePositionY);
+            //set air friction 
+            //float originalDrag = inputsScript.playerRb.drag;
+            //inputsScript.playerRb.drag = drag;
+            //stop jumping
+            isJumping = false;
+            //set jumping animation to stop
+            //playerAnimator.SetBool("isJumping", isJumping);
+            //null velocity
+            playerRb.velocity = Vector2.zero;
+            //set dash direction if is wall sliding
+            if (isWallSliding)
+            {
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            }
+            //dash 
+            playerRb.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * dashForce, 0f);
+            yield return new WaitForSeconds(dashTime);
+            //reset everything
+            playerRb.constraints.Equals(RigidbodyConstraints2D.None);
+            playerRb.constraints.Equals(RigidbodyConstraints2D.FreezePosition);
+            playerRb.drag = 0f;
+            playerRb.gravityScale = originalGravity;
+            //playerRb.drag = originalDrag;
+            isDashing = false;
+            //playerAnimator.SetBool("Dashing", isDashing);
+            yield return new WaitForSeconds(dashTime);
+
         }
         #endregion
 

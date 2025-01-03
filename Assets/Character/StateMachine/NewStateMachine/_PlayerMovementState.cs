@@ -2,26 +2,26 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class _PlayerMovementState : _PlayerBaseState
+    public class _PlayerMovementState : _PlayerBaseState 
     {
         public _PlayerMovementState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory)
         {
             _isRootState = true;
             //Debug.Log("mvt rt: " + _isRootState);
-            InitiliseSubState();
         }
         public override void EnterState()
         {
 
-            Debug.Log("Enter Movement");
+            InitiliseSubState();
+            //Debug.Log("Enter Movement");
             //_cntx.currentSuperState = this.ToString();
         }
         public override void UpdateState()
         {
             ////Debug.Log("Movement");
-            CheckSwitchState();
             Move();
+            CheckSwitchState();
             //LedgeBump();
         }
         public override void FixedUpdateState()
@@ -30,13 +30,13 @@ namespace StateMachine
         }
         public override void ExitState()
         {
-            Debug.Log("exit Movement");
+            //Debug.Log("exit Movement");
             
         }
         
         public override void CheckSwitchState()
         {
-            if(_cntx.dashInputDown)
+            if(_cntx.dashInputDown)// && _cntx.canDash)
             {
                 SwitchState(_factory.Action());
                 //Debug.Log("switch to super action");
@@ -44,20 +44,20 @@ namespace StateMachine
         }
         public override void InitiliseSubState()
         {
-            Debug.Log("mvt InitiliseSubState");
+            //Debug.Log("mvt InitiliseSubState");
             if (_cntx.isGrounded)
             {
-                Debug.Log("1 movement switch state ground");
+                //Debug.Log("1 movement switch state ground");
                 SetSubState(_factory.Grounded());
             }
             else if (_cntx.jumpInputDown || _cntx.playerRb.velocity.y > 0)
             {
-                Debug.Log("1 movement switch state jump");
+                //Debug.Log("1 movement switch state jump");
                 SetSubState(_factory.Jump());
             }
             else
             {
-                Debug.Log("1 movement switch state fall");
+                //Debug.Log("1 movement switch state fall");
                 SetSubState(_factory.Fall());
             }
             /**/

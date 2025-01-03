@@ -1,13 +1,32 @@
+using System.Collections.Generic;
 using StateMachine;
 namespace StateMachine
 {
-
+    enum _playerStates
+    {
+        Movement,
+        Action,
+        Grounded,
+        Jump,
+        Fall,
+        Dash,
+        WallSlide,
+        WallJump
+    }
     public class _PlayerStateFactory
     {
         _PlayerStateMachine context;
+        Dictionary<_playerStates,_PlayerBaseState> _states=new Dictionary<_playerStates,_PlayerBaseState>();
         public _PlayerStateFactory(_PlayerStateMachine currentContext)
         {
             context = currentContext;
+            _states[ _playerStates.Movement] = new _PlayerMovementState(context, this);
+            _states[ _playerStates.Action] = new _PlayerActionState(context, this);
+            _states[ _playerStates.Grounded]= new _PlayerGroundedState(context, this);
+            _states[ _playerStates.Jump]= new _PlayerJumpState(context, this);
+            _states[ _playerStates.Fall]= new _PlayerFallingState(context, this);
+            _states[ _playerStates.Dash]= new _PlayerDashState(context, this);
+            _states[ _playerStates.WallSlide]= new _PlayerWallSlidingState(context, this);
         }
 
         //Parent state
@@ -15,11 +34,13 @@ namespace StateMachine
         
         public _PlayerBaseState Movement()
         {
-            return new _PlayerMovementState(context, this);
+            return _states[_playerStates.Movement];
+            //return new _PlayerMovementState(context, this);
         }
         public _PlayerBaseState Action()
         {
-            return new _PlayerActionState(context, this);
+            return (_states[_playerStates.Action]);
+            //return new _PlayerActionState(context, this);
         }
         #endregion
 
@@ -28,15 +49,19 @@ namespace StateMachine
         #region Child States
         public _PlayerBaseState Grounded()
         {
-            return new _PlayerGroundedState(context, this);
+            return _states[_playerStates.Grounded];
+            //return new _PlayerGroundedState(context, this);
         }
         public _PlayerBaseState Jump()
         {
-            return new _PlayerJumpState(context, this);
+            return ( _states[_playerStates.Jump] );
+            //return new _PlayerJumpState(context, this);
         }
         public _PlayerBaseState Fall()
         {
-            return new _PlayerFallingState(context, this);
+            
+            return ( _states[_playerStates.Fall] );
+            //return new _PlayerFallingState(context, this);
         }
         /**/
         #endregion
@@ -48,12 +73,14 @@ namespace StateMachine
         
         public _PlayerBaseState Dash()
         {
-            return new _PlayerDashState(context, this);
+            return (_states[_playerStates.Dash]);
+            //return new _PlayerDashState(context, this);
         }
         
         public _PlayerBaseState WallSlide()
         {
-            return new _PlayerWallSlidingState(context, this);
+            return (_states[_playerStates.WallSlide]);
+            //return new _PlayerWallSlidingState(context, this);
         }
         /**/
         #endregion

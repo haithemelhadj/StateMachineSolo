@@ -42,23 +42,24 @@ namespace StateMachine
 
         protected void SwitchState(_PlayerBaseState newState)
         {
+            Debug.Log("switch states: "+newState.ToString() );
             //exit current state
             ExitState();
             //ExitStates();
             //enter new state
             newState.EnterState();
-            if (_isRootState)
+            if (newState._isRootState)
             {
                 _cntx._currentState = newState;
                 //if (newState == _factory.Movement()) { Debug.Log("1_switched to super mvt"); }
-                Debug.Log("switching root state to:" + newState);
+                //Debug.Log("switching root state to:" + newState);
                 _cntx.currentSuperState = newState.ToString();
 
             }            
             else if (_cuurentSuperState != null)
             {
                 //if (newState == _factory.Movement()) { Debug.Log("2_switched to sub mvt"); }
-                Debug.Log("switching child state to:" + newState);
+                //Debug.Log("switching child state to:" + newState);
                 _cuurentSuperState.SetSubState(newState);
                 _cntx.currentSubState= newState.ToString();
             }
@@ -70,15 +71,15 @@ namespace StateMachine
         }
         protected void SetSuperState(_PlayerBaseState newSuperState)
         {
-            Debug.Log("old super state is :" + _cuurentSuperState);
+            //Debug.Log("old super state is :" + _cuurentSuperState);
             _cuurentSuperState = newSuperState;
-            Debug.Log("switching super state to:" + newSuperState);
+            //Debug.Log("switching super state to:" + newSuperState);
         }
         protected void SetSubState(_PlayerBaseState newSubState)
         {
             _cuurentSubState = newSubState;
             newSubState.SetSuperState(this);
-            Debug.Log("switching Sub state to:" + newSubState);
+            //Debug.Log("switching Sub state to:" + newSubState);
         }
 
     }

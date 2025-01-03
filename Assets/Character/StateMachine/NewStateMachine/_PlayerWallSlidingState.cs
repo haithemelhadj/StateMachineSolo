@@ -46,21 +46,21 @@ namespace StateMachine
             if (_cntx.isGrounded || _cntx.playerRb.velocity.y > 0)
             {
                 _cntx.isWallSliding = false;
-                _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
+                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
                 return;
             }
 
             if (_cntx.WallDetectionUpper() || _cntx.WallDetectionMiddle() || _cntx.WallDetectionLower())
             {
                 _cntx.isWallSliding = true;
-                _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
+                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
                 //StopCoroutine(actionsScript.Dash());
                 _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, -_cntx.wallSlidingSpeed);
             }
             else
             {
                 _cntx.isWallSliding = false;
-                _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
+                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
             }
         }
     }
