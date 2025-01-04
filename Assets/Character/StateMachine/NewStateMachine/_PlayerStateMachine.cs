@@ -1,7 +1,6 @@
 
-using UnityEngine;
 using System.Collections;
-using UnityEngine.EventSystems;
+using UnityEngine;
 
 namespace StateMachine
 {
@@ -13,14 +12,12 @@ namespace StateMachine
 
         public string currentSuperState;
         public string currentSubState;
-        
+
         //Awake
         private void InitializeState()
         {
             _states = new _PlayerStateFactory(this);
-            //Debug.Log("SM awake mvt");
-            //_currentState = _states.Movement();            
-            _currentState = _states.Grounded();            
+            _currentState = _states.Grounded();
             _currentState.EnterState();
         }
 
@@ -35,7 +32,7 @@ namespace StateMachine
         private void Update()
         {
             //rays casts
-            if (!isLedgeBumping)            
+            //if (!isLedgeBumping)
                 GroundCheck();
             HeadCheck();
             WallCheck();
@@ -48,8 +45,7 @@ namespace StateMachine
             GetAttackInput();
             GetInterractionInput();
 
-            //
-            //JumpBuffer();
+
             //logic
             _currentState.UpdateStates();
         }
@@ -67,14 +63,14 @@ namespace StateMachine
         [Header("Components")]
         public Rigidbody2D playerRb;
         public CapsuleCollider2D capsuleCollider;
-        //public Animator playerAnimator;
+        public Animator playerAnimator;
         public float playerHeight;
         public float playerWidth;
         public void GetComponents()
         {
             playerRb = GetComponent<Rigidbody2D>();
             capsuleCollider = GetComponent<CapsuleCollider2D>();
-            //playerAnimator = GetComponent<Animator>();
+            playerAnimator = GetComponent<Animator>();
             playerWidth = capsuleCollider.size.x * transform.localScale.x;
             playerHeight = capsuleCollider.size.y * transform.localScale.y;
         }
@@ -87,12 +83,14 @@ namespace StateMachine
         public void GetHInputs()
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
+            playerAnimator.SetFloat("Hvelocity", Mathf.Abs(horizontalInput));
         }
 
         public float verticalInput;
         public void GetVInputs()
         {
             verticalInput = Input.GetAxisRaw("Vertical");
+            playerAnimator.SetFloat("Yvelocity", verticalInput);
         }
         #endregion
 
@@ -168,10 +166,9 @@ namespace StateMachine
         public float LastTimeWalled;
         public void WallCheck()
         {
-            isHuggingWall = WallDetectionUpper() || WallDetectionMiddle() || WallDetectionLower();
+            isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle() ) || (WallDetectionLower() && WallDetectionMiddle());
             if (isHuggingWall)
             {
-                //canCyoteJump = true;
                 LastTimeWalled = Time.time;
             }
         }
@@ -221,7 +218,7 @@ namespace StateMachine
         {
             jumpInput = Input.GetKey(jumpKey);
             jumpInputDown = Input.GetKeyDown(jumpKey);
-            jumpInputUp = Input.GetKeyUp(jumpKey);            
+            jumpInputUp = Input.GetKeyUp(jumpKey);
             if (jumpInputUp)
             {
                 willBufferJump = false;
@@ -267,15 +264,6 @@ namespace StateMachine
         #endregion
 
         //Wall
-        #region wall Jump
-        [Header("wall Jump")]
-        public float wallJumpDuration;
-        public float wallJumpPressTime;
-        public bool isWallJumping;
-        public Vector2 jumpDirection;
-        public Vector2 wallJumpDirection;
-
-        #endregion
 
         #region Wall Slide
 
@@ -289,9 +277,6 @@ namespace StateMachine
         [Header("Fall Controll")]
         public float maxFallSpeed;
         public float fasterFallMultiplier;
-        //public float jumpApexThreshhold;
-        //public float jumpApexGravityMultiplier;
-        //public float fallMultiplier;
         #endregion
 
         //Actions        
@@ -309,6 +294,7 @@ namespace StateMachine
         {
             dashInputDown = Input.GetKeyDown(dashKey);
         }
+        /*
         public IEnumerator Dash()
         {
             Debug.Log("starting dash");
@@ -348,6 +334,7 @@ namespace StateMachine
             yield return new WaitForSeconds(dashTime);
 
         }
+        /**/
         #endregion
 
         #region Attack
@@ -408,18 +395,31 @@ namespace StateMachine
         #region Interract
         [Header("Interract")]
         public KeyCode InterractionKey;
-        
+        public bool Interraction;
+
         public void GetInterractionInput()
         {
-
+            Interraction = Input.GetKeyDown(InterractionKey);
         }
+        #endregion
+
+
+
+        #region wall Jump
+        [Header("wall Jump")]
+        public float wallJumpDuration;
+        public float wallJumpPressTime;
+        public bool isWallJumping;
+        public Vector2 jumpDirection;
+        public Vector2 wallJumpDirection;
+
         #endregion
 
         #region Ledge Bump
         [Header("Ledge Bump")]
         public float bumpForce;
         public bool isLedgeBumping;
-        public float bumpTime;        
+        public float bumpTime;
         #endregion
 
 
@@ -433,9 +433,7 @@ namespace StateMachine
     }
 }
 /*
- * add H movement parallel state
  * add jump apex lerp and bonus movement
- * add actions 
  * add animations
  */
 

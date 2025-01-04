@@ -1,5 +1,5 @@
 
-    using UnityEngine;
+using UnityEngine;
 
 namespace StateMachine
 {
@@ -10,6 +10,8 @@ namespace StateMachine
         public override void EnterState()
         {
             base.EnterState();
+            //animator
+            _cntx.playerAnimator.SetBool("isJumping", true);
             //
             _cntx.willBufferJump = false;
             //null y velocity
@@ -35,7 +37,11 @@ namespace StateMachine
         public override void ExitState()
         {
             _cntx.willBufferJump = false;
-            //_cntx.isWallJumping = false;
+            _cntx.playerAnimator.SetBool("isJumping", false);
+            _cntx.c_MaxHSpeed = _cntx.j_MaxHSpeed;
+            _cntx.c_Acceleration = _cntx.j_Acceleration;
+            _cntx.c_Deceleration = _cntx.j_Deceleration;
+            _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, _cntx.playerRb.velocity.y * 0.5f);
         }
         public override void CheckSwitchState()
         {
@@ -45,7 +51,7 @@ namespace StateMachine
                 SwitchState(_factory.Fall());
             }
         }
-        
+
         public void Jumping(Vector2 JumpDirection)
         {
             _cntx.playerRb.velocity = JumpDirection;

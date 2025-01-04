@@ -2,26 +2,20 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class _PlayerMovementState : _PlayerBaseState 
+    public class _PlayerMovementState : _PlayerBaseState
     {
         public _PlayerMovementState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory)
         {
             _isRootState = true;
-            //Debug.Log("mvt rt: " + _isRootState);
         }
         public override void EnterState()
         {
 
-            //InitiliseSubState();
-            //Debug.Log("Enter Movement");
-            //_cntx.currentSuperState = this.ToString();
         }
         public override void UpdateState()
         {
-            ////Debug.Log("Movement");
             Move();
-            //CheckSwitchState();
             //LedgeBump();
         }
         public override void FixedUpdateState()
@@ -30,16 +24,14 @@ namespace StateMachine
         }
         public override void ExitState()
         {
-            //Debug.Log("exit Movement");
-            
+
         }
-        
+
         public override void CheckSwitchState()
         {
-            if(_cntx.dashInputDown)// && _cntx.canDash)
+            if (_cntx.dashInputDown)
             {
                 SwitchState(_factory.Dash());
-                //Debug.Log("switch to super action");
             }
         }
         public override void InitiliseSubState()

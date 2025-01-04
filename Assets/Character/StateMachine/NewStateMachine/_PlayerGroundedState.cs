@@ -8,6 +8,9 @@ namespace StateMachine
         public override void EnterState()
         {
             base.EnterState();
+            //animation
+            _cntx.playerAnimator.SetBool("isGrounded", true);
+            //set speed
             _cntx.c_MaxHSpeed = _cntx.g_MaxHSpeed;
             _cntx.c_Acceleration = _cntx.g_Acceleration;
             _cntx.c_Deceleration = _cntx.g_Deceleration;
@@ -21,7 +24,7 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
-            base .UpdateState();
+            base.UpdateState();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -31,6 +34,7 @@ namespace StateMachine
         public override void ExitState()
         {
             _cntx.LastGrounded = Time.time;
+            _cntx.playerAnimator.SetBool("isGrounded", false);
         }
         public override void CheckSwitchState()
         {
@@ -39,10 +43,10 @@ namespace StateMachine
             {
                 SwitchState(_factory.Jump());
             }
-            if (!_cntx.isGrounded && _cntx.playerRb.velocity.y<0f)
+            if (!_cntx.isGrounded && _cntx.playerRb.velocity.y < 0f)
             {
                 SwitchState(_factory.Fall());
-            
+
             }
 
         }

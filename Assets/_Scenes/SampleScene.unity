@@ -1014,6 +1014,7 @@ MonoBehaviour:
   currentSubState: 
   playerRb: {fileID: 0}
   capsuleCollider: {fileID: 0}
+  playerAnimator: {fileID: 0}
   playerHeight: 0
   playerWidth: 0
   horizontalInput: 0
@@ -1058,11 +1059,6 @@ MonoBehaviour:
   LastGrounded: 0
   cyoteTime: 0.05
   canCyoteJump: 0
-  wallJumpDuration: 0
-  wallJumpPressTime: 0.8
-  isWallJumping: 0
-  jumpDirection: {x: 0, y: 0}
-  wallJumpDirection: {x: 8, y: 16}
   isWallSliding: 0
   wallSlidingSpeed: 0
   maxFallSpeed: 30
@@ -1084,6 +1080,12 @@ MonoBehaviour:
   atkPosition: {x: 0, y: 0}
   atkRotation: 0
   InterractionKey: 101
+  Interraction: 0
+  wallJumpDuration: 0.2
+  wallJumpPressTime: 0
+  isWallJumping: 0
+  jumpDirection: {x: 0, y: 0}
+  wallJumpDirection: {x: 8, y: 16}
   bumpForce: 1.5
   isLedgeBumping: 0
   bumpTime: 0.1
@@ -1095,9 +1097,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330048788}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 140d5ee1c5d3cf9438a1ae148b887997, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1211,9 +1213,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.7882353, g: 0.45153564, b: 0.44313726, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 1039420431, guid: 81919da6c38de514f8910ea9d30f26c7, type: 3}
+  m_Color: {r: 0.7377358, g: 0.99239725, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}

@@ -1,5 +1,5 @@
 
-    using UnityEngine;
+using UnityEngine;
 
 namespace StateMachine
 {
@@ -26,19 +26,19 @@ namespace StateMachine
         public void UpdateStates()
         {
             UpdateState();
-            if(_cuurentSubState!=null)
+            if (_cuurentSubState != null)
             {
                 _cuurentSubState.UpdateStates();
             }
             else
             {
-                Debug.Log("_cuurentSubState is null");
+                //Debug.Log("_cuurentSubState is null");
             }
         }
         public void ExitStates()
         {
             ExitState();
-            if( _cuurentSubState!=null )
+            if (_cuurentSubState != null)
             {
                 _cuurentSubState.ExitStates();
             }
@@ -52,20 +52,16 @@ namespace StateMachine
             //ExitStates();
             //enter new state
             newState.EnterState();
+
             if (newState._isRootState)
             {
                 _cntx._currentState = newState;
-                //if (newState == _factory.Movement()) { Debug.Log("1_switched to super mvt"); }
-                //Debug.Log("switching root state to:" + newState);
                 _cntx.currentSuperState = newState.ToString();
-
-            }            
+            }
             else if (_cuurentSuperState != null)
             {
-                //if (newState == _factory.Movement()) { Debug.Log("2_switched to sub mvt"); }
-                //Debug.Log("switching child state to:" + newState);
                 _cuurentSuperState.SetSubState(newState);
-                _cntx.currentSubState= newState.ToString();
+                _cntx.currentSubState = newState.ToString();
             }
             else
             {
@@ -75,15 +71,12 @@ namespace StateMachine
         }
         protected void SetSuperState(_PlayerBaseState newSuperState)
         {
-            //Debug.Log("old super state is :" + _cuurentSuperState);
             _cuurentSuperState = newSuperState;
-            //Debug.Log("switching super state to:" + newSuperState);
         }
         protected void SetSubState(_PlayerBaseState newSubState)
         {
             _cuurentSubState = newSubState;
             newSubState.SetSuperState(this);
-            //Debug.Log("switching Sub state to:" + newSubState);
         }
 
     }

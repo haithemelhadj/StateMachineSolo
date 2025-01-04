@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -14,6 +12,7 @@ namespace StateMachine
             base.EnterState();
             _cntx.canCyoteJump = true;
             if (_cntx.fasterFallMultiplier == 0f) _cntx.fasterFallMultiplier = 1f;
+
         }
         public override void UpdateState()
         {
@@ -24,7 +23,7 @@ namespace StateMachine
                 _cntx.willBufferJump = true;
             }
             CyoteTime();
-            Fall();      
+            Fall();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -41,35 +40,48 @@ namespace StateMachine
             if (_cntx.isGrounded)
             {
                 SwitchState(_factory.Grounded());
+                _cntx.playerAnimator.SetBool("isJumping", false);
             }
             if (_cntx.canCyoteJump && _cntx.jumpInputDown)
             {
                 SwitchState(_factory.Jump());
             }
-            /*
-            if(!_cntx.isGrounded && _cntx.isHuggingWall) 
+
+            if (!_cntx.isGrounded && _cntx.isHuggingWall)
             {
                 SwitchState(_factory.WallSlide());
+                _cntx.playerAnimator.SetBool("isJumping", false);
             }
-            /**/
         }
-        
+
 
         public void Fall()
         {
-            //make fall speed faster
-            if (_cntx.playerRb.velocity.y < 0 && _cntx.playerRb.velocity.y > _cntx.maxFallSpeed)
+            if (_cntx.playerRb.velocity.y <= 0f)
             {
-                _cntx.playerRb.velocity += Vector2.up * Physics2D.gravity.y * _cntx.fasterFallMultiplier * Time.deltaTime;
+                //limit fall speed 
+                _cntx.playerAnimator.SetBool("isJumping", false);
+                _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, Mathf.Max(_cntx.playerRb.velocity.y, _cntx.maxFallSpeed));
+                //make fall speed faster
+                if (_cntx.playerRb.velocity.y > _cntx.maxFallSpeed)
+                {
+                    _cntx.playerRb.velocity += Vector2.up * Physics2D.gravity.y * _cntx.fasterFallMultiplier * Time.deltaTime;
+                }
+                _cntx.c_MaxHSpeed = _cntx.a_MaxHSpeed;
+                _cntx.c_Acceleration = _cntx.a_Acceleration;
+                _cntx.c_Deceleration = _cntx.a_Deceleration;
             }
-            //limit fall speed 
-            else if (_cntx.playerRb.velocity.y < 0f)
+            else//JumpApexControll
             {
-                _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, Mathf.Max(_cntx.playerRb.velocity.y, _cntx.maxFallSpeed) );
+                Debug.Log("jump Apex");
+                _cntx.playerAnimator.SetBool("isJumping", true);
+                //_cntx.playerRb.velocity= 
+                //Vector2.Lerp(_cntx.playerRb.velocity, new Vector2(_cntx.playerRb.velocity.x, 0f,0.2f);
                 
             }
+            
         }
-                
+
 
         public void CyoteTime()
         {
@@ -81,17 +93,6 @@ namespace StateMachine
         public override void InitiliseSubState()
         {
 
-        }
-        public void JumpApexControll()
-        {
-            if(_cntx.playerRb.velocity.y>0)
-            {
-
-            }
-            else
-            {
-
-            }
         }
     }
 }

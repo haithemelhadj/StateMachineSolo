@@ -9,10 +9,13 @@ namespace StateMachine
         public override void EnterState()
         {
             base.EnterState();
+            _cntx.isWallSliding = true;
+            _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
         }
         public override void UpdateState()
         {
-            Debug.Log("wall sliding");
+            base.UpdateState();
+            _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, -_cntx.wallSlidingSpeed);
             CheckSwitchState();
         }
         public override void FixedUpdateState()
@@ -21,48 +24,33 @@ namespace StateMachine
         }
         public override void ExitState()
         {
-
+            _cntx.isWallSliding = false;
+            _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
+            base.ExitState();
+            
         }
         public override void CheckSwitchState()
         {
+            base.CheckSwitchState();
             if (_cntx.isGrounded)
             {
                 SwitchState(_factory.Grounded());
             }
-            /*
             if (_cntx.jumpInputDown || _cntx.willBufferJump)
             {
-                SwitchState(_factory.Jump());
+                _cntx.wallJumpPressTime = Time.time;
+                SwitchState(_factory.WallJump());
             }
-            /**/
+            if (!_cntx.isGrounded && !_cntx.isHuggingWall)
+            {
+                SwitchState(_factory.Fall());
+            }
         }
         public override void InitiliseSubState()
         {
 
         }
 
-        public void WallSlide()
-        {
-            if (_cntx.isGrounded || _cntx.playerRb.velocity.y > 0)
-            {
-                _cntx.isWallSliding = false;
-                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
-                return;
-            }
-
-            if (_cntx.WallDetectionUpper() || _cntx.WallDetectionMiddle() || _cntx.WallDetectionLower())
-            {
-                _cntx.isWallSliding = true;
-                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
-                //StopCoroutine(actionsScript.Dash());
-                _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, -_cntx.wallSlidingSpeed);
-            }
-            else
-            {
-                _cntx.isWallSliding = false;
-                //_cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
-            }
-        }
     }
 }
 
