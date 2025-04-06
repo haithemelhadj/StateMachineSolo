@@ -39,7 +39,8 @@ namespace StateMachine
             if (_cntx.jumpInputDown || _cntx.willBufferJump)
             {
                 _cntx.wallJumpPressTime = Time.time;
-                SwitchState(_factory.WallJump());
+                SwitchState(_factory.Jump());
+                //SwitchState(_factory.WallJump());
             }
             if (!_cntx.isGrounded && !_cntx.isHuggingWall)
             {

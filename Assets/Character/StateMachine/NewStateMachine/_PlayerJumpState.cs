@@ -25,10 +25,23 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
-            base.UpdateState();
-            _cntx.jumpTimeCounter -= Time.deltaTime;
-            _cntx.jumpDirection = new Vector2(_cntx.playerRb.velocity.x, _cntx.jumpForce);
-            Jumping(_cntx.jumpDirection);
+            //if is wall jumping
+            if (Time.time - _cntx.wallJumpPressTime < _cntx.wallJumpDuration)
+            {
+                //_cntx.isWallJumping = Time.time - _cntx.wallJumpPressTime < _cntx.wallJumpDuration;
+                _cntx.jumpDirection = new Vector2(-_cntx.transform.localScale.x * _cntx.wallJumpDirection.x, _cntx.wallJumpDirection.y);
+                //_cntx.playerAnimator.SetBool("isJumping", true);
+                //Jumping(_cntx.jumpDirection);
+
+            }
+            else // else if is normal jumping
+            {
+                base.UpdateState();
+                _cntx.jumpDirection = new Vector2(_cntx.playerRb.velocity.x, _cntx.jumpForce);
+            }
+                _cntx.jumpTimeCounter -= Time.deltaTime;
+                Jumping(_cntx.jumpDirection);
+
             CheckSwitchState();
         }
         public override void FixedUpdateState()

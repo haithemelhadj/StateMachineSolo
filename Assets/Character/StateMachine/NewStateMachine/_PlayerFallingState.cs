@@ -73,7 +73,7 @@ namespace StateMachine
             }
             else//JumpApexControll
             {
-                Debug.Log("jump Apex");
+                //Debug.Log("jump Apex");
                 _cntx.playerAnimator.SetBool("isJumping", true);
                 //_cntx.playerRb.velocity= 
                 //Vector2.Lerp(_cntx.playerRb.velocity, new Vector2(_cntx.playerRb.velocity.x, 0f,0.2f);

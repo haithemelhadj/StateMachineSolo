@@ -40,17 +40,17 @@ namespace StateMachine
             if (_cntx.isGrounded)
             {
                 //Debug.Log("1 movement switch state ground");
-                SetSubState(_factory.Grounded());
+                SetState(_factory.Grounded());
             }
             else if (_cntx.jumpInputDown || _cntx.playerRb.velocity.y > 0)
             {
                 //Debug.Log("1 movement switch state jump");
-                SetSubState(_factory.Jump());
+                SetState(_factory.Jump());
             }
             else
             {
                 //Debug.Log("1 movement switch state fall");
-                SetSubState(_factory.Fall());
+                SetState(_factory.Fall());
             }
             /**/
 
@@ -59,15 +59,18 @@ namespace StateMachine
         #region Movement
         public void Move()
         {
+
             //move player
             if (_cntx.horizontalInput != 0f)
             {
                 _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration);
+                //Debug.Log("velocity: "+_cntx.playerRb.velocity.x);
+                
                 //flip character and keep it that way when no inputs        
                 Flip();
             }
             else //slow player to stop
-                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);
+                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);           
         }
 
         public void Flip()

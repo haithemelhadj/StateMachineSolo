@@ -31,7 +31,7 @@ namespace StateMachine
         {
             if (_cntx.dashInputDown)
             {
-                SetSubState(_factory.Dash());
+                SetState(_factory.Dash());
             }
         }
     }

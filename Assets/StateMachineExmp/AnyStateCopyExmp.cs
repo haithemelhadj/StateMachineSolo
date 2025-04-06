@@ -1,29 +1,32 @@
 namespace StateMachine
 {
-    public class _NewStateCopy : _PlayerMovementState
+    public class AnyStateCopyExmp : BaseStateExmp
     {
-        public _NewStateCopy(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public AnyStateCopyExmp(StateMachineExmp currentContext, StateFactoryExmp StateFactory)
+            : base(currentContext, StateFactory) 
+        {
+            //_isRootState = true;
+        }
         public override void EnterState()
         {
-            base.EnterState();
+            //base.EnterState();
         }
         public override void UpdateState()
         {
-            base.UpdateState();
+            //base.UpdateState();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
         {
-            base.FixedUpdateState();
+            //base.FixedUpdateState();
         }
         public override void ExitState()
         {
-            base.ExitState();
+            //base.ExitState();
         }
         public override void CheckSwitchState()
         {
-            base.CheckSwitchState();
+            //base.CheckSwitchState();
         }
 
         public override void InitiliseSubState()

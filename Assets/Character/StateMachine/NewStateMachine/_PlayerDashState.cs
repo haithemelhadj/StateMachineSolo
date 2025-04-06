@@ -86,7 +86,7 @@ namespace StateMachine
             /**/
             //dash 
             _cntx.playerRb.velocity = new Vector2(Mathf.Sign(_cntx.transform.localScale.x) * _cntx.dashForce, 0f);
-            Debug.Log(_cntx.transform.localScale.x);
+            //Debug.Log(_cntx.transform.localScale.x);
             yield return new WaitForSeconds(_cntx.dashTime);
             //reset everything
             _cntx.playerRb.constraints.Equals(RigidbodyConstraints2D.None);

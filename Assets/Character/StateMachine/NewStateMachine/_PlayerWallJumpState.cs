@@ -3,7 +3,7 @@ using static UnityEngine.LightAnchor;
 
 namespace StateMachine
 {
-    public class _PlayerWallJumpState : _PlayerActionState
+    public class _PlayerWallJumpState : _PlayerJumpState
     {
         public _PlayerWallJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
             : base(currentContext, playerStateFactory) { }
@@ -13,7 +13,7 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
-            base.UpdateState();
+            //base.UpdateState();
             _cntx.isWallJumping = Time.time - _cntx.wallJumpPressTime < _cntx.wallJumpDuration;
             _cntx.jumpDirection = new Vector2(-_cntx.transform.localScale.x * _cntx.wallJumpDirection.x, _cntx.wallJumpDirection.y);
             _cntx.playerAnimator.SetBool("isJumping", true);
@@ -50,10 +50,12 @@ namespace StateMachine
         {
 
         }
+        /*
         public void Jumping(Vector2 JumpDirection)
         {
             _cntx.playerRb.velocity = JumpDirection;
         }
+        /**/
     }
 }
 

@@ -42,6 +42,55 @@ public class JumpScript : MonoBehaviour
     public bool isWallJumping;
     public Vector2 jumpDirection;
     public Vector2 wallJumpDirection;
+    #region Variable Jump
+    [Header("Variable Jump")]
+    public float jumpTimeCounter;
+    public float jumpTime;
+    public bool isJumping;
+    public void VariableJump()
+    {
+        if (inputsScript.jumpInputUp)
+        {
+            isJumping = false;
+            //set jumping animation
+            inputsScript.playerAnimator.SetBool("isJumping", isJumping);
+            isWallJumping = false;
+        }
+    }
+    #endregion
+
+    #region Jump Buffer
+    //-----------Jump Buffer
+    [Header("Jump Buffer")]
+    public float jumpPressTime;
+    public float jumpBufferTime;
+    public bool willJump;
+    public void JumpBuffer()
+    {
+        if (Time.time - jumpPressTime > jumpBufferTime)
+        {
+            willJump = false;
+        }
+
+    }
+    #endregion
+
+    #region Cyote Time
+    //-----------cyote time
+    [Header("Cyote Time")]
+    public float LastGrounded;
+    public float cyoteTime;
+    public bool canJump;
+    public void CyoteTime()
+    {
+        //if (!canJump) return;
+        if (Time.time - LastGrounded > cyoteTime || Time.time - LastWalled > cyoteTime)
+        {
+            canJump = false;
+        }
+    }
+    #endregion
+
     public void JumpInput()
     {        
         // get jump input and set values 
@@ -112,6 +161,7 @@ public class JumpScript : MonoBehaviour
             }
         }
     }
+
     public void Jumping(Vector2 JumpDirection)
     {
         inputsScript.playerRb.velocity = JumpDirection;
@@ -120,54 +170,7 @@ public class JumpScript : MonoBehaviour
 
     #endregion
 
-    #region Variable Jump
-    [Header("Variable Jump")]
-    public float jumpTimeCounter;
-    public float jumpTime;
-    public bool isJumping;
-    public void VariableJump()
-    {
-        if (inputsScript.jumpInputUp)
-        {
-            isJumping = false;
-            //set jumping animation
-            inputsScript.playerAnimator.SetBool("isJumping", isJumping);
-            isWallJumping = false;
-        }
-    }
-    #endregion
 
-    #region Jump Buffer
-    //-----------Jump Buffer
-    [Header("Jump Buffer")]
-    public float jumpPressTime;
-    public float jumpBufferTime;
-    public bool willJump;
-    public void JumpBuffer()
-    {
-        if (Time.time - jumpPressTime > jumpBufferTime)
-        {
-            willJump = false;
-        }
-
-    }
-    #endregion
-
-    #region Cyote Time
-    //-----------cyote time
-    [Header("Cyote Time")]
-    public float LastGrounded;
-    public float cyoteTime;
-    public bool canJump;
-    public void CyoteTime()
-    {
-        //if (!canJump) return;
-        if (Time.time - LastGrounded > cyoteTime || Time.time - LastWalled > cyoteTime)
-        {
-            canJump = false;
-        }
-    }
-    #endregion
 
     #region WallCheck
     public float LastWalled;

@@ -8,8 +8,7 @@ namespace StateMachine
         protected bool _isRootState = false;
         protected _PlayerStateMachine _cntx;
         protected _PlayerStateFactory _factory;
-        protected _PlayerBaseState _cuurentSuperState;
-        protected _PlayerBaseState _cuurentSubState;
+        protected _PlayerBaseState _currentState;
         public _PlayerBaseState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
         {
             _cntx = currentContext;
@@ -26,42 +25,51 @@ namespace StateMachine
         public void UpdateStates()
         {
             UpdateState();
-            if (_cuurentSubState != null)
+            /*
+            if (_currentState != null)
             {
-                _cuurentSubState.UpdateStates();
+                _currentState.UpdateStates();
+                Debug.Log("doing updates***");
             }
             else
             {
-                //Debug.Log("_cuurentSubState is null");
+                Debug.Log("_cuurentSubState is null");
             }
+            /**/
         }
         public void ExitStates()
         {
             ExitState();
-            if (_cuurentSubState != null)
+            /*
+            if (_currentState != null)
             {
-                _cuurentSubState.ExitStates();
+                _currentState.ExitStates();
             }
+            /**/
         }
 
         protected void SwitchState(_PlayerBaseState newState)
         {
-            Debug.Log("switch states: " + newState.ToString());
+            //Debug.Log("switch states: " + newState.ToString());
             //exit current state
             ExitState();
             //ExitStates();
             //enter new state
             newState.EnterState();
-
+            _cntx._currentState = newState;
+            /*
             if (newState._isRootState)
             {
-                _cntx._currentState = newState;
                 _cntx.currentSuperState = newState.ToString();
+                Debug.Log("doing root state logic");
             }
+            /*
             else if (_cuurentSuperState != null)
             {
                 _cuurentSuperState.SetSubState(newState);
                 _cntx.currentSubState = newState.ToString();
+                Debug.Log("doing sub state logic");
+
             }
             else
             {
@@ -69,14 +77,16 @@ namespace StateMachine
             }
             /**/
         }
+        /*
         protected void SetSuperState(_PlayerBaseState newSuperState)
         {
             _cuurentSuperState = newSuperState;
         }
-        protected void SetSubState(_PlayerBaseState newSubState)
+        /**/
+        protected void SetState(_PlayerBaseState newState)
         {
-            _cuurentSubState = newSubState;
-            newSubState.SetSuperState(this);
+            _currentState = newState;
+            //newSubState.SetSuperState(this);
         }
 
     }
