@@ -17,7 +17,7 @@ public abstract class AiBaseState
     public abstract void FixedUpdateState();
     public abstract void ExitState();
     public abstract void CheckSwitchState();
-    public abstract void InitiliseSubState();
+    //public abstract void InitiliseSubState();
 
     public void UpdateStates()
     {
@@ -37,7 +37,7 @@ public abstract class AiBaseState
         //enter new state
         newState.EnterState();
         _cntx._currentState = newState;
-        
+
     }
     protected void SetSubState(AiBaseState newState)
     {

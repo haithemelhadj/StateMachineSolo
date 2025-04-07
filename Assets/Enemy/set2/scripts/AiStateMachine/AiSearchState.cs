@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class AiChaseState : AiMovementState
+    public class AiSearchState : AiMovementState
     {
-        public AiChaseState(AiStateMachine currentContext, AiStateFactory StateFactory)
+        public AiSearchState(AiStateMachine currentContext, AiStateFactory StateFactory)
             : base(currentContext, StateFactory)
         {
             //_isRootState = true;
@@ -12,7 +12,9 @@ namespace StateMachine
         public override void EnterState()
         {
             base.EnterState();
-            ChangeColor(color: Color.red);
+            ChangeColor(color: Color.yellow);
+            _cntx.randSearchTime = Random.Range(1f, 5f);
+            _cntx.searchEnterTime = Time.time;
         }
         public override void UpdateState()
         {
@@ -21,27 +23,21 @@ namespace StateMachine
         public override void FixedUpdateState()
         {
             base.FixedUpdateState();
-            MoveTowardsTargetPosition(_cntx.targetPlayer.position,_cntx.chaseSpeed);
-            _cntx.animator.SetFloat("speed", 1);
+            MoveTowardsTargetPosition(_cntx.playerlastSeenPos,_cntx.searchSpeed);
             CheckSwitchState();
         }
         public override void ExitState()
         {
             base.ExitState();
-            
         }
         public override void CheckSwitchState()
         {
             base.CheckSwitchState();
-            if (!IsInFOV(_cntx.targetPlayer) && Vector2.Distance(_cntx.targetPlayer.position,_cntx.transform.position)>_cntx.detectionRange*2)
+            if (Time.time - _cntx.randSearchTime >= _cntx.searchEnterTime)
             {
-                _cntx.playerlastSeenPos = _cntx.targetPlayer.position;
-                SwitchState(_factory.Search());
+                SwitchState(_factory.Patrol());
             }
         }
-
-
-
 
     }
 }

@@ -33,18 +33,18 @@ namespace StateMachine
             newState.EnterState();
             _cntx._currentState = newState;
 
-            Debug.Log("switching state to:" + newState);
+            //Debug.Log("switching state to:" + newState);
         }
         protected void SetSuperState(PlayerBaseState newSuperState)
         {
             _cuurentSuperState = newSuperState;
-            Debug.Log("switching super state to:" + newSuperState);
+            //Debug.Log("switching super state to:" + newSuperState);
         }
         protected void SetSubState(PlayerBaseState newSubState)
         {
             _cuurentSubState = newSubState;
             newSubState.SetSuperState(this);
-            Debug.Log("switching Sub state to:" + newSubState);
+            //Debug.Log("switching Sub state to:" + newSubState);
         }
 
     }

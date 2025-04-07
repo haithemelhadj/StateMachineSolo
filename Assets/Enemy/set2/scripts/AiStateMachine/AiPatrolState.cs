@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AiPatrolState : MonoBehaviour
+namespace StateMachine
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AiPatrolState : AiMovementState
     {
-        
-    }
+        public AiPatrolState(AiStateMachine currentContext, AiStateFactory StateFactory)
+            : base(currentContext, StateFactory)
+        {
+            //_isRootState = true;
+        }
+        public override void EnterState()
+        {
+            base.EnterState();
+            ChangeColor(color: Color.blue);
+            _cntx.randPatrolTime = Random.Range(1f, 5f);
+            _cntx.patrolEnterTime = Time.time;
+        }
+        public override void UpdateState()
+        {
+            base.UpdateState();
+        }
+        public override void FixedUpdateState()
+        {
+            base.FixedUpdateState();
+            Move();
+            CheckSwitchState();
+        }
+        public override void ExitState()
+        {
+            base.ExitState();            
+        }
+        public override void CheckSwitchState()
+        {
+            base.CheckSwitchState();
+            if (Time.time - _cntx.randPatrolTime >= _cntx.patrolEnterTime)
+            {
+                SwitchState(_factory.Idle());
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
     }
 }
+

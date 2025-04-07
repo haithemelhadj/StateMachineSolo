@@ -1,36 +1,32 @@
-using UnityEngine;
-
 namespace StateMachine
 {
-    public class AiAttackState : AiActionState
+    public class AiTemplateState : AiBaseState
     {
-        public AiAttackState(AiStateMachine currentContext, AiStateFactory StateFactory)
+        public AiTemplateState(AiStateMachine currentContext, AiStateFactory StateFactory)
             : base(currentContext, StateFactory)
         {
             //_isRootState = true;
         }
         public override void EnterState()
         {
-            base.EnterState();
-            Debug.Log("attack started");
-            SwitchState(_factory.Chase());
+            //base.EnterState();
         }
         public override void UpdateState()
         {
-            base.UpdateState();
             CheckSwitchState();
+            //base.UpdateState();
         }
         public override void FixedUpdateState()
         {
-            base.FixedUpdateState();
+            //base.FixedUpdateState();
         }
         public override void ExitState()
         {
-            base.ExitState();
+            //base.ExitState();
         }
         public override void CheckSwitchState()
         {
-            base.CheckSwitchState();
+            //base.CheckSwitchState();
         }
 
     }

@@ -1,8 +1,5 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using StateMachine;
-using UnityEngine;
 
 enum AiStates
 {
@@ -13,10 +10,11 @@ enum AiStates
     patrol,
     Search,
     Chase,
-    Retreat,
-    Jump,
-    Fall,
-    
+    Attack,
+    //Retreat,
+    //Jump,
+    //Fall,
+
     /*
     None,
     Movement,
@@ -40,6 +38,13 @@ public class AiStateFactory
         context = currentContext;
         //_states[States.None] = new AiAnyStateCopy(context, this);
         _states[AiStates.Movement] = new AiMovementState(context, this);
+        _states[AiStates.Action] = new AiActionState(context, this);
+
+        _states[AiStates.Idle] = new AiIdleState(context, this);
+        _states[AiStates.patrol] = new AiPatrolState(context, this);
+        _states[AiStates.Chase] = new AiChaseState(context, this);
+        _states[AiStates.Search] = new AiSearchState(context, this);
+        _states[AiStates.Attack] = new AiAttackState(context, this);
     }
 
 
@@ -49,7 +54,7 @@ public class AiStateFactory
     {
         return _states[AiStates.Movement];
     }
-    
+
     public AiBaseState Action()
     {
         return (_states[AiStates.Action]);
@@ -60,40 +65,49 @@ public class AiStateFactory
 
     //Child States
     #region Child States
-    /*
-    public _PlayerBaseState Grounded()
+    public AiBaseState Idle()
     {
-        return _states[AiStates.Grounded];
+        return _states[AiStates.Idle];
     }
-    public _PlayerBaseState Jump()
-    {
-        return (_states[States.Jump]);
-    }
-    public _PlayerBaseState Fall()
-    {
 
-        return (_states[States.Fall]);
+    public AiBaseState Patrol()
+    {
+        return _states[AiStates.patrol];
     }
-    /**/
+
+    public AiBaseState Chase()
+    {
+        return _states[AiStates.Chase];
+    }
+
+    public AiBaseState Search()
+    {
+        return _states[AiStates.Search];
+    }
+
     #endregion
 
 
 
     //actions
     #region actions
-    /*
-    public _PlayerBaseState Dash()
+    public AiBaseState Attack()
     {
-        return (_states[States.Dash]);
+        return (_states[AiStates.Attack]);
+    }
+    /*
+    public AiBaseState Dash()
+    {
+        return (_states[AiStates.Dash]);
     }
 
-    public _PlayerBaseState WallSlide()
+    public AiBaseState WallSlide()
     {
-        return (_states[States.WallSlide]);
+        return (_states[AiStates.WallSlide]);
     }
-    public _PlayerBaseState WallJump()
+    public AiBaseState WallJump()
     {
-        return (_states[States.WallJump]);
+        return (_states[AiStates.WallJump]);
     }
 
     /**/

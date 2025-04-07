@@ -52,11 +52,6 @@ namespace StateMachine
         {
             //start dash coroutine
             _cntx.StartCoroutine(Dash());
-            //
-            if (!_cntx.isDashing && (_cntx.isGrounded || _cntx.isWallSliding))
-            {
-                _cntx.canDash = true;
-            }
         }
 
 
@@ -64,7 +59,7 @@ namespace StateMachine
         public IEnumerator Dash()
         {
             //set vars
-            _cntx.canDash = false;
+            //_cntx.canDash = false;
             _cntx.isDashing = true;
             _cntx.playerAnimator.SetBool("Dashing", _cntx.isDashing);
             //save gravity
@@ -75,10 +70,10 @@ namespace StateMachine
             _cntx.isJumping = false;
             //set jumping animation to stop
             _cntx.playerAnimator.SetBool("isJumping", _cntx.isJumping);
-            //null velocity
+            //null velocity           
             _cntx.playerRb.velocity = Vector2.zero;
             //set dash direction if is wall sliding
-            
+
             if (_cntx.isHuggingWall)
             {
                 _cntx.transform.localScale = new Vector2(-_cntx.transform.localScale.x, _cntx.transform.localScale.y);
@@ -91,8 +86,9 @@ namespace StateMachine
             //reset everything
             _cntx.playerRb.constraints.Equals(RigidbodyConstraints2D.None);
             _cntx.playerRb.constraints.Equals(RigidbodyConstraints2D.FreezePosition);
-            _cntx.playerRb.drag = 0f;
+            //_cntx.playerRb.drag = 0f;
             _cntx.playerRb.gravityScale = originalGravity;
+            _cntx.playerRb.velocity = Vector2.zero;
             _cntx.isDashing = false;
             _cntx.playerAnimator.SetBool("Dashing", _cntx.isDashing);
             yield return new WaitForSeconds(_cntx.dashTime);

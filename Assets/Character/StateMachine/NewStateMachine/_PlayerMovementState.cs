@@ -29,7 +29,8 @@ namespace StateMachine
 
         public override void CheckSwitchState()
         {
-            if (_cntx.dashInputDown)
+                
+            if (_cntx.dashInputDown && _cntx.canDashCheck())
             {
                 SwitchState(_factory.Dash());
             }

@@ -1,5 +1,3 @@
-
-using System.Collections;
 using UnityEngine;
 
 namespace StateMachine
@@ -33,7 +31,7 @@ namespace StateMachine
         {
             //rays casts
             //if (!isLedgeBumping)
-                GroundCheck();
+            GroundCheck();
             HeadCheck();
             WallCheck();
             //inputs
@@ -166,7 +164,7 @@ namespace StateMachine
         public float LastTimeWalled;
         public void WallCheck()
         {
-            isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle() ) || (WallDetectionLower() && WallDetectionMiddle());
+            isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle()) || (WallDetectionLower() && WallDetectionMiddle());
             if (isHuggingWall)
             {
                 LastTimeWalled = Time.time;
@@ -283,58 +281,44 @@ namespace StateMachine
 
         #region Dash
         [Header("Dash")]
-        public float dashForce;
-        public float dashTime;
-        public bool canDash;
-        public bool isDashing;
-        public float dashDirection;
+        //public bool canDash;
         public KeyCode dashKey;
         public bool dashInputDown;
         public void GetDashInput()
         {
             dashInputDown = Input.GetKeyDown(dashKey);
         }
-        /*
-        public IEnumerator Dash()
+
+        public float dashDirection;
+        public float dashForce;
+
+        public bool isDashing;
+        public float dashTime;
+
+        public float dashCd;
+        public float lastDash;
+        public bool dashCounter;
+        public bool canDashCheck()
         {
-            Debug.Log("starting dash");
-            //set vars
-            canDash = false;
-            isDashing = true;
-            //playerAnimator.SetBool("Dashing", isDashing);
-            //save gravity
-            float originalGravity = playerRb.gravityScale;
-            playerRb.gravityScale = 0f;
-            playerRb.constraints.Equals(RigidbodyConstraints2D.FreezePositionY);
-            //set air friction 
-            //float originalDrag = inputsScript.playerRb.drag;
-            //inputsScript.playerRb.drag = drag;
-            //stop jumping
-            isJumping = false;
-            //set jumping animation to stop
-            //playerAnimator.SetBool("isJumping", isJumping);
-            //null velocity
-            playerRb.velocity = Vector2.zero;
-            //set dash direction if is wall sliding
-            if (isWallSliding)
+            if (!isDashing)// && (isGrounded || isWallSliding))
             {
-                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                return true;
             }
-            //dash 
-            playerRb.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * dashForce, 0f);
-            yield return new WaitForSeconds(dashTime);
-            //reset everything
-            playerRb.constraints.Equals(RigidbodyConstraints2D.None);
-            playerRb.constraints.Equals(RigidbodyConstraints2D.FreezePosition);
-            playerRb.drag = 0f;
-            playerRb.gravityScale = originalGravity;
-            //playerRb.drag = originalDrag;
-            isDashing = false;
-            //playerAnimator.SetBool("Dashing", isDashing);
-            yield return new WaitForSeconds(dashTime);
+            else
+                return false;
+        }
+
+        void DashLimiting()
+        {
+            //on grounded dashcounter=1
+            //on dash dashCounter=0
+            //on dash lastDash=timt.time
+            //on dash press if(dashcd) ==> dash
+            dashCounter = false;
+            if (isGrounded) dashCounter = true;
 
         }
-        /**/
+
         #endregion
 
         #region Attack
@@ -402,7 +386,6 @@ namespace StateMachine
             Interraction = Input.GetKeyDown(InterractionKey);
         }
         #endregion
-
 
 
         #region wall Jump
