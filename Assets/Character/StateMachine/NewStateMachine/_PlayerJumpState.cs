@@ -5,8 +5,8 @@ namespace StateMachine
 {
     public class _PlayerJumpState : _PlayerMovementState
     {
-        public _PlayerJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
         public override void EnterState()
         {
             base.EnterState();
@@ -17,11 +17,11 @@ namespace StateMachine
             //null y velocity
             _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, 0f);
             //set air movement speed
-            _cntx.c_MaxHSpeed = _cntx.a_MaxHSpeed;
-            _cntx.c_Acceleration = _cntx.a_Acceleration;
-            _cntx.c_Deceleration = _cntx.a_Deceleration;
+            //_cntx.c_MaxHSpeed = _cntx.f_MaxHSpeed;
+            //_cntx.c_Acceleration = _cntx.f_Acceleration;
+            //_cntx.c_Deceleration = _cntx.f_Deceleration;
             //set jump start counter
-            _cntx.jumpTimeCounter = _cntx.jumpTime;
+            _cntx.jumpTimeCounter = _cntx.maxJumpTime;
         }
         public override void UpdateState()
         {
@@ -39,8 +39,8 @@ namespace StateMachine
                 base.UpdateState();
                 _cntx.jumpDirection = new Vector2(_cntx.playerRb.velocity.x, _cntx.jumpForce);
             }
-                _cntx.jumpTimeCounter -= Time.deltaTime;
-                Jumping(_cntx.jumpDirection);
+            _cntx.jumpTimeCounter -= Time.deltaTime;
+            Jumping(_cntx.jumpDirection);
 
             CheckSwitchState();
         }
@@ -51,9 +51,9 @@ namespace StateMachine
         {
             _cntx.willBufferJump = false;
             _cntx.playerAnimator.SetBool("isJumping", false);
-            _cntx.c_MaxHSpeed = _cntx.j_MaxHSpeed;
-            _cntx.c_Acceleration = _cntx.j_Acceleration;
-            _cntx.c_Deceleration = _cntx.j_Deceleration;
+            //_cntx.c_MaxHSpeed = _cntx.j_MaxHSpeed;
+            //_cntx.c_Acceleration = _cntx.j_Acceleration;
+            //_cntx.c_Deceleration = _cntx.j_Deceleration;
             _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, _cntx.playerRb.velocity.y * 0.5f);
         }
         public override void CheckSwitchState()
@@ -68,10 +68,6 @@ namespace StateMachine
         public void Jumping(Vector2 JumpDirection)
         {
             _cntx.playerRb.velocity = JumpDirection;
-        }
-        public override void InitiliseSubState()
-        {
-
         }
     }
 }

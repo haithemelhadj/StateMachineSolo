@@ -5,8 +5,8 @@ namespace StateMachine
 {
     public class _PlayerDashState : _PlayerActionState
     {
-        public _PlayerDashState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerDashState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
         public override void EnterState()
         {
             base.EnterState();
@@ -41,10 +41,6 @@ namespace StateMachine
             }
         }
 
-        public override void InitiliseSubState()
-        {
-
-        }
         #region Dash
 
         //public float drag;

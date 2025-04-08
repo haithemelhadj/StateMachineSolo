@@ -4,18 +4,24 @@ namespace StateMachine
 {
     public class _PlayerStateMachine : MonoBehaviour
     {
-        public _PlayerBaseState _currentState;
-
         _PlayerStateFactory _states;
+        //current state
+        public _PlayerBaseState _currentState;
+        //parallel state
+        public _PlayerBaseState _currentParallelState;
+        _PlayerBaseState attackParallelState;
+        _PlayerBaseState iFramesParallelState;
 
-        public string currentSuperState;
-        public string currentSubState;
+        [Header("visualising")]
+        public string currentActiveState;
 
         //Awake
         private void InitializeState()
         {
             _states = new _PlayerStateFactory(this);
             _currentState = _states.Grounded();
+            attackParallelState = _states.Attack();
+            iFramesParallelState = _states.iFrames();
             _currentState.EnterState();
         }
 
@@ -31,39 +37,69 @@ namespace StateMachine
         {
             //rays casts
             //if (!isLedgeBumping)
-            GroundCheck();
-            HeadCheck();
-            WallCheck();
+            Checks();
             //inputs
-            GetHInputs();
-            GetVInputs();
-            GetJumpInput();
+            GetMovementInputs();
             //actions
-            GetDashInput();
-            GetAttackInput();
-            GetInterractionInput();
+            GetActionInputs();
 
 
-            //logic
-            _currentState.UpdateStates();
+            //states logic
+            StatesLogicHandler();
         }
-
         private void FixedUpdate()
         {
             _currentState.FixedUpdateState();
         }
 
 
+        #region Update Methods
+        private void StatesLogicHandler()
+        {
+            _currentState.UpdateStates();
+            ParallelStatesHandler();
+        }
+        private void ParallelStatesHandler()
+        {
+            if (AttackInputDown)
+            {
+                attackParallelState.EnterState();
+                //Debug.Log("attacking");
+            }
+        }
+        private void GetActionInputs()
+        {
+            GetDashInput();
+            GetAttackInput();
+            GetInterractionInput();
+        }
+
+        private void GetMovementInputs()
+        {
+            GetHInputs();
+            GetVInputs();
+            GetJumpInput();
+        }
+
+        private void Checks()
+        {
+            GroundCheck();
+            HeadCheck();
+            WallCheck();
+        }
+
+        #endregion
+
 
 
         //Get Componenets
         #region Get Components
         [Header("Components")]
-        public Rigidbody2D playerRb;
-        public CapsuleCollider2D capsuleCollider;
-        public Animator playerAnimator;
-        public float playerHeight;
-        public float playerWidth;
+        [SerializeField] public Rigidbody2D playerRb;
+        [SerializeField] public CapsuleCollider2D capsuleCollider;
+        [SerializeField] public Animator playerAnimator;
+        [SerializeField] public float playerHeight;
+        [SerializeField] public float playerWidth;
         public void GetComponents()
         {
             playerRb = GetComponent<Rigidbody2D>();
@@ -77,7 +113,7 @@ namespace StateMachine
         //Movement
         #region Movement Input
         [Header("Movement Inputs")]
-        public float horizontalInput;
+        [SerializeField] public float horizontalInput;
         public void GetHInputs()
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -94,9 +130,9 @@ namespace StateMachine
 
         #region  Current Movement 
         [Header("Current Movement")]
-        public float c_MaxHSpeed;
-        public float c_Acceleration;
-        public float c_Deceleration;
+        [SerializeField] public float c_MaxHSpeed;
+        [SerializeField] public float c_Acceleration;
+        [SerializeField] public float c_Deceleration;
         #endregion
 
         #region  Ground Movement 
@@ -110,7 +146,7 @@ namespace StateMachine
         #region Ground check
         [Header("Ground check")]
         public LayerMask whatIsGround;
-        public bool isGrounded;
+        [SerializeField] public bool isGrounded;
         public float extraGroundCheckDistance = 0.01f;
 
         public void GroundCheck()
@@ -131,8 +167,7 @@ namespace StateMachine
 
         #region Head Check
         [Header("Head Check")]
-        //public LayerMask whatIsOverHead;
-        public bool isHeadBumped;
+        [SerializeField] public bool isHeadBumped;
         public float extraHeadCheckDistance = 0.01f;
 
         public void HeadCheck()
@@ -160,8 +195,8 @@ namespace StateMachine
         #region Wall Detection
         [Header("Wall Check")]
         public LayerMask whatIsWall;
-        public bool isHuggingWall = false;
-        public float LastTimeWalled;
+        [SerializeField] public bool isHuggingWall = false;
+        [SerializeField] public float LastTimeWalled;
         public void WallCheck()
         {
             isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle()) || (WallDetectionLower() && WallDetectionMiddle());
@@ -189,28 +224,28 @@ namespace StateMachine
 
         //AirBorne Movement
         #region  Air Movement 
-        [Header("Air Movement ")]
-        public float a_MaxHSpeed;
-        public float a_Acceleration;
-        public float a_Deceleration;
+        //[Header("falling  Movement ")]
+        //public float f_MaxHSpeed;
+        //public float f_Acceleration;
+        //public float f_Deceleration;
         #endregion
 
         #region  Jump Apex Movement 
-        [Header("Jump Apex Movement ")]
-        public float j_MaxHSpeed;
-        public float j_Acceleration;
-        public float j_Deceleration;
+        //[Header("Jump Apex Movement ")]
+        //public float j_MaxHSpeed;
+        //public float j_Acceleration;
+        //public float j_Deceleration;
         #endregion
 
 
-        //Jump        
+        //Jump
         #region Jump Input
         [Header("Jump Inputs")]
         public KeyCode jumpKey;
-        public bool jumpInput;
-        public bool jumpInputDown;
-        public bool jumpInputUp;
-        public bool isJumping;
+        [SerializeField] public bool jumpInput;
+        [SerializeField] public bool jumpInputDown;
+        [SerializeField] public bool jumpInputUp;
+        [SerializeField] public bool isJumping;
 
         public void GetJumpInput()
         {
@@ -227,77 +262,79 @@ namespace StateMachine
         #region  Jump Values
         [Header("Jump")]
         public float jumpForce;
-        public bool jumpInputConfirmed;
-        public bool jumpReset;
+        [SerializeField] public bool jumpInputConfirmed;
+        [SerializeField] public bool jumpReset;
         #endregion
 
         #region Variable Jump
         [Header("Variable Jump")]
-        public float jumpTimeCounter;
-        public float jumpTime;
+        public float maxJumpTime;
+        [SerializeField] public float jumpTimeCounter;
         #endregion
 
         #region Jump Buffer
         [Header("Jump Buffer")]
-        public float jumpPressTime;
         public float jumpBufferTime;
-        public bool willBufferJump;
-        public void JumpBuffer()
-        {
-            /*
-            if (Time.time - jumpPressTime > jumpBufferTime || jumpInputUp)
-            {
-                willBufferJump = false;
-            }
-            /**/
-        }
+        [SerializeField] public float jumpPressTime;
+        [SerializeField] public bool willBufferJump;
         #endregion
 
         #region Cyote Time
         [Header("Cyote Time")]
-        public float LastGrounded;
         public float cyoteTime;
-        public bool canCyoteJump;
+        [SerializeField] public float LastGrounded;
+        [SerializeField] public bool canCyoteJump;
 
         #endregion
 
-        //Wall
 
-        #region Wall Slide
-
-        [Header("Wall Slide")]
-        public bool isWallSliding;
-        public float wallSlidingSpeed;
-        #endregion
-
-        //fall 
         #region Fall Controll
         [Header("Fall Controll")]
         public float maxFallSpeed;
         public float fasterFallMultiplier;
         #endregion
 
-        //Actions        
+        //wall
 
+        #region wall Jump
+        [Header("wall Jump")]
+        public float wallJumpDuration;
+        [SerializeField] public float wallJumpPressTime;
+        [SerializeField] public bool isWallJumping;
+        [SerializeField] public Vector2 jumpDirection;
+        public Vector2 wallJumpDirection;
+
+        #endregion
+
+        #region Wall Slide
+
+        [Header("Wall Slide")]
+        public float wallSlidingSpeed;
+        [SerializeField] public bool isWallSliding;
+        #endregion
+
+
+
+        //Actions        
         #region Dash
         [Header("Dash")]
         //public bool canDash;
         public KeyCode dashKey;
-        public bool dashInputDown;
+        [SerializeField] public bool dashInputDown;
         public void GetDashInput()
         {
             dashInputDown = Input.GetKeyDown(dashKey);
         }
 
-        public float dashDirection;
         public float dashForce;
-
-        public bool isDashing;
         public float dashTime;
-
         public float dashCd;
-        public float lastDash;
-        public bool dashCounter;
+
+        [SerializeField] public float dashDirection;
+        [SerializeField] public bool isDashing;
+        [SerializeField] public float lastDash;
+        [SerializeField] public bool dashCounter;
+
         public bool canDashCheck()
         {
             if (!isDashing)// && (isGrounded || isWallSliding))
@@ -324,19 +361,26 @@ namespace StateMachine
         #region Attack
         [Header("Attack")]
         public KeyCode attackKey;
-        public bool AttackInput;
+        [SerializeField] public bool AttackInputDown;
         //attack refrences
         public GameObject atkObj;
-        public Animator atkAnimator;
+        [SerializeField] public Animator atkAnimator;
         //attack variables
         public float atkRange;
         public float atkTime;
-        [HideInInspector] public float atkDistance;
-        [HideInInspector] public Vector2 atkPosition;
-        [HideInInspector] public float atkRotation;
+        [SerializeField] public float atkDistance;
+        [SerializeField] public Vector2 atkPosition;
+        [SerializeField] public float atkRotation;
         public void GetAttackInput()
         {
-            AttackInput = Input.GetKeyDown(attackKey);
+            AttackInputDown = Input.GetKeyDown(attackKey);
+        }
+        public void StopAttacking()
+        {
+            atkAnimator.SetBool("Attack", false);
+            atkObj.SetActive(false);
+            //Debug.Log("attack stopped");
+
         }
         /*
         public void AttackInput()
@@ -388,30 +432,48 @@ namespace StateMachine
         #endregion
 
 
-        #region wall Jump
-        [Header("wall Jump")]
-        public float wallJumpDuration;
-        public float wallJumpPressTime;
-        public bool isWallJumping;
-        public Vector2 jumpDirection;
-        public Vector2 wallJumpDirection;
-
-        #endregion
-
+        //other
         #region Ledge Bump
         [Header("Ledge Bump")]
         public float bumpForce;
-        public bool isLedgeBumping;
         public float bumpTime;
+        [SerializeField] public bool isLedgeBumping;
+        #endregion
+
+        #region getting hit
+        public float knockBackforce;
+        #endregion
+
+        #region i-Frames
+        public float iFramesDuration;
+        public float lastHitTime;
+        public bool isInIframes;
+
+        public void ExitIFrames()
+        {
+            isInIframes = false;
+        }
+
         #endregion
 
 
 
 
+        #region collsion management
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy") && !isInIframes)
+            {
+                //Debug.Log("got hit");
+                //getting hit knock back 
+                playerRb.velocity = Vector3.zero;
+                Vector2 knockBackDirection = (collision.transform.position - transform.position).normalized;
+                playerRb.AddForce(knockBackDirection * knockBackforce);
+                //trigger animation
+                iFramesParallelState.EnterState();
+            }
+        }
 
-
-
-        #region
         #endregion
     }
 }

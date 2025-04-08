@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AiStateMachine : MonoBehaviour
 {
+    [Header("Visualizing")]
+    [SerializeField] public string currentActiveState;
+    [SerializeField] public bool isGrounded;
     [Header("State Management")]
     public AiBaseState _currentState;
     AiStateFactory _states;
@@ -13,7 +16,6 @@ public class AiStateMachine : MonoBehaviour
     [SerializeField] public Transform targetPlayer;
 
     [Header("Components")]
-    [SerializeField] public LayerMask whatIsGround;
     [SerializeField] public Rigidbody2D selfRb;
     [SerializeField] public CapsuleCollider2D mobCollider;
     [SerializeField] public SpriteRenderer spriteRenderer;
@@ -68,10 +70,9 @@ public class AiStateMachine : MonoBehaviour
     }
 
     #region Checks
-    #region Ground check
-    [Header("Ground check")]
-    //public LayerMask whatIsGround;
-    [SerializeField] protected bool isGrounded;
+
+    [Header("checks")]
+    [SerializeField] public LayerMask whatIsGround;
     public float extraCheckDistance = 0.01f;
 
     public bool GroundCheck()
@@ -84,8 +85,7 @@ public class AiStateMachine : MonoBehaviour
         isGrounded = (hitLeft.collider != null || hitRight.collider != null);
         return isGrounded;
     }
-    #endregion
-
+    
     public bool WallCheck()
     {
         RaycastHit2D wallCheck = Physics2D.Raycast(transform.position + (Vector3)mobCollider.offset + new Vector3((mobWidth / 2 + detectionRange) * Mathf.Sign(transform.localScale.x), 0, 0), Vector2.right * Mathf.Sign(transform.localScale.x), extraCheckDistance, whatIsGround);
@@ -104,7 +104,7 @@ public class AiStateMachine : MonoBehaviour
 
     #region Dectection
 
-    [Header("Detection")]
+    [Header("FOV & Detection")]
     public float detectionRange = 1f;
     public float fovAngle = 60f;
     public float reactionTime = 0.2f;

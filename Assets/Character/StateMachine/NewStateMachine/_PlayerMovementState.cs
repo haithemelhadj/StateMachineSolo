@@ -4,11 +4,8 @@ namespace StateMachine
 {
     public class _PlayerMovementState : _PlayerBaseState
     {
-        public _PlayerMovementState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory)
-        {
-            _isRootState = true;
-        }
+        public _PlayerMovementState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
         public override void EnterState()
         {
 
@@ -29,12 +26,13 @@ namespace StateMachine
 
         public override void CheckSwitchState()
         {
-                
+
             if (_cntx.dashInputDown && _cntx.canDashCheck())
             {
                 SwitchState(_factory.Dash());
             }
         }
+        /*
         public override void InitiliseSubState()
         {
             //Debug.Log("mvt InitiliseSubState");
@@ -53,9 +51,9 @@ namespace StateMachine
                 //Debug.Log("1 movement switch state fall");
                 SetState(_factory.Fall());
             }
-            /**/
 
         }
+            /**/
 
         #region Movement
         public void Move()
@@ -66,12 +64,12 @@ namespace StateMachine
             {
                 _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration);
                 //Debug.Log("velocity: "+_cntx.playerRb.velocity.x);
-                
+
                 //flip character and keep it that way when no inputs        
                 Flip();
             }
             else //slow player to stop
-                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);           
+                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);
         }
 
         public void Flip()

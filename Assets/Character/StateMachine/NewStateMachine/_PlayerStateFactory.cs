@@ -3,14 +3,17 @@ namespace StateMachine
 {
     enum _playerStates
     {
-        Movement,
-        Action,
+        //Movement,
+        //Action,
+
         Grounded,
         Jump,
         Fall,
         Dash,
         WallSlide,
-        WallJump
+        WallJump,
+        Attack,
+        iFrames,
     }
     public class _PlayerStateFactory
     {
@@ -19,30 +22,19 @@ namespace StateMachine
         public _PlayerStateFactory(_PlayerStateMachine currentContext)
         {
             context = currentContext;
-            _states[_playerStates.Movement] = new _PlayerMovementState(context, this);
-            _states[_playerStates.Action] = new _PlayerActionState(context, this);
+            //_states[_playerStates.Movement] = new _PlayerMovementState(context, this);
+            //_states[_playerStates.Action] = new _PlayerActionState(context, this);
             _states[_playerStates.Grounded] = new _PlayerGroundedState(context, this);
             _states[_playerStates.Jump] = new _PlayerJumpState(context, this);
             _states[_playerStates.Fall] = new _PlayerFallingState(context, this);
             _states[_playerStates.Dash] = new _PlayerDashState(context, this);
             _states[_playerStates.WallSlide] = new _PlayerWallSlidingState(context, this);
             _states[_playerStates.WallJump] = new _PlayerWallJumpState(context, this);
+            _states[_playerStates.Attack] = new _PlayerAttackState(context, this);
+            _states[_playerStates.iFrames] = new _PlayerIFramesState(context, this);
         }
 
         //Parent state
-        #region Parent state
-
-        public _PlayerBaseState Movement()
-        {
-            return _states[_playerStates.Movement];
-            //return new _PlayerMovementState(context, this);
-        }
-        public _PlayerBaseState Action()
-        {
-            return (_states[_playerStates.Action]);
-            //return new _PlayerActionState(context, this);
-        }
-        #endregion
 
 
         //Child States
@@ -50,18 +42,15 @@ namespace StateMachine
         public _PlayerBaseState Grounded()
         {
             return _states[_playerStates.Grounded];
-            //return new _PlayerGroundedState(context, this);
         }
         public _PlayerBaseState Jump()
         {
             return (_states[_playerStates.Jump]);
-            //return new _PlayerJumpState(context, this);
         }
         public _PlayerBaseState Fall()
         {
 
             return (_states[_playerStates.Fall]);
-            //return new _PlayerFallingState(context, this);
         }
         /**/
         #endregion
@@ -74,8 +63,10 @@ namespace StateMachine
         public _PlayerBaseState Dash()
         {
             return (_states[_playerStates.Dash]);
-            //return new _PlayerDashState(context, this);
         }
+        #endregion
+
+        #region wall
 
         public _PlayerBaseState WallSlide()
         {
@@ -90,6 +81,22 @@ namespace StateMachine
 
         /**/
         #endregion
+
+        #region Parallel
+        public _PlayerBaseState Attack()
+        {
+            return (_states[_playerStates.Attack]);
+        }
+
+        public _PlayerBaseState iFrames()
+        {
+            return (_states[_playerStates.iFrames]);
+        }
+
+
+        #endregion
+
+
 
         //movement sub sub states
         #region movement sub sub states

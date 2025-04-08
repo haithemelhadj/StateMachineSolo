@@ -3,8 +3,8 @@ namespace StateMachine
 {
     public class _PlayerGroundedState : _PlayerMovementState
     {
-        public _PlayerGroundedState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerGroundedState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
         public override void EnterState()
         {
             base.EnterState();
@@ -48,10 +48,6 @@ namespace StateMachine
                 SwitchState(_factory.Fall());
 
             }
-
-        }
-        public override void InitiliseSubState()
-        {
 
         }
     }

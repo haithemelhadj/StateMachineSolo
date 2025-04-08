@@ -1,12 +1,10 @@
 using UnityEngine;
-using static UnityEngine.LightAnchor;
 
 namespace StateMachine
 {
     public class _PlayerWallJumpState : _PlayerJumpState
     {
-        public _PlayerWallJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerWallJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
             base.EnterState();
@@ -46,10 +44,6 @@ namespace StateMachine
             }
         }
 
-        public override void InitiliseSubState()
-        {
-
-        }
         /*
         public void Jumping(Vector2 JumpDirection)
         {

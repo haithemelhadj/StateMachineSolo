@@ -12,7 +12,8 @@ namespace StateMachine
         }
         public override void EnterState()
         {
-            Debug.Log("enter new state:" + this);
+            //Debug.Log("enter new state:" + this);
+            _cntx.currentActiveState = this.ToString();
 
 
         }
@@ -65,13 +66,13 @@ namespace StateMachine
         {
             if (Mathf.Abs(target.x- _cntx.transform.position.x) < _cntx.catchDistance)//calculate x distance for grounded mob (abs for both sides)
             {
-                //stand
+                //stand idle
                 _cntx.selfRb.velocity = Vector3.zero;
                 _cntx.animator.SetFloat("speed", 0);
                 if(Vector2.Distance(_cntx.transform.position, target)<_cntx.attackDistance)
                 {
                     Debug.Log("attack!");
-                    SwitchState(_factory.Attack());
+                    //SwitchState(_factory.Attack());
                 }
             }
             else
@@ -85,7 +86,6 @@ namespace StateMachine
         }
         public void Move()
         {
-            //Debug.Log(" Moving");
             _cntx.selfRb.velocity = Vector3.MoveTowards(_cntx.selfRb.velocity, new Vector3(_cntx.transform.localScale.x * _cntx.patrolSpeed, _cntx.selfRb.velocity.y, 0f), _cntx.patrolSpeed * 0.3f);
             _cntx.animator.SetFloat("speed", 1);
             if ((!_cntx.LedgeCheck() || _cntx.WallCheck()) || !_cntx.GroundCheck())

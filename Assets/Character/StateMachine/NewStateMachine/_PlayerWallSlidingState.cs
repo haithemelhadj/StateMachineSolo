@@ -4,8 +4,7 @@ namespace StateMachine
 {
     public class _PlayerWallSlidingState : _PlayerMovementState
     {
-        public _PlayerWallSlidingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerWallSlidingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
             base.EnterState();
@@ -27,7 +26,7 @@ namespace StateMachine
             _cntx.isWallSliding = false;
             _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
             base.ExitState();
-            
+
         }
         public override void CheckSwitchState()
         {
@@ -46,10 +45,6 @@ namespace StateMachine
             {
                 SwitchState(_factory.Fall());
             }
-        }
-        public override void InitiliseSubState()
-        {
-
         }
 
     }

@@ -5,8 +5,8 @@ namespace StateMachine
 {
     public class _PlayerFallingState : _PlayerMovementState
     {
-        public _PlayerFallingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
-            : base(currentContext, playerStateFactory) { }
+        public _PlayerFallingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
+
         public override void EnterState()
         {
             base.EnterState();
@@ -67,9 +67,9 @@ namespace StateMachine
                 {
                     _cntx.playerRb.velocity += Vector2.up * Physics2D.gravity.y * _cntx.fasterFallMultiplier * Time.deltaTime;
                 }
-                _cntx.c_MaxHSpeed = _cntx.a_MaxHSpeed;
-                _cntx.c_Acceleration = _cntx.a_Acceleration;
-                _cntx.c_Deceleration = _cntx.a_Deceleration;
+                //_cntx.c_MaxHSpeed = _cntx.f_MaxHSpeed;
+                //_cntx.c_Acceleration = _cntx.f_Acceleration;
+                //_cntx.c_Deceleration = _cntx.f_Deceleration;
             }
             else//JumpApexControll
             {
@@ -77,9 +77,9 @@ namespace StateMachine
                 _cntx.playerAnimator.SetBool("isJumping", true);
                 //_cntx.playerRb.velocity= 
                 //Vector2.Lerp(_cntx.playerRb.velocity, new Vector2(_cntx.playerRb.velocity.x, 0f,0.2f);
-                
+
             }
-            
+
         }
 
 
@@ -89,10 +89,6 @@ namespace StateMachine
             {
                 _cntx.canCyoteJump = false;
             }
-        }
-        public override void InitiliseSubState()
-        {
-
         }
     }
 }

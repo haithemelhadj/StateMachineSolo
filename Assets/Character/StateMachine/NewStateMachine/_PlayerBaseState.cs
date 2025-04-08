@@ -1,6 +1,3 @@
-
-using UnityEngine;
-
 namespace StateMachine
 {
     public abstract class _PlayerBaseState
@@ -20,7 +17,6 @@ namespace StateMachine
         public abstract void FixedUpdateState();
         public abstract void ExitState();
         public abstract void CheckSwitchState();
-        public abstract void InitiliseSubState();
 
         public void UpdateStates()
         {
