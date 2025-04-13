@@ -38,8 +38,7 @@ namespace StateMachine
             //rays casts
             //if (!isLedgeBumping)
             Checks();
-            //inputs
-            GetMovementInputs();
+            
             //actions
             GetActionInputs();
 
@@ -67,15 +66,16 @@ namespace StateMachine
                 //Debug.Log("attacking");
             }
         }
-        private void GetActionInputs()
+        public void GetActionInputs()
         {
             GetDashInput();
             GetAttackInput();
             GetInterractionInput();
         }
 
-        private void GetMovementInputs()
+        public void GetMovementInputs()
         {
+            GetWalkSpeedInput();
             GetHInputs();
             GetVInputs();
             GetJumpInput();
@@ -114,16 +114,18 @@ namespace StateMachine
         #region Movement Input
         [Header("Movement Inputs")]
         [SerializeField] public float horizontalInput;
+
         public void GetHInputs()
         {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-            playerAnimator.SetFloat("Hvelocity", Mathf.Abs(horizontalInput));
+            horizontalInput = Input.GetAxis("Horizontal");
+            float x = Mathf.Abs(horizontalInput) * c_MaxHSpeed;
+            playerAnimator.SetFloat("Hvelocity", x);
         }
 
         public float verticalInput;
         public void GetVInputs()
         {
-            verticalInput = Input.GetAxisRaw("Vertical");
+            verticalInput = Input.GetAxis("Vertical");
             playerAnimator.SetFloat("Yvelocity", verticalInput);
         }
         #endregion
@@ -137,9 +139,16 @@ namespace StateMachine
 
         #region  Ground Movement 
         [Header("Ground Movement")]
-        public float g_MaxHSpeed;
-        public float g_Acceleration;
-        public float g_Deceleration;
+        public float r_MaxHSpeed;
+        public float r_Acceleration;
+        public float r_Deceleration;
+        #endregion
+
+        #region  Ground Movement 
+        [Header("Ground Movement")]
+        public float w_MaxHSpeed;
+        public float w_Acceleration;
+        public float w_Deceleration;
         #endregion
 
         //checks
@@ -157,6 +166,7 @@ namespace StateMachine
             if (hitLeft.collider != null || hitRight.collider != null)
             {
                 isGrounded = true;
+                dashReset = true;
             }
             else
             {
@@ -219,7 +229,67 @@ namespace StateMachine
         }
         #endregion
 
+        #region walk Speed Input
 
+        public KeyCode walkInput;
+        public bool walkInputDown;
+        public bool holdToWalk;
+        bool iswalking = false;
+
+        public void GetWalkSpeedInput()
+        {
+            if (holdToWalk)
+            {
+
+                //Hold to walk
+                if (Input.GetKey(walkInput))
+                {
+                    c_MaxHSpeed = w_MaxHSpeed;
+                    c_Acceleration = w_Acceleration;
+                    c_Deceleration = w_Deceleration;
+                }
+                else
+                {
+                    c_MaxHSpeed = r_MaxHSpeed;
+                    c_Acceleration = r_Acceleration;
+                    c_Acceleration = r_Deceleration;
+                }
+            }
+            else
+            {
+                //press to switch between states
+                if (Input.GetKeyDown(walkInput))
+                {
+                    iswalking = !iswalking;
+                }
+                if (iswalking)
+                {
+                    c_MaxHSpeed = w_MaxHSpeed;
+                    c_Acceleration = w_Acceleration;
+                    c_Deceleration = w_Deceleration;
+                }
+                else
+                {
+                    c_MaxHSpeed = r_MaxHSpeed;
+                    c_Acceleration = r_Acceleration;
+                    c_Acceleration = r_Deceleration;
+                }
+            }
+        }
+
+
+
+
+
+        #endregion
+
+        #region animator
+        public void InitAnimatorVals()
+        {
+
+        }
+
+        #endregion
 
 
         //AirBorne Movement
@@ -330,6 +400,8 @@ namespace StateMachine
         public float dashTime;
         public float dashCd;
 
+        [SerializeField] public float lastDashFinishTime;
+        [SerializeField] public bool dashReset;
         [SerializeField] public float dashDirection;
         [SerializeField] public bool isDashing;
         [SerializeField] public float lastDash;
@@ -337,12 +409,20 @@ namespace StateMachine
 
         public bool canDashCheck()
         {
-            if (!isDashing)// && (isGrounded || isWallSliding))
+            //if already dashed give time to redash
+            if (Time.time - lastDashFinishTime > dashCd)
             {
-                return true;
+                //if dashed in air can't dash again until grounded
+                if (dashReset)
+                {
+                    //if is dashing can't dash mid dash
+                    if (!isDashing)
+                    {
+                        return true;
+                    }
+                }
             }
-            else
-                return false;
+            return false;
         }
 
         void DashLimiting()
@@ -377,47 +457,11 @@ namespace StateMachine
         }
         public void StopAttacking()
         {
-            atkAnimator.SetBool("Attack", false);
+            playerAnimator.SetBool("Attack", false);
             atkObj.SetActive(false);
             //Debug.Log("attack stopped");
 
         }
-        /*
-        public void AttackInput()
-        {
-            if (AttackInput)
-            {
-                if (verticalInput != 0)
-                {
-                    //attack vertically
-                    atkDistance = Mathf.Sign(verticalInput) * (playerHeight / 2 + atkRange);
-                    atkPosition = new Vector2(transform.position.x, transform.position.y + atkDistance);
-                    atkRotation = 90f * Mathf.Sign(verticalInput) * Mathf.Sign(transform.localScale.x);//rotation is based on localScale.x
-                }
-                else
-                {
-                    //attack horizontally
-                    atkDistance = Mathf.Sign(transform.localScale.x) * (playerWidth / 2 + atkRange);
-                    atkPosition = new Vector2(transform.position.x + atkDistance, transform.position.y);
-                    atkRotation = 0f;
-                }
-                //set position and rotation
-                atkObj.transform.position = atkPosition;
-                atkObj.transform.eulerAngles = new Vector3(0f, 0f, atkRotation);
-                //attack and disable attack after attackTime
-                atkObj.SetActive(true);
-                atkAnimator.SetBool("Attack", true);
-                Invoke(nameof(StopAttacking), atkTime);
-            }
-        }
-        public void StopAttacking()
-        {
-            atkAnimator.SetBool("Attack", false);
-            atkObj.SetActive(false);
-
-        }
-        /**/
-
         #endregion
 
         #region Interract
@@ -440,11 +484,14 @@ namespace StateMachine
         [SerializeField] public bool isLedgeBumping;
         #endregion
 
-        #region getting hit
+        #region Getting Hit
+        [Header("Getting Hit")]
         public float knockBackforce;
+        public float yPushForce;
         #endregion
 
         #region i-Frames
+        [Header("i-Frames")]
         public float iFramesDuration;
         public float lastHitTime;
         public bool isInIframes;
@@ -452,24 +499,33 @@ namespace StateMachine
         public void ExitIFrames()
         {
             isInIframes = false;
+            playerAnimator.SetBool("Getting Hit", false);
         }
 
         #endregion
 
 
 
-
         #region collsion management
+        [Header("")]
+        [Header("collsion management")]
+        public LayerMask enemyLayers;
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            //if ((collision.gameObject.layer==enemyLayers))
+            
             if (collision.gameObject.CompareTag("Enemy") && !isInIframes)
             {
-                //Debug.Log("got hit");
+                Debug.Log("got hit");
                 //getting hit knock back 
                 playerRb.velocity = Vector3.zero;
-                Vector2 knockBackDirection = (collision.transform.position - transform.position).normalized;
-                playerRb.AddForce(knockBackDirection * knockBackforce);
+                Vector2 knockBackDirection = (transform.position - collision.transform.position).normalized;
+                Debug.Log("knock back dir: " + knockBackDirection);
+                knockBackDirection = knockBackDirection * knockBackforce;
+                knockBackDirection.y = yPushForce;
+                playerRb.AddForce(knockBackDirection,ForceMode2D.Impulse);
                 //trigger animation
+                playerAnimator.SetBool("Getting Hit",true);
                 iFramesParallelState.EnterState();
             }
         }

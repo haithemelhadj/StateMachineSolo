@@ -5,11 +5,8 @@ namespace StateMachine
     public class AiMovementState : AiBaseState
     {
 
-        public AiMovementState(AiStateMachine currentContext, AiStateFactory StateFactory)
-            : base(currentContext, StateFactory)
-        {
-            //_isRootState = true;
-        }
+        public AiMovementState(AiStateMachine currentContext, AiStateFactory StateFactory) : base(currentContext, StateFactory) { }
+
         public override void EnterState()
         {
             //Debug.Log("enter new state:" + this);
@@ -25,7 +22,7 @@ namespace StateMachine
 
         public override void FixedUpdateState()
         {
-            
+
             CheckSwitchState();
 
         }
@@ -64,12 +61,12 @@ namespace StateMachine
         }
         public void MoveTowardsTargetPosition(Vector2 target, float speed)
         {
-            if (Mathf.Abs(target.x- _cntx.transform.position.x) < _cntx.catchDistance)//calculate x distance for grounded mob (abs for both sides)
+            if (Mathf.Abs(target.x - _cntx.transform.position.x) < _cntx.catchDistance)//calculate x distance for grounded mob (abs for both sides)
             {
                 //stand idle
                 _cntx.selfRb.velocity = Vector3.zero;
                 _cntx.animator.SetFloat("speed", 0);
-                if(Vector2.Distance(_cntx.transform.position, target)<_cntx.attackDistance)
+                if (Vector2.Distance(_cntx.transform.position, target) < _cntx.attackDistance)
                 {
                     Debug.Log("attack!");
                     //SwitchState(_factory.Attack());
@@ -82,7 +79,7 @@ namespace StateMachine
             }
             if (Mathf.Sign(_cntx.transform.position.x - target.x) != Mathf.Sign(-_cntx.transform.localScale.x))
                 _cntx.Flip();
-            
+
         }
         public void Move()
         {

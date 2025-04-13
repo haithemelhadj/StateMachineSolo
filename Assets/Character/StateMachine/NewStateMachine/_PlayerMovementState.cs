@@ -12,6 +12,8 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
+            //inputs
+            _cntx.GetMovementInputs();
             Move();
             //LedgeBump();
         }
@@ -32,28 +34,6 @@ namespace StateMachine
                 SwitchState(_factory.Dash());
             }
         }
-        /*
-        public override void InitiliseSubState()
-        {
-            //Debug.Log("mvt InitiliseSubState");
-            if (_cntx.isGrounded)
-            {
-                //Debug.Log("1 movement switch state ground");
-                SetState(_factory.Grounded());
-            }
-            else if (_cntx.jumpInputDown || _cntx.playerRb.velocity.y > 0)
-            {
-                //Debug.Log("1 movement switch state jump");
-                SetState(_factory.Jump());
-            }
-            else
-            {
-                //Debug.Log("1 movement switch state fall");
-                SetState(_factory.Fall());
-            }
-
-        }
-            /**/
 
         #region Movement
         public void Move()

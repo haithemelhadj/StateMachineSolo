@@ -2,29 +2,31 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class _PlayerAttackState : _PlayerBaseState
+    public class _PlayerAttackState : _PlayerActionState
     {
         public _PlayerAttackState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
 
         public override void EnterState()
         {
+            base.EnterState();
             Attack();
         }
         public override void UpdateState()
         {
+            base.UpdateState();
             CheckSwitchState();
         }
         public override void FixedUpdateState()
         {
-
+            base.FixedUpdateState();
         }
         public override void ExitState()
         {
-
+            base.ExitState();
         }
         public override void CheckSwitchState()
         {
-
+            base.CheckSwitchState();
         }
 
 
@@ -52,7 +54,7 @@ namespace StateMachine
             _cntx.atkObj.transform.eulerAngles = new Vector3(0f, 0f, _cntx.atkRotation);
             //attack and disable attack after attackTime
             _cntx.atkObj.SetActive(true);
-            _cntx.atkAnimator.SetBool("Attack", true);
+            _cntx.playerAnimator.SetBool("Attack", true);
             _cntx.Invoke(nameof(_cntx.StopAttacking), _cntx.atkTime);
 
         }

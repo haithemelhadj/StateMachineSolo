@@ -4,11 +4,8 @@ namespace StateMachine
 {
     public class AiAttackState : AiActionState
     {
-        public AiAttackState(AiStateMachine currentContext, AiStateFactory StateFactory)
-            : base(currentContext, StateFactory)
-        {
-            //_isRootState = true;
-        }
+        public AiAttackState(AiStateMachine currentContext, AiStateFactory StateFactory) : base(currentContext, StateFactory) { }
+
         public override void EnterState()
         {
             base.EnterState();

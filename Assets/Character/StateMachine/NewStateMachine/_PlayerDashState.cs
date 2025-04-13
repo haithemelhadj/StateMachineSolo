@@ -11,7 +11,8 @@ namespace StateMachine
         {
             base.EnterState();
             _cntx.isDashing = true;
-            DashInput();
+            _cntx.dashReset=false;
+            _cntx.StartCoroutine(Dash());
         }
         public override void UpdateState()
         {
@@ -25,6 +26,7 @@ namespace StateMachine
         }
         public override void ExitState()
         {
+            _cntx.lastDashFinishTime=Time.time;
             base.ExitState();
         }
         public override void CheckSwitchState()
@@ -42,15 +44,6 @@ namespace StateMachine
         }
 
         #region Dash
-
-        //public float drag;
-        public void DashInput()
-        {
-            //start dash coroutine
-            _cntx.StartCoroutine(Dash());
-        }
-
-
 
         public IEnumerator Dash()
         {

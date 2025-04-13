@@ -11,9 +11,9 @@ namespace StateMachine
             //animation
             _cntx.playerAnimator.SetBool("isGrounded", true);
             //set speed
-            _cntx.c_MaxHSpeed = _cntx.g_MaxHSpeed;
-            _cntx.c_Acceleration = _cntx.g_Acceleration;
-            _cntx.c_Deceleration = _cntx.g_Deceleration;
+            //_cntx.c_MaxHSpeed = _cntx.r_MaxHSpeed;
+            //_cntx.c_Acceleration = _cntx.r_Acceleration;
+            //_cntx.c_Deceleration = _cntx.r_Deceleration;
             //cyote time
             _cntx.canCyoteJump = false;
             //Buffer time

@@ -1105,9 +1105,12 @@ MonoBehaviour:
   c_MaxHSpeed: 12
   c_Acceleration: 2
   c_Deceleration: 2
-  g_MaxHSpeed: 12
-  g_Acceleration: 2
-  g_Deceleration: 2
+  r_MaxHSpeed: 12
+  r_Acceleration: 2
+  r_Deceleration: 2
+  w_MaxHSpeed: 2.5
+  w_Acceleration: 1
+  w_Deceleration: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1120,6 +1123,9 @@ MonoBehaviour:
     m_Bits: 192
   isHuggingWall: 0
   LastTimeWalled: 0
+  walkInput: 99
+  walkInputDown: 0
+  holdToWalk: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0
@@ -1149,7 +1155,9 @@ MonoBehaviour:
   dashInputDown: 0
   dashForce: 30
   dashTime: 0.2
-  dashCd: 0
+  dashCd: 0.2
+  lastDashFinishTime: 0
+  dashReset: 0
   dashDirection: 0
   isDashing: 0
   lastDash: 0
@@ -1168,10 +1176,11 @@ MonoBehaviour:
   bumpForce: 1.5
   bumpTime: 0.1
   isLedgeBumping: 0
-  knockBackforce: 100
-  iFramesDuration: 0.5
+  knockBackforce: 30
+  iFramesDuration: 0.2
   lastHitTime: 0
   isInIframes: 0
+  yPushForce: 10
 --- !u!95 &279938111
 Animator:
   serializedVersion: 5
@@ -1296,12 +1305,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -330237573, guid: 9d3562ccfd13ff14b95dabdd9bde29e9, type: 3}
-  m_Color: {r: 0.7377358, g: 0.99239725, b: 1, a: 1}
+  m_Sprite: {fileID: 1657812673, guid: 0387c1d243c45ab479aa2abfc917b3f3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1401,9 +1410,12 @@ MonoBehaviour:
   c_MaxHSpeed: 0
   c_Acceleration: 0.3
   c_Deceleration: 0.4
-  g_MaxHSpeed: 12
-  g_Acceleration: 0.3
-  g_Deceleration: 0.4
+  r_MaxHSpeed: 0
+  r_Acceleration: 0
+  r_Deceleration: 0
+  w_MaxHSpeed: 0
+  w_Acceleration: 0
+  w_Deceleration: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1416,6 +1428,9 @@ MonoBehaviour:
     m_Bits: 192
   isHuggingWall: 0
   LastTimeWalled: 0
+  walkInput: 0
+  walkInputDown: 0
+  holdToWalk: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0
@@ -1446,6 +1461,8 @@ MonoBehaviour:
   dashForce: 30
   dashTime: 0.1
   dashCd: 0
+  lastDashFinishTime: 0
+  dashReset: 0
   dashDirection: 0
   isDashing: 0
   lastDash: 0
@@ -1468,6 +1485,7 @@ MonoBehaviour:
   iFramesDuration: 0
   lastHitTime: 0
   isInIframes: 0
+  yPushForce: 0
 --- !u!95 &330048790
 Animator:
   serializedVersion: 5
@@ -2692,6 +2710,7 @@ GameObject:
   - component: {fileID: 743869699}
   - component: {fileID: 743869697}
   - component: {fileID: 743869700}
+  - component: {fileID: 743869701}
   m_Layer: 0
   m_Name: newAi
   m_TagString: Enemy
@@ -2760,7 +2779,7 @@ Transform:
   m_GameObject: {fileID: 743869694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -7.4, z: 0}
+  m_LocalPosition: {x: -33.6, y: -7.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2893,6 +2912,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &743869701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743869694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf83e4237de7c6540997517a03350f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &755034116
 GameObject:
   m_ObjectHideFlags: 0
@@ -28864,7 +28895,7 @@ Transform:
   m_GameObject: {fileID: 1439141794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.09, y: 0, z: 0}
+  m_LocalPosition: {x: 0.67, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28905,8 +28936,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0571429, y: 1.5142857}
+    pivot: {x: 0.8033784, y: 0.35334736}
+    oldSize: {x: 2.71875, y: 2.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -28977,7 +29008,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 319245323, guid: 9a8656c7f8d9f664681bf91e06c631de, type: 3}
+  m_Sprite: {fileID: 1044640267, guid: 0387c1d243c45ab479aa2abfc917b3f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -28985,7 +29016,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1474560394

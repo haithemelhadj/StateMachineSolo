@@ -9,6 +9,7 @@ namespace StateMachine
         {
             base.EnterState();
             _cntx.isWallSliding = true;
+            _cntx.dashReset = true;
             _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
         }
         public override void UpdateState()
