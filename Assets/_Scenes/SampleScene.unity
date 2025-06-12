@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 55271612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: -10}
+  m_LocalPosition: {x: 0, y: -6.862, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1177,10 +1177,13 @@ MonoBehaviour:
   bumpTime: 0.1
   isLedgeBumping: 0
   knockBackforce: 30
+  yPushForce: 10
   iFramesDuration: 0.2
   lastHitTime: 0
   isInIframes: 0
-  yPushForce: 10
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &279938111
 Animator:
   serializedVersion: 5
@@ -1325,7 +1328,7 @@ Transform:
   m_GameObject: {fileID: 279938109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalPosition: {x: 0, y: -6.862, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1482,10 +1485,13 @@ MonoBehaviour:
   bumpTime: 0.1
   isLedgeBumping: 0
   knockBackforce: 0
+  yPushForce: 0
   iFramesDuration: 0
   lastHitTime: 0
   isInIframes: 0
-  yPushForce: 0
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &330048790
 Animator:
   serializedVersion: 5
@@ -2213,7 +2219,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: -10}
+  m_LocalPosition: {x: 0, y: -6.862, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

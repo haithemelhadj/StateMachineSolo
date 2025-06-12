@@ -39,8 +39,6 @@ namespace StateMachine
             //if (!isLedgeBumping)
             Checks();
             
-            //actions
-            GetActionInputs();
 
 
             //states logic
