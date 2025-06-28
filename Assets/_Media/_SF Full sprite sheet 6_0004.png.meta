@@ -1,0 +1,1387 @@
+fileFormatVersion: 2
+guid: 1505e476ba7fb3d47a5f97f13bdfa0ee
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 31
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 701
+        width: 708
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33836ea44a3cf6240b83524c4eb6e920
+      internalID: -179277153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_45
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 637
+        width: 1273
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653489357b2c6ac43befa11accb2cfd6
+      internalID: -1304716702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_67
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 573
+        width: 643
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e744bc05dc45b4fb952ce32bbe3e41
+      internalID: -334346514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_90
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 508
+        width: 25
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ac32c6a6af7fb488dc864dc40419fa
+      internalID: 2054693882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_92
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 508
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2331bc877203d0a44aa9ebcc76e667df
+      internalID: 574373870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_95
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 509
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac745df45f8ce04cbf3666a439809c5
+      internalID: -331029441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_96
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 509
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49031544, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf397501bb96f143975cfc6752d166a
+      internalID: -886373982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_131
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 379
+        width: 110
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b80490d7f36c294abb6c09adccefb58
+      internalID: -1355071900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_133
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 380
+        width: 61
+        height: 81
+      alignment: 9
+      pivot: {x: 0.51, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d580ef735a6ac458a0ba6ffbbe4ef3
+      internalID: -685028802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_134
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 380
+        width: 67
+        height: 71
+      alignment: 9
+      pivot: {x: 0.52, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee0568d00cebd3479b4c63e8b9b43a3
+      internalID: -135988534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_135
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 380
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.36, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9ef4991f4f2294eb021e8ea4845520
+      internalID: 1208830204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_142
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 380
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bef645e24811540b5d7fb89d2103c8
+      internalID: 1564549351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_145
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 379
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb996cf38bbe9841a45a9bec0851479
+      internalID: 966202766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_148
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 380
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e30c7b50d79b6c47ade5f70f484e293
+      internalID: -856783075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_149
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 380
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05eaca038b4d2dd40ab647e0a7d70841
+      internalID: -1209311630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_175
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 252
+        width: 112
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b42a3714aeb02e48a73534c0a5e4f91
+      internalID: -1225016408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_177
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 252
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.6, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11eec4f1e25d4084e99801bff85a3882
+      internalID: -1225298886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_178
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 252
+        width: 64
+        height: 72
+      alignment: 9
+      pivot: {x: 0.7, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba40a5129dbd2e4ca935efd11c12b66
+      internalID: 1852679448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_179
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 252
+        width: 64
+        height: 77
+      alignment: 9
+      pivot: {x: 0.8, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8421b2711f9a376408c6c87d5cd43c60
+      internalID: 810541444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_180
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 254
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.9, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1e04d765bc6fb44bf98c764f29d126
+      internalID: 1622506384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_182
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 253
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97af1f439b9350c44844bd9d910e5976
+      internalID: -2003241263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_186
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08040bd91a36f543b427c1c2d64cd64
+      internalID: -371458002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_187
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e393454ddb209104bbb717065f0b6a92
+      internalID: -856284831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_188
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75fa2a6d85f10542b919d0c4c8a8886
+      internalID: 1263442362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_189
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e85e99d35aca1e468c366a19d8bf7c7
+      internalID: 471191900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_190
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de1ca06b93547c4398680f86b1d5e54
+      internalID: -2051347338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_191
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdfc61358e954c42984eddcee780391
+      internalID: -1455104896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_192
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 254
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49484a71af7cdb8488788ec0fd818175
+      internalID: -1616035895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_193
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 254
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e925578f2373c42a85072d3cad0565
+      internalID: 395555029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_219
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 124
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7040bd7b7f67a8e45b49cb419ca40fc2
+      internalID: -165632324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_221
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 124
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9330519c6e09244a9c3ffcabc8cae3d
+      internalID: -468387687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_246
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 60
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d358d0b3d5f5ef4cb2c0bc83ffb59cc
+      internalID: -253276362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_247
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e262602acc2db1e469c365e1cc7c1e57
+      internalID: -828752456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_248
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e84ce6a0bde034099d883d508c5781
+      internalID: 19808027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_249
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60fd84e1f7044745bb23da0884b0087
+      internalID: 2068023195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_250
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd121563c20478247a2e2e6088b4e675
+      internalID: 557882806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_251
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd55120d6ef5ee409c449a38a9da66c
+      internalID: -580250408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_252
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f03a2b9c6862c0439a06eeab54d8435
+      internalID: -988298387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_253
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977034eb8cc19504b877efed82557fd5
+      internalID: -1838964558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_254
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce9cd8ec546a3b44bdafb91b9ac7c9c
+      internalID: 680932543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_255
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47dca9efedae4e4bb72ca8877bcb850
+      internalID: -946423828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_256
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f404991410a42ee49b492b2d1e1d7312
+      internalID: 1852501670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_257
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55677220fbf114940a7789ec65cc45a3
+      internalID: 1856774888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_258
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b98a0173ca0ed419f966e62d32f9d8
+      internalID: 172862084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_259
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 60
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768075248b7a6e549b90550fc16d3119
+      internalID: 870785434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_0
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 252
+        width: 108
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff6f68149436c742bbcdf0528ae4a28
+      internalID: 1820666128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet 6_0004_1
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 379
+        width: 111
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d630a5f2841664c815eb79c28aeb86
+      internalID: 1344679660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _SF Full sprite sheet 6_0004_0: 1820666128
+      _SF Full sprite sheet 6_0004_1: 1344679660
+      _SF Full sprite sheet 6_0004_10: -1693833796
+      _SF Full sprite sheet 6_0004_100: -492944269
+      _SF Full sprite sheet 6_0004_101: -1232860613
+      _SF Full sprite sheet 6_0004_102: -1673438147
+      _SF Full sprite sheet 6_0004_103: -1686869965
+      _SF Full sprite sheet 6_0004_104: 861593422
+      _SF Full sprite sheet 6_0004_105: -970902871
+      _SF Full sprite sheet 6_0004_106: -327319565
+      _SF Full sprite sheet 6_0004_107: 907709986
+      _SF Full sprite sheet 6_0004_108: 348368680
+      _SF Full sprite sheet 6_0004_109: 1743889027
+      _SF Full sprite sheet 6_0004_11: -987108294
+      _SF Full sprite sheet 6_0004_110: -588093279
+      _SF Full sprite sheet 6_0004_111: 1505737636
+      _SF Full sprite sheet 6_0004_112: 1260551364
+      _SF Full sprite sheet 6_0004_113: -314077321
+      _SF Full sprite sheet 6_0004_114: 275429075
+      _SF Full sprite sheet 6_0004_115: 1739298792
+      _SF Full sprite sheet 6_0004_116: -1588667812
+      _SF Full sprite sheet 6_0004_117: -1071385556
+      _SF Full sprite sheet 6_0004_118: 330414107
+      _SF Full sprite sheet 6_0004_119: -509556798
+      _SF Full sprite sheet 6_0004_12: 1737280482
+      _SF Full sprite sheet 6_0004_120: -742231626
+      _SF Full sprite sheet 6_0004_121: 2119311440
+      _SF Full sprite sheet 6_0004_122: 1462673400
+      _SF Full sprite sheet 6_0004_123: 303663650
+      _SF Full sprite sheet 6_0004_124: 1076222995
+      _SF Full sprite sheet 6_0004_125: 1102855774
+      _SF Full sprite sheet 6_0004_126: -2136358303
+      _SF Full sprite sheet 6_0004_127: -1407362644
+      _SF Full sprite sheet 6_0004_128: -1867004878
+      _SF Full sprite sheet 6_0004_129: -64247162
+      _SF Full sprite sheet 6_0004_13: 1403431663
+      _SF Full sprite sheet 6_0004_130: 192077718
+      _SF Full sprite sheet 6_0004_131: -1355071900
+      _SF Full sprite sheet 6_0004_132: -2036861480
+      _SF Full sprite sheet 6_0004_133: -685028802
+      _SF Full sprite sheet 6_0004_134: -135988534
+      _SF Full sprite sheet 6_0004_135: 1208830204
+      _SF Full sprite sheet 6_0004_136: 446734336
+      _SF Full sprite sheet 6_0004_137: 1364711398
+      _SF Full sprite sheet 6_0004_138: 898249698
+      _SF Full sprite sheet 6_0004_139: 911989578
+      _SF Full sprite sheet 6_0004_14: -799627614
+      _SF Full sprite sheet 6_0004_140: -123592279
+      _SF Full sprite sheet 6_0004_141: 1976161853
+      _SF Full sprite sheet 6_0004_142: 1564549351
+      _SF Full sprite sheet 6_0004_143: 645998322
+      _SF Full sprite sheet 6_0004_144: 712137417
+      _SF Full sprite sheet 6_0004_145: 966202766
+      _SF Full sprite sheet 6_0004_146: 146847775
+      _SF Full sprite sheet 6_0004_147: -1461965345
+      _SF Full sprite sheet 6_0004_148: -856783075
+      _SF Full sprite sheet 6_0004_149: -1209311630
+      _SF Full sprite sheet 6_0004_15: -77740169
+      _SF Full sprite sheet 6_0004_150: -1068190484
+      _SF Full sprite sheet 6_0004_151: -372112771
+      _SF Full sprite sheet 6_0004_152: 1124447788
+      _SF Full sprite sheet 6_0004_153: -642718252
+      _SF Full sprite sheet 6_0004_154: 1118957562
+      _SF Full sprite sheet 6_0004_155: -2068225806
+      _SF Full sprite sheet 6_0004_156: 1198837835
+      _SF Full sprite sheet 6_0004_157: -930193014
+      _SF Full sprite sheet 6_0004_158: 1458277388
+      _SF Full sprite sheet 6_0004_159: -74341487
+      _SF Full sprite sheet 6_0004_16: 338637383
+      _SF Full sprite sheet 6_0004_160: -2014114334
+      _SF Full sprite sheet 6_0004_161: 160191771
+      _SF Full sprite sheet 6_0004_162: -2106307666
+      _SF Full sprite sheet 6_0004_163: 1966089704
+      _SF Full sprite sheet 6_0004_164: 395051586
+      _SF Full sprite sheet 6_0004_165: 847541025
+      _SF Full sprite sheet 6_0004_166: 1813799942
+      _SF Full sprite sheet 6_0004_167: -159139428
+      _SF Full sprite sheet 6_0004_168: -1927251436
+      _SF Full sprite sheet 6_0004_169: 192616677
+      _SF Full sprite sheet 6_0004_17: 326323375
+      _SF Full sprite sheet 6_0004_170: -602265880
+      _SF Full sprite sheet 6_0004_171: -1039048504
+      _SF Full sprite sheet 6_0004_172: 2033003501
+      _SF Full sprite sheet 6_0004_173: -505559974
+      _SF Full sprite sheet 6_0004_174: 1752892543
+      _SF Full sprite sheet 6_0004_175: -1225016408
+      _SF Full sprite sheet 6_0004_176: -614043007
+      _SF Full sprite sheet 6_0004_177: -1225298886
+      _SF Full sprite sheet 6_0004_178: 1852679448
+      _SF Full sprite sheet 6_0004_179: 810541444
+      _SF Full sprite sheet 6_0004_18: 236993837
+      _SF Full sprite sheet 6_0004_180: 1622506384
+      _SF Full sprite sheet 6_0004_181: -544571464
+      _SF Full sprite sheet 6_0004_182: -2003241263
+      _SF Full sprite sheet 6_0004_183: 2133918023
+      _SF Full sprite sheet 6_0004_184: 1886197975
+      _SF Full sprite sheet 6_0004_185: 51816563
+      _SF Full sprite sheet 6_0004_186: -371458002
+      _SF Full sprite sheet 6_0004_187: -856284831
+      _SF Full sprite sheet 6_0004_188: 1263442362
+      _SF Full sprite sheet 6_0004_189: 471191900
+      _SF Full sprite sheet 6_0004_19: -1291791241
+      _SF Full sprite sheet 6_0004_190: -2051347338
+      _SF Full sprite sheet 6_0004_191: -1455104896
+      _SF Full sprite sheet 6_0004_192: -1616035895
+      _SF Full sprite sheet 6_0004_193: 395555029
+      _SF Full sprite sheet 6_0004_194: -78952982
+      _SF Full sprite sheet 6_0004_195: 201171409
+      _SF Full sprite sheet 6_0004_196: -1250302495
+      _SF Full sprite sheet 6_0004_197: -2096165852
+      _SF Full sprite sheet 6_0004_198: -1693167589
+      _SF Full sprite sheet 6_0004_199: 833077694
+      _SF Full sprite sheet 6_0004_2: 129412412
+      _SF Full sprite sheet 6_0004_20: 1316205996
+      _SF Full sprite sheet 6_0004_200: -1780671766
+      _SF Full sprite sheet 6_0004_201: -38897236
+      _SF Full sprite sheet 6_0004_202: 542524666
+      _SF Full sprite sheet 6_0004_203: -1746902454
+      _SF Full sprite sheet 6_0004_204: 1892094483
+      _SF Full sprite sheet 6_0004_205: -1593364045
+      _SF Full sprite sheet 6_0004_206: -687779239
+      _SF Full sprite sheet 6_0004_207: -821498333
+      _SF Full sprite sheet 6_0004_208: -1230030445
+      _SF Full sprite sheet 6_0004_209: 1104238781
+      _SF Full sprite sheet 6_0004_21: 1892122538
+      _SF Full sprite sheet 6_0004_210: 1575050343
+      _SF Full sprite sheet 6_0004_211: 165063864
+      _SF Full sprite sheet 6_0004_212: -655051476
+      _SF Full sprite sheet 6_0004_213: -1238485395
+      _SF Full sprite sheet 6_0004_214: -1300874196
+      _SF Full sprite sheet 6_0004_215: -557449978
+      _SF Full sprite sheet 6_0004_216: -1699038892
+      _SF Full sprite sheet 6_0004_217: 725638468
+      _SF Full sprite sheet 6_0004_218: -603956386
+      _SF Full sprite sheet 6_0004_219: -165632324
+      _SF Full sprite sheet 6_0004_22: 1468513792
+      _SF Full sprite sheet 6_0004_220: -769477812
+      _SF Full sprite sheet 6_0004_221: -468387687
+      _SF Full sprite sheet 6_0004_222: 277891778
+      _SF Full sprite sheet 6_0004_223: -967400884
+      _SF Full sprite sheet 6_0004_224: -131605870
+      _SF Full sprite sheet 6_0004_225: -1453885736
+      _SF Full sprite sheet 6_0004_226: 1415135562
+      _SF Full sprite sheet 6_0004_227: 1726056962
+      _SF Full sprite sheet 6_0004_228: 1384163543
+      _SF Full sprite sheet 6_0004_229: 1577034951
+      _SF Full sprite sheet 6_0004_23: 540095670
+      _SF Full sprite sheet 6_0004_230: 1613368554
+      _SF Full sprite sheet 6_0004_231: 532511681
+      _SF Full sprite sheet 6_0004_232: 924927972
+      _SF Full sprite sheet 6_0004_233: 254232568
+      _SF Full sprite sheet 6_0004_234: -1771895349
+      _SF Full sprite sheet 6_0004_235: 1887159286
+      _SF Full sprite sheet 6_0004_236: -1101135748
+      _SF Full sprite sheet 6_0004_237: -1978595681
+      _SF Full sprite sheet 6_0004_238: -1068425562
+      _SF Full sprite sheet 6_0004_239: 1437009433
+      _SF Full sprite sheet 6_0004_24: -179277153
+      _SF Full sprite sheet 6_0004_240: 1163822194
+      _SF Full sprite sheet 6_0004_241: 1491436953
+      _SF Full sprite sheet 6_0004_242: 840991160
+      _SF Full sprite sheet 6_0004_243: 1334826957
+      _SF Full sprite sheet 6_0004_244: 1733704563
+      _SF Full sprite sheet 6_0004_245: 1998609134
+      _SF Full sprite sheet 6_0004_246: -253276362
+      _SF Full sprite sheet 6_0004_247: -828752456
+      _SF Full sprite sheet 6_0004_248: 19808027
+      _SF Full sprite sheet 6_0004_249: 2068023195
+      _SF Full sprite sheet 6_0004_25: -271708672
+      _SF Full sprite sheet 6_0004_250: 557882806
+      _SF Full sprite sheet 6_0004_251: -580250408
+      _SF Full sprite sheet 6_0004_252: -988298387
+      _SF Full sprite sheet 6_0004_253: -1838964558
+      _SF Full sprite sheet 6_0004_254: 680932543
+      _SF Full sprite sheet 6_0004_255: -946423828
+      _SF Full sprite sheet 6_0004_256: 1852501670
+      _SF Full sprite sheet 6_0004_257: 1856774888
+      _SF Full sprite sheet 6_0004_258: 172862084
+      _SF Full sprite sheet 6_0004_259: 870785434
+      _SF Full sprite sheet 6_0004_26: -1972023476
+      _SF Full sprite sheet 6_0004_27: -1636286800
+      _SF Full sprite sheet 6_0004_28: -833098180
+      _SF Full sprite sheet 6_0004_29: -364549370
+      _SF Full sprite sheet 6_0004_3: 1459661690
+      _SF Full sprite sheet 6_0004_30: 116564894
+      _SF Full sprite sheet 6_0004_31: -1182818001
+      _SF Full sprite sheet 6_0004_32: 1566495932
+      _SF Full sprite sheet 6_0004_33: -773481578
+      _SF Full sprite sheet 6_0004_34: 954340133
+      _SF Full sprite sheet 6_0004_35: -663596772
+      _SF Full sprite sheet 6_0004_36: 1220181204
+      _SF Full sprite sheet 6_0004_37: -766507179
+      _SF Full sprite sheet 6_0004_38: -1125086995
+      _SF Full sprite sheet 6_0004_39: 1295681562
+      _SF Full sprite sheet 6_0004_4: -1262883434
+      _SF Full sprite sheet 6_0004_40: -589675842
+      _SF Full sprite sheet 6_0004_41: 2127230549
+      _SF Full sprite sheet 6_0004_42: 338127146
+      _SF Full sprite sheet 6_0004_43: 835361185
+      _SF Full sprite sheet 6_0004_44: -859096126
+      _SF Full sprite sheet 6_0004_45: -1304716702
+      _SF Full sprite sheet 6_0004_46: -602141038
+      _SF Full sprite sheet 6_0004_47: -469171152
+      _SF Full sprite sheet 6_0004_48: -1970451930
+      _SF Full sprite sheet 6_0004_49: 1345228295
+      _SF Full sprite sheet 6_0004_5: -1262784733
+      _SF Full sprite sheet 6_0004_50: 127556802
+      _SF Full sprite sheet 6_0004_51: 959322680
+      _SF Full sprite sheet 6_0004_52: 1225143572
+      _SF Full sprite sheet 6_0004_53: -553146596
+      _SF Full sprite sheet 6_0004_54: -1727015129
+      _SF Full sprite sheet 6_0004_55: -245116844
+      _SF Full sprite sheet 6_0004_56: 1702511210
+      _SF Full sprite sheet 6_0004_57: -169357802
+      _SF Full sprite sheet 6_0004_58: 1106747901
+      _SF Full sprite sheet 6_0004_59: 1585795921
+      _SF Full sprite sheet 6_0004_6: -1076948241
+      _SF Full sprite sheet 6_0004_60: -1233673623
+      _SF Full sprite sheet 6_0004_61: 380593240
+      _SF Full sprite sheet 6_0004_62: -2107561685
+      _SF Full sprite sheet 6_0004_63: 1270408547
+      _SF Full sprite sheet 6_0004_64: -1327699550
+      _SF Full sprite sheet 6_0004_65: -1325783057
+      _SF Full sprite sheet 6_0004_66: -383816436
+      _SF Full sprite sheet 6_0004_67: -334346514
+      _SF Full sprite sheet 6_0004_68: 119621543
+      _SF Full sprite sheet 6_0004_69: -1600096132
+      _SF Full sprite sheet 6_0004_7: -1604839965
+      _SF Full sprite sheet 6_0004_70: 336220566
+      _SF Full sprite sheet 6_0004_71: -1859100212
+      _SF Full sprite sheet 6_0004_72: -1766573040
+      _SF Full sprite sheet 6_0004_73: 1400792957
+      _SF Full sprite sheet 6_0004_74: -1931392841
+      _SF Full sprite sheet 6_0004_75: 949122241
+      _SF Full sprite sheet 6_0004_76: -1581739902
+      _SF Full sprite sheet 6_0004_77: 301092758
+      _SF Full sprite sheet 6_0004_78: 1259560284
+      _SF Full sprite sheet 6_0004_79: 259534639
+      _SF Full sprite sheet 6_0004_8: -161014336
+      _SF Full sprite sheet 6_0004_80: 1057082199
+      _SF Full sprite sheet 6_0004_81: -1313597284
+      _SF Full sprite sheet 6_0004_82: -1052913713
+      _SF Full sprite sheet 6_0004_83: 1015032780
+      _SF Full sprite sheet 6_0004_84: 1165211117
+      _SF Full sprite sheet 6_0004_85: 514191150
+      _SF Full sprite sheet 6_0004_86: -502401429
+      _SF Full sprite sheet 6_0004_87: 1243070243
+      _SF Full sprite sheet 6_0004_88: -90861041
+      _SF Full sprite sheet 6_0004_89: -1357635065
+      _SF Full sprite sheet 6_0004_9: -1535189180
+      _SF Full sprite sheet 6_0004_90: 2054693882
+      _SF Full sprite sheet 6_0004_91: -1085804584
+      _SF Full sprite sheet 6_0004_92: 574373870
+      _SF Full sprite sheet 6_0004_93: -1109854367
+      _SF Full sprite sheet 6_0004_94: -1040574383
+      _SF Full sprite sheet 6_0004_95: -331029441
+      _SF Full sprite sheet 6_0004_96: -886373982
+      _SF Full sprite sheet 6_0004_97: -1527719959
+      _SF Full sprite sheet 6_0004_98: -1783959222
+      _SF Full sprite sheet 6_0004_99: 627889335
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

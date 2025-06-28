@@ -28,6 +28,8 @@ namespace StateMachine
 
         public override void CheckSwitchState()
         {
+            _cntx.playerAnimator.SetFloat("Hvelocity", _cntx.playerRb.velocity.x);
+            _cntx.playerAnimator.SetFloat("Yvelocity", _cntx.playerRb.velocity.y);
 
             if (_cntx.dashInputDown && _cntx.canDashCheck())
             {

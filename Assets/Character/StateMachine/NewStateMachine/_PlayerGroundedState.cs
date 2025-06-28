@@ -7,6 +7,7 @@ namespace StateMachine
 
         public override void EnterState()
         {
+            Debug.Log("Grounded State Entered");
             base.EnterState();
             //animation
             _cntx.playerAnimator.SetBool("isGrounded", true);

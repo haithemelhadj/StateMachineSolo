@@ -38,7 +38,7 @@ namespace StateMachine
             //rays casts
             //if (!isLedgeBumping)
             Checks();
-            
+            GetDashInput();
 
 
             //states logic
@@ -66,7 +66,7 @@ namespace StateMachine
         }
         public void GetActionInputs()
         {
-            GetDashInput();
+            
             GetAttackInput();
             GetInterractionInput();
         }
@@ -117,14 +117,14 @@ namespace StateMachine
         {
             horizontalInput = Input.GetAxis("Horizontal");
             float x = Mathf.Abs(horizontalInput) * c_MaxHSpeed;
-            playerAnimator.SetFloat("Hvelocity", x);
+            playerAnimator.SetFloat("HInput", x);
         }
 
         public float verticalInput;
         public void GetVInputs()
         {
             verticalInput = Input.GetAxis("Vertical");
-            playerAnimator.SetFloat("Yvelocity", verticalInput);
+            playerAnimator.SetFloat("YInput", verticalInput);
         }
         #endregion
 
