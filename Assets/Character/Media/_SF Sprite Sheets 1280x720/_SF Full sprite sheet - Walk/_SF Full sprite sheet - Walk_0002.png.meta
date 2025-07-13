@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: fad776a0a605ebb4bb7c7425c0f572d2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4e531518c093d44a5bb4436e29339a
+      internalID: -778871015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374389d890d7c6d4495fd8a3e44cfb5a
+      internalID: -598608796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94fee64c0251b2844a3d775da097c7bc
+      internalID: 425967931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d557f1026343445a7fa0335951158b
+      internalID: -1462989864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95376a186ab35a64ba41a7e0770a30c8
+      internalID: 2134726923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1247c05f28738b64187917785c22b554
+      internalID: 549196991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135776a0ad205924d8961737f2fee696
+      internalID: -151395503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80bac0763fa5d6041b76e6b0b32d6aa2
+      internalID: -706825939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85094d18c9c4414c8519112577e2a83
+      internalID: 424037016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812eab0f35301df4d9a552a1dcc22d51
+      internalID: -484486393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 891
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c396113e302804e9693a6fae4c7130
+      internalID: 1157892844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14bc4ebdccc9d441a0563d13c198fd7
+      internalID: -564309153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99811b952814ba042b96c49a0d858a64
+      internalID: 1249064005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_23
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291c692c601feea468cc4641e378b733
+      internalID: -760793204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4718a20438d6a4788219fd90584e2e
+      internalID: 1568799539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ff15d29eb6fdc41b21b9ee045ae272
+      internalID: -107586217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678d7d86297c0bd418bc887177dd4df6
+      internalID: 179473966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e79e1405498264c86f51a3e950450f
+      internalID: 1908499570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd2676013ce72842824da3d9b0f5e10
+      internalID: 1229829013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c082d5b1185753f4d86177d761e3393e
+      internalID: 39094002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_30
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24c57bd02f7b5a4197dac6252d5b912
+      internalID: -916506500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Walk_0002_31
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 633
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd35a4107dc1e9a439904e5e96d64f3a
+      internalID: -1549180394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _SF Full sprite sheet - Walk_0002_0: -778871015
+      _SF Full sprite sheet - Walk_0002_1: -598608796
+      _SF Full sprite sheet - Walk_0002_10: 1157892844
+      _SF Full sprite sheet - Walk_0002_11: 2104787621
+      _SF Full sprite sheet - Walk_0002_12: -456681727
+      _SF Full sprite sheet - Walk_0002_13: 2094988143
+      _SF Full sprite sheet - Walk_0002_14: -838032009
+      _SF Full sprite sheet - Walk_0002_15: 215637726
+      _SF Full sprite sheet - Walk_0002_16: 746192910
+      _SF Full sprite sheet - Walk_0002_17: -1035506565
+      _SF Full sprite sheet - Walk_0002_18: 131871398
+      _SF Full sprite sheet - Walk_0002_19: 1670947821
+      _SF Full sprite sheet - Walk_0002_2: 425967931
+      _SF Full sprite sheet - Walk_0002_20: -237275025
+      _SF Full sprite sheet - Walk_0002_21: -564309153
+      _SF Full sprite sheet - Walk_0002_22: 1249064005
+      _SF Full sprite sheet - Walk_0002_23: -760793204
+      _SF Full sprite sheet - Walk_0002_24: 1568799539
+      _SF Full sprite sheet - Walk_0002_25: -107586217
+      _SF Full sprite sheet - Walk_0002_26: 179473966
+      _SF Full sprite sheet - Walk_0002_27: 1908499570
+      _SF Full sprite sheet - Walk_0002_28: 1229829013
+      _SF Full sprite sheet - Walk_0002_29: 39094002
+      _SF Full sprite sheet - Walk_0002_3: -1462989864
+      _SF Full sprite sheet - Walk_0002_30: -916506500
+      _SF Full sprite sheet - Walk_0002_31: -1549180394
+      _SF Full sprite sheet - Walk_0002_32: 1707009005
+      _SF Full sprite sheet - Walk_0002_33: 2008265239
+      _SF Full sprite sheet - Walk_0002_34: 5508227
+      _SF Full sprite sheet - Walk_0002_35: -116682829
+      _SF Full sprite sheet - Walk_0002_36: -1992402845
+      _SF Full sprite sheet - Walk_0002_37: -663848672
+      _SF Full sprite sheet - Walk_0002_38: -1921593570
+      _SF Full sprite sheet - Walk_0002_39: 609439335
+      _SF Full sprite sheet - Walk_0002_4: 2134726923
+      _SF Full sprite sheet - Walk_0002_40: 32592313
+      _SF Full sprite sheet - Walk_0002_41: 1254065789
+      _SF Full sprite sheet - Walk_0002_5: 549196991
+      _SF Full sprite sheet - Walk_0002_6: -151395503
+      _SF Full sprite sheet - Walk_0002_7: -706825939
+      _SF Full sprite sheet - Walk_0002_8: 424037016
+      _SF Full sprite sheet - Walk_0002_9: -484486393
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

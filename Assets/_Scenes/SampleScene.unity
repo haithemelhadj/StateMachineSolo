@@ -1115,6 +1115,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+  isHeadBumping: 0
   extraGroundCheckDistance: 0.01
   isHeadBumped: 0
   extraHeadCheckDistance: 0.01
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   jumpForce: 15
   jumpInputConfirmed: 0
   jumpReset: 0
-  maxJumpTime: 0.3
+  maxJumpTime: 0.2
   jumpTimeCounter: 0
   jumpBufferTime: 0.15
   jumpPressTime: 0
@@ -1308,7 +1309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -331029441, guid: 1505e476ba7fb3d47a5f97f13bdfa0ee, type: 3}
+  m_Sprite: {fileID: -1018295078, guid: 1066c4ef2ea86e64592f74ee3ba9f295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1423,6 +1424,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+  isHeadBumping: 0
   extraGroundCheckDistance: 0.01
   isHeadBumped: 0
   extraHeadCheckDistance: 0.01

@@ -66,7 +66,7 @@ namespace StateMachine
         }
         public void GetActionInputs()
         {
-            
+
             GetAttackInput();
             GetInterractionInput();
         }
@@ -154,6 +154,7 @@ namespace StateMachine
         [Header("Ground check")]
         public LayerMask whatIsGround;
         [SerializeField] public bool isGrounded;
+        [SerializeField] public bool isHeadBumping;
         public float extraGroundCheckDistance = 0.01f;
 
         public void GroundCheck()
@@ -186,8 +187,9 @@ namespace StateMachine
             if (hitLeft.collider != null || hitRight.collider != null)
             {
                 //ceiling
+                isHeadBumping = true;
                 //check if both are diffrent
-                if (hitLeft == hitRight)
+                if (hitLeft != hitRight)
                 {
                     //push the player to the side that is false to exactly fit 
                 }
@@ -196,6 +198,7 @@ namespace StateMachine
             else
             {
                 //no ceiling
+                isHeadBumping = false;
             }
         }
         #endregion
@@ -511,7 +514,7 @@ namespace StateMachine
         private void OnCollisionEnter2D(Collision2D collision)
         {
             //if ((collision.gameObject.layer==enemyLayers))
-            
+
             if (collision.gameObject.CompareTag("Enemy") && !isInIframes)
             {
                 Debug.Log("got hit");
@@ -521,9 +524,9 @@ namespace StateMachine
                 Debug.Log("knock back dir: " + knockBackDirection);
                 knockBackDirection = knockBackDirection * knockBackforce;
                 knockBackDirection.y = yPushForce;
-                playerRb.AddForce(knockBackDirection,ForceMode2D.Impulse);
+                playerRb.AddForce(knockBackDirection, ForceMode2D.Impulse);
                 //trigger animation
-                playerAnimator.SetBool("Getting Hit",true);
+                playerAnimator.SetBool("Getting Hit", true);
                 iFramesParallelState.EnterState();
             }
         }
@@ -532,8 +535,8 @@ namespace StateMachine
     }
 }
 /*
- * add jump apex lerp and bonus movement
- * add animations
+ * 
+ * 
  */
 
 //make wall jump on the same wall can go higher like HK = make player can move during jump and can jump heigher 

@@ -59,7 +59,7 @@ namespace StateMachine
         public override void CheckSwitchState()
         {
             base.CheckSwitchState();
-            if ((_cntx.jumpInputUp || _cntx.jumpTimeCounter < 0))
+            if (_cntx.jumpInputUp || _cntx.jumpTimeCounter < 0 || _cntx.isHeadBumping)
             {
                 SwitchState(_factory.Fall());
             }
