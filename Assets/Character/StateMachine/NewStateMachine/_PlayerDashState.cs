@@ -11,14 +11,15 @@ namespace StateMachine
         {
             base.EnterState();
             _cntx.isDashing = true;
-            _cntx.dashReset=false;
+            _cntx.dashReset = false;
             _cntx.StartCoroutine(Dash());
         }
         public override void UpdateState()
         {
 
             base.UpdateState();
-            CheckSwitchState();
+            if (!_cntx.isDashing)
+                CheckSwitchState();
         }
         public override void FixedUpdateState()
         {
@@ -26,20 +27,22 @@ namespace StateMachine
         }
         public override void ExitState()
         {
-            _cntx.lastDashFinishTime=Time.time;
+            _cntx.lastDashFinishTime = Time.time;
             base.ExitState();
         }
         public override void CheckSwitchState()
         {
             base.CheckSwitchState();
-            if (!_cntx.isDashing)
-            {
-                SwitchState(_factory.Fall());
-            }
+
             if (_cntx.isHuggingWall)
             {
                 SwitchState(_factory.WallSlide());
-
+                Debug.Log("Switching to WallSlide from Dash");
+            }
+            else if (!_cntx.isDashing)
+            {
+                SwitchState(_factory.Fall());
+                Debug.Log("Switching to Fall from Dash");
             }
         }
 

@@ -5,7 +5,7 @@ namespace StateMachine
         public _PlayerActionState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
         public override void EnterState()
         {
-
+            _cntx.currentActiveState = this.ToString();
         }
         public override void UpdateState()
         {

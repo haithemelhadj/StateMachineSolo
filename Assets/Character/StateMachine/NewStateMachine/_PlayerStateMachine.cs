@@ -21,12 +21,13 @@ namespace StateMachine
             _states = new _PlayerStateFactory(this);
             _currentState = _states.Grounded();
             attackParallelState = _states.Attack();
-            iFramesParallelState = _states.iFrames();
+            //iFramesParallelState = _states.iFrames();
             _currentState.EnterState();
         }
 
         private void Awake()
         {
+
             GetComponents();
             InitializeState();
             //max falling speed is always negative
@@ -253,7 +254,7 @@ namespace StateMachine
                 {
                     c_MaxHSpeed = r_MaxHSpeed;
                     c_Acceleration = r_Acceleration;
-                    c_Acceleration = r_Deceleration;
+                    c_Deceleration = r_Deceleration;
                 }
             }
             else
@@ -273,7 +274,7 @@ namespace StateMachine
                 {
                     c_MaxHSpeed = r_MaxHSpeed;
                     c_Acceleration = r_Acceleration;
-                    c_Acceleration = r_Deceleration;
+                    c_Deceleration = r_Deceleration;
                 }
             }
         }

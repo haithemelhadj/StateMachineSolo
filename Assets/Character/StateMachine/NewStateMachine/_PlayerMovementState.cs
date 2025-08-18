@@ -8,7 +8,7 @@ namespace StateMachine
 
         public override void EnterState()
         {
-
+            _cntx.currentActiveState = this.ToString();
         }
         public override void UpdateState()
         {
@@ -47,10 +47,11 @@ namespace StateMachine
                 _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration);
                 //Debug.Log("velocity: "+_cntx.playerRb.velocity.x);
 
-                //flip character and keep it that way when no inputs        
-                Flip();
+                //flip character and keep it that way when no inputs
+                if (!_cntx.isHuggingWall)
+                    Flip();
             }
-            else //slow player to stop
+            else if (_cntx.playerRb.velocity.x != 0f) //slow player to stop
                 _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);
         }
 
