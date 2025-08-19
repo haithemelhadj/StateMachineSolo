@@ -14,12 +14,12 @@ namespace StateMachine
         {
             //inputs
             _cntx.GetMovementInputs();
-            Move();
             //LedgeBump();
         }
         public override void FixedUpdateState()
         {
-
+            Move();
+            CheckSwitchState();
         }
         public override void ExitState()
         {
@@ -44,7 +44,9 @@ namespace StateMachine
             //move player
             if (_cntx.horizontalInput != 0f)
             {
-                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration);
+                //if(_cntx.horizontalInput>0.5f )
+
+                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(_cntx.horizontalInput * _cntx.c_MaxHSpeed, _cntx.playerRb.velocity.y, 0f), _cntx.c_Acceleration * Time.deltaTime);
                 //Debug.Log("velocity: "+_cntx.playerRb.velocity.x);
 
                 //flip character and keep it that way when no inputs
@@ -52,7 +54,8 @@ namespace StateMachine
                     Flip();
             }
             else if (_cntx.playerRb.velocity.x != 0f) //slow player to stop
-                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration);
+                _cntx.playerRb.velocity = Vector3.MoveTowards(_cntx.playerRb.velocity, new Vector3(0f, _cntx.playerRb.velocity.y, 0f), _cntx.c_Deceleration * Time.deltaTime);
+            _cntx.c_HSpeed= _cntx.playerRb.velocity.x; //set current horizontal speed
         }
 
         public void Flip()

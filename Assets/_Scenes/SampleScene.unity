@@ -1098,19 +1098,20 @@ MonoBehaviour:
   playerRb: {fileID: 0}
   capsuleCollider: {fileID: 0}
   playerAnimator: {fileID: 0}
-  playerHeight: 0
-  playerWidth: 0
+  playerHeight: 2
+  playerWidth: 0.7
   horizontalInput: 0
   verticalInput: 0
+  c_HSpeed: 0
   c_MaxHSpeed: 12
-  c_Acceleration: 2
-  c_Deceleration: 2
+  c_Acceleration: 20
+  c_Deceleration: 30
   r_MaxHSpeed: 12
-  r_Acceleration: 2
-  r_Deceleration: 2
+  r_Acceleration: 30
+  r_Deceleration: 40
   w_MaxHSpeed: 2.5
-  w_Acceleration: 1
-  w_Deceleration: 1
+  w_Acceleration: 30
+  w_Deceleration: 30
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1127,12 +1128,15 @@ MonoBehaviour:
   walkInput: 99
   walkInputDown: 0
   holdToWalk: 0
+  normalGravityScale: 0
+  lowGravityScale: 0
+  shortHopMultiplier: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0
   jumpInputUp: 0
   isJumping: 0
-  jumpForce: 15
+  jumpForce: 30
   jumpInputConfirmed: 0
   jumpReset: 0
   maxJumpTime: 0.2
@@ -1411,6 +1415,7 @@ MonoBehaviour:
   playerWidth: 0
   horizontalInput: 0
   verticalInput: 0
+  c_HSpeed: 0
   c_MaxHSpeed: 0
   c_Acceleration: 0.3
   c_Deceleration: 0.4
@@ -1436,6 +1441,9 @@ MonoBehaviour:
   walkInput: 0
   walkInputDown: 0
   holdToWalk: 0
+  normalGravityScale: 0
+  lowGravityScale: 0
+  shortHopMultiplier: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0

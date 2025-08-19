@@ -7,8 +7,8 @@ namespace StateMachine
 
         public override void EnterState()
         {
-            Debug.Log("Grounded State Entered");
             base.EnterState();
+            //Debug.Log("Grounded State Entered");
             //animation
             _cntx.playerAnimator.SetBool("isGrounded", true);
             //set speed
@@ -30,10 +30,11 @@ namespace StateMachine
         }
         public override void FixedUpdateState()
         {
-
+            base.FixedUpdateState();
         }
         public override void ExitState()
         {
+            base.ExitState();
             _cntx.LastGrounded = Time.time;
             _cntx.playerAnimator.SetBool("isGrounded", false);
         }

@@ -66,9 +66,9 @@ public class PlayerScript : MonoBehaviour
     {
         //move player
         if (horizontalInput != 0f)
-            playerRb.velocity += new Vector2(horizontalInput * speed, playerRb.velocity.y);
+            playerRb.velocity += new Vector2(horizontalInput * speed, playerRb.velocity.y) * Time.deltaTime;
         else //slow player to stop
-            playerRb.velocity = Vector3.Lerp(playerRb.velocity, new Vector3(0, playerRb.velocity.y, 0), deceleration);
+            playerRb.velocity = Vector3.Lerp(playerRb.velocity, new Vector3(0, playerRb.velocity.y, 0), deceleration * Time.deltaTime);
 
         //flip character and keep it that way when no inputs
         if (horizontalInput > 0 && !isFacingRight)

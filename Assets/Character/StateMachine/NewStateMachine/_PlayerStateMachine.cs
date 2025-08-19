@@ -131,20 +131,21 @@ namespace StateMachine
 
         #region  Current Movement 
         [Header("Current Movement")]
+        [SerializeField] public float c_HSpeed;
         [SerializeField] public float c_MaxHSpeed;
         [SerializeField] public float c_Acceleration;
         [SerializeField] public float c_Deceleration;
         #endregion
 
         #region  Ground Movement 
-        [Header("Ground Movement")]
+        [Header("run Movement")]
         public float r_MaxHSpeed;
         public float r_Acceleration;
         public float r_Deceleration;
         #endregion
 
         #region  Ground Movement 
-        [Header("Ground Movement")]
+        [Header("walk Movement")]
         public float w_MaxHSpeed;
         public float w_Acceleration;
         public float w_Deceleration;
@@ -173,6 +174,18 @@ namespace StateMachine
                 isGrounded = false;
             }
         }
+        void OnDrawGizmos()
+        {
+            Vector3 rightRayOrigin = transform.position + new Vector3(playerWidth / 2, 0, 0);
+            Vector3 leftRayOrigin = transform.position - new Vector3(playerWidth / 2, 0, 0);
+
+            float rayLength = playerHeight / 2 + extraGroundCheckDistance;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(rightRayOrigin, rightRayOrigin + Vector3.down * rayLength);
+            Gizmos.DrawLine(leftRayOrigin, leftRayOrigin + Vector3.down * rayLength);
+        }
+
         #endregion
 
         #region Head Check
@@ -293,6 +306,9 @@ namespace StateMachine
 
         #endregion
 
+        public float normalGravityScale;
+        public float lowGravityScale;
+        public float shortHopMultiplier;
 
         //AirBorne Movement
         #region  Air Movement 

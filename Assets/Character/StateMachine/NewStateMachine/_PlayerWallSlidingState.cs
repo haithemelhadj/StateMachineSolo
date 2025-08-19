@@ -15,18 +15,19 @@ namespace StateMachine
         public override void UpdateState()
         {
             base.UpdateState();
-            _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, -_cntx.wallSlidingSpeed);
             CheckSwitchState();
+
         }
         public override void FixedUpdateState()
         {
-
+            base.FixedUpdateState();
+            _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, -_cntx.wallSlidingSpeed);
         }
         public override void ExitState()
         {
+            base.ExitState();
             _cntx.isWallSliding = false;
             _cntx.playerAnimator.SetBool("isWallSliding", _cntx.isWallSliding);
-            base.ExitState();
 
         }
         public override void CheckSwitchState()
@@ -40,6 +41,7 @@ namespace StateMachine
             {
                 _cntx.wallJumpPressTime = Time.time;
                 SwitchState(_factory.Jump());
+                //Debug.Log("Wall Jumping");
                 //SwitchState(_factory.WallJump());
             }
             if (!_cntx.isGrounded && !_cntx.isHuggingWall)

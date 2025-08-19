@@ -9,7 +9,6 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
-
             //actions
             _cntx.GetActionInputs();
         }
