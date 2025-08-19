@@ -31,6 +31,8 @@ namespace StateMachine
             _states[_playerStates.WallSlide] = new _PlayerWallSlidingState(context, this);
             _states[_playerStates.WallJump] = new _PlayerWallJumpState(context, this);
             _states[_playerStates.Attack] = new _PlayerAttackState(context, this);
+            _states[_playerStates.Attack] = new _PlayerAttackState(context, this);
+            _states[_playerStates.Attack] = new _PlayerAttackState(context, this);
             _states[_playerStates.iFrames] = new _PlayerIFramesState(context, this);
         }
 

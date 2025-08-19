@@ -1072,8 +1072,8 @@ GameObject:
   - component: {fileID: 279938115}
   - component: {fileID: 279938114}
   - component: {fileID: 279938111}
-  - component: {fileID: 279938113}
   - component: {fileID: 279938112}
+  - component: {fileID: 279938113}
   - component: {fileID: 279938110}
   m_Layer: 0
   m_Name: SF Player
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   r_Deceleration: 40
   w_MaxHSpeed: 2.5
   w_Acceleration: 30
-  w_Deceleration: 30
+  w_Deceleration: 40
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64

@@ -12,8 +12,6 @@ namespace StateMachine
         }
         public override void UpdateState()
         {
-            //inputs
-            _cntx.GetMovementInputs();
             //LedgeBump();
         }
         public override void FixedUpdateState()

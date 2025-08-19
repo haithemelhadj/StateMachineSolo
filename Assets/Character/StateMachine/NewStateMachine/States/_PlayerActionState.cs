@@ -10,7 +10,7 @@ namespace StateMachine
         public override void UpdateState()
         {
             //actions
-            _cntx.GetActionInputs();
+            //_cntx.GetActionInputs();
         }
         public override void FixedUpdateState()
         {

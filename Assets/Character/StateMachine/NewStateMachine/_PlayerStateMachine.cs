@@ -37,10 +37,12 @@ namespace StateMachine
         private void Update()
         {
             //rays casts
-            //if (!isLedgeBumping)
             Checks();
-            GetDashInput();
 
+            //inputs
+            GetMovementInputs();
+            GetDashInput();
+            GetActionInputs();
 
             //states logic
             StatesLogicHandler();
