@@ -1,10 +1,9 @@
 
 using UnityEngine;
-using static UnityEngine.LightAnchor;
+using StateMachine;
 
-namespace StateMachine
-{
-    public class _PlayerJumpState : _PlayerMovementState
+[CreateAssetMenu(fileName = "Jump State", menuName = "Player/States/Jump")]
+public class _PlayerJumpState : _PlayerMovementState
     {
         //private bool _hasAppliedJump;
         //private bool _isWallJumping;
@@ -23,7 +22,7 @@ namespace StateMachine
             _cntx.playerRb.velocity = new Vector2(_cntx.playerRb.velocity.x, 0f);
 
             // Apply initial jump impulse
-            
+
             Jump();
 
             //.
@@ -38,6 +37,7 @@ namespace StateMachine
             _cntx.jumpTimeCounter -= Time.deltaTime;
             CheckSwitchState();
         }
+
         /*
         public override void FixedUpdateState()
         {
@@ -151,13 +151,12 @@ namespace StateMachine
             base.CheckSwitchState();
             if (!_cntx.jumpInput || _cntx.jumpTimeCounter < 0 || _cntx.isHeadBumping)
             {
-                SwitchState(_factory.Fall());
+                SwitchState(_factory.GetState(_States.Fall));
             }
         }
 
         public void Jumping(Vector2 JumpDirection)
         {
-            
+
         }
     }
-}

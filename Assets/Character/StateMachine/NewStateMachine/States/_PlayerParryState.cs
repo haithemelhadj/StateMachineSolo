@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-namespace StateMachine
-{
-    public class _PlayerParryState : _PlayerActionState
+using StateMachine;
+[CreateAssetMenu(fileName = "Parry State", menuName = "Player/States/Parry")]
+public class _PlayerParryState : _PlayerActionState
     {
         public _PlayerParryState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
         public override void EnterState()
@@ -29,4 +28,4 @@ namespace StateMachine
             base.CheckSwitchState();
         }
     }
-}
+

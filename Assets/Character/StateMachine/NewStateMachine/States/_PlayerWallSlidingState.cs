@@ -1,8 +1,8 @@
 using UnityEngine;
+using StateMachine;
 
-namespace StateMachine
-{
-    public class _PlayerWallSlidingState : _PlayerMovementState
+[CreateAssetMenu(fileName = "WallSlide State", menuName = "Player/States/WallSlide")]
+public class _PlayerWallSlidingState : _PlayerMovementState
     {
         public _PlayerWallSlidingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
         public override void EnterState()
@@ -35,22 +35,19 @@ namespace StateMachine
             base.CheckSwitchState();
             if (_cntx.isGrounded)
             {
-                SwitchState(_factory.Grounded());
+                SwitchState(_factory.GetState(_States.Grounded));
             }
             if (_cntx.jumpInputDown || _cntx.willBufferJump)
             {
                 _cntx.wallJumpPressTime = Time.time;
-                SwitchState(_factory.Jump());
+                SwitchState(_factory.GetState(_States.Jump));
                 //Debug.Log("Wall Jumping");
                 //SwitchState(_factory.WallJump());
             }
             if (!_cntx.isGrounded && !_cntx.isHuggingWall)
             {
-                SwitchState(_factory.Fall());
+                SwitchState(_factory.GetState(_States.Fall));
             }
         }
 
     }
-}
-
-

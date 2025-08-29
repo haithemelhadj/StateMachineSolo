@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - attack
   - Enemy
+  - Parry
+  - Defend
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - 
-  - 
-  - 
-  - 
+  - HitBox
+  - HurtBox
+  - Player
+  - Enemy
   - 
   - 
   - 

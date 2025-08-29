@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afa619977fded0469d77a339a253eb5, type: 3}
+  m_Name: _PlayerStates
+  m_EditorClassIdentifier: 
+  states:
+  - state: 2
+    stateClass: {fileID: 11400000, guid: c38b356d2eeca1846845b805dd823393, type: 2}
+  - state: 3
+    stateClass: {fileID: 11400000, guid: 33b2fda520535ff479d226d95dad4ef2, type: 2}
+  - state: 4
+    stateClass: {fileID: 11400000, guid: f27482bff4614904ca8127de6a5931d7, type: 2}
+  - state: 5
+    stateClass: {fileID: 11400000, guid: 96d12d999df2e9b49a39931785cd142b, type: 2}
+  - state: 6
+    stateClass: {fileID: 11400000, guid: 89e0b8a84edc5794a8b6bfe7f96dec32, type: 2}
+  - state: 7
+    stateClass: {fileID: 11400000, guid: 6777cf3f589956748be1dc8d420c761d, type: 2}
+  - state: 8
+    stateClass: {fileID: 11400000, guid: 96d12d999df2e9b49a39931785cd142b, type: 2}
+  - state: 9
+    stateClass: {fileID: 11400000, guid: a4fc8ab5275c5dd4a9b5e65e17071276, type: 2}
+  - state: 10
+    stateClass: {fileID: 11400000, guid: 2a45faf3f66fe964db627ab01a22d947, type: 2}

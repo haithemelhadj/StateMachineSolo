@@ -1,7 +1,8 @@
 using UnityEngine;
+using StateMachine;
 
-namespace StateMachine
-{
+[CreateAssetMenu(fileName = "WallJump State", menuName = "Player/States/WallJump")]
+
     public class _PlayerWallJumpState : _PlayerJumpState
     {
         public _PlayerWallJumpState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
@@ -31,16 +32,16 @@ namespace StateMachine
             base.CheckSwitchState();
             if (_cntx.jumpInputUp)
             {
-                SwitchState(_factory.Fall());
+                SwitchState(_factory.GetState(_States.Fall));
             }
             if (!_cntx.isWallJumping)
             {
-                SwitchState(_factory.Jump());
+                SwitchState(_factory.GetState(_States.Jump));
 
             }
             if (_cntx.dashInputDown)
             {
-                SwitchState(_factory.Dash());
+                SwitchState(_factory.GetState(_States.Dash));
             }
         }
 
@@ -51,5 +52,3 @@ namespace StateMachine
         }
         /**/
     }
-}
-

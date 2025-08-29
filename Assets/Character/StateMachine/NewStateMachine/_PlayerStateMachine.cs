@@ -8,19 +8,19 @@ namespace StateMachine
         //current state
         public _PlayerBaseState _currentState;
         //parallel state
-        public _PlayerBaseState _currentParallelState;
-        _PlayerBaseState attackParallelState;
-        _PlayerBaseState iFramesParallelState;
-
+        //public _PlayerBaseState _currentParallelState;
+        //_PlayerBaseState attackParallelState;
+        //_PlayerBaseState iFramesParallelState;
+        public _PlayerStateConfig playerStates;
         [Header("visualising")]
         public string currentActiveState;
 
         //Awake
         private void InitializeState()
         {
-            _states = new _PlayerStateFactory(this);
-            _currentState = _states.Grounded();
-            attackParallelState = _states.Attack();
+            _states = new _PlayerStateFactory(this, playerStates);
+            _currentState = _states.GetState(_States.Grounded);
+            //attackParallelState = _states.Attack();
             //iFramesParallelState = _states.iFrames();
             _currentState.EnterState();
         }
@@ -56,14 +56,14 @@ namespace StateMachine
         #region Update Methods
         private void StatesLogicHandler()
         {
-            _currentState.UpdateStates();
+            _currentState.UpdateState();
             ParallelStatesHandler();
         }
         private void ParallelStatesHandler()
         {
             if (AttackInputDown)
             {
-                attackParallelState.EnterState();
+                //attackParallelState.EnterState();
                 //Debug.Log("attacking");
             }
         }
@@ -546,7 +546,7 @@ namespace StateMachine
                 playerRb.AddForce(knockBackDirection, ForceMode2D.Impulse);
                 //trigger animation
                 playerAnimator.SetBool("Getting Hit", true);
-                iFramesParallelState.EnterState();
+                //iFramesParallelState.EnterState();
             }
         }
 

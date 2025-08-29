@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using StateMachine;
 
-namespace StateMachine
-{
+[CreateAssetMenu(fileName = "Dash State", menuName = "Player/States/Dash")]
     public class _PlayerDashState : _PlayerActionState
     {
         public _PlayerDashState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
@@ -36,12 +36,12 @@ namespace StateMachine
 
             if (_cntx.isHuggingWall)
             {
-                SwitchState(_factory.WallSlide());
+                SwitchState(_factory.GetState(_States.WallSlide));
                 //Debug.Log("Switching to WallSlide from Dash");
             }
             else if (!_cntx.isDashing)
             {
-                SwitchState(_factory.Fall());
+                SwitchState(_factory.GetState(_States.Fall));
                 //Debug.Log("Switching to Fall from Dash");
             }
         }
@@ -126,4 +126,4 @@ namespace StateMachine
 
         #endregion
     }
-}
+

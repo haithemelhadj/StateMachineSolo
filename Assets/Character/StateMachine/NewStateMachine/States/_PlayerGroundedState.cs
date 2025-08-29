@@ -1,6 +1,7 @@
 using UnityEngine;
 namespace StateMachine
 {
+    [CreateAssetMenu(fileName = "Grounded State", menuName = "Player/States/Grounded")]
     public class _PlayerGroundedState : _PlayerMovementState
     {
         public _PlayerGroundedState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
@@ -43,11 +44,11 @@ namespace StateMachine
             base.CheckSwitchState();
             if (_cntx.jumpInputDown || _cntx.willBufferJump)
             {
-                SwitchState(_factory.Jump());
+                SwitchState(_factory.GetState(_States.Jump));
             }
             if (!_cntx.isGrounded && _cntx.playerRb.velocity.y < 0f)
             {
-                SwitchState(_factory.Fall());
+                SwitchState(_factory.GetState(_States.Fall));
 
             }
 

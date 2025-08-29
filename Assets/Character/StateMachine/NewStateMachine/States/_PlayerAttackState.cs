@@ -1,15 +1,15 @@
 using UnityEngine;
+using StateMachine;
 
-namespace StateMachine
-{
-    public class _PlayerAttackState : _PlayerActionState
+[CreateAssetMenu(fileName = "Attack State", menuName = "Player/States/Attack")]
+public class _PlayerAttackState : _PlayerActionState
     {
         public _PlayerAttackState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
 
         public override void EnterState()
         {
             base.EnterState();
-            Attack();
+            //Attack();
         }
         public override void UpdateState()
         {
@@ -62,4 +62,4 @@ namespace StateMachine
 
 
     }
-}
+

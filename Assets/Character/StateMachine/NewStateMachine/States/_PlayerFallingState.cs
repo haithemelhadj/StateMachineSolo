@@ -1,9 +1,9 @@
 using UnityEngine;
 
+using StateMachine;
 
-namespace StateMachine
-{
-    public class _PlayerFallingState : _PlayerMovementState
+[CreateAssetMenu(fileName = "Fall State", menuName = "Player/States/Fall")]
+public class _PlayerFallingState : _PlayerMovementState
     {
         public _PlayerFallingState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
 
@@ -44,17 +44,17 @@ namespace StateMachine
             base.CheckSwitchState();
             if (_cntx.isGrounded)
             {
-                SwitchState(_factory.Grounded());
+                SwitchState(_factory.GetState(_States.Grounded));
                 //_cntx.playerAnimator.SetBool("isJumping", false);
             }
             if (_cntx.canCyoteJump && _cntx.jumpInputDown)
             {
-                SwitchState(_factory.Jump());
+                SwitchState(_factory.GetState(_States.Jump));
             }
 
             if (!_cntx.isGrounded && _cntx.isHuggingWall)
             {
-                SwitchState(_factory.WallSlide());
+                SwitchState(_factory.GetState(_States.WallSlide));
                 //_cntx.playerAnimator.SetBool("isJumping", false);
             }
         }
@@ -94,4 +94,3 @@ namespace StateMachine
             }
         }
     }
-}
