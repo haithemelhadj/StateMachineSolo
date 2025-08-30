@@ -1288,9 +1288,6 @@ MonoBehaviour:
   walkInput: 99
   walkInputDown: 0
   holdToWalk: 0
-  normalGravityScale: 0
-  lowGravityScale: 0
-  shortHopMultiplier: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0
@@ -1329,13 +1326,19 @@ MonoBehaviour:
   dashCounter: 0
   attackKey: 323
   AttackInputDown: 0
-  atkObj: {fileID: 0}
+  atkObj: {fileID: 17187836}
   atkAnimator: {fileID: 0}
   atkRange: 1.2
   atkTime: 0.2
   atkDistance: 0
   atkPosition: {x: 0, y: 0}
   atkRotation: 0
+  defendKey: 0
+  defendInput: 0
+  defendInputDown: 0
+  defendInputUp: 0
+  parryObj: {fileID: 0}
+  defendObj: {fileID: 0}
   InterractionKey: 101
   Interraction: 0
   bumpForce: 1.5
@@ -1604,9 +1607,6 @@ MonoBehaviour:
   walkInput: 0
   walkInputDown: 0
   holdToWalk: 0
-  normalGravityScale: 0
-  lowGravityScale: 0
-  shortHopMultiplier: 0
   jumpKey: 32
   jumpInput: 0
   jumpInputDown: 0
@@ -1652,6 +1652,12 @@ MonoBehaviour:
   atkDistance: 0
   atkPosition: {x: 0, y: 0}
   atkRotation: 0
+  defendKey: 0
+  defendInput: 0
+  defendInputDown: 0
+  defendInputUp: 0
+  parryObj: {fileID: 0}
+  defendObj: {fileID: 0}
   InterractionKey: 101
   Interraction: 0
   bumpForce: 1.5

@@ -1,7 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using StateMachine;
-using UnityEngine;
 
 enum States
 {
@@ -24,15 +21,15 @@ enum States
     WallJump
     /**/
 }
-public class StateFactoryExmp 
+public class StateFactoryExmp
 {
     StateMachineExmp context;
     Dictionary<States, BaseStateExmp> _states = new Dictionary<States, BaseStateExmp>();
     public StateFactoryExmp(StateMachineExmp currentContext)
     {
         context = currentContext;
-        _states[States.Action] = new AnyStateCopyExmp(context,this);
-        _states[States.Movement] = new AnyStateCopyExmp(context,this);
+        _states[States.Action] = new AnyStateCopyExmp(context, this);
+        _states[States.Movement] = new AnyStateCopyExmp(context, this);
     }
 
     public BaseStateExmp None()

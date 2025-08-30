@@ -1,22 +1,23 @@
-public class AiTemplateState : AiBaseState
+
+public class ToCopy : _PlayerBaseState
 {
-    public AiTemplateState(AiStateMachine currentContext, AiStateFactory StateFactory)
-        : base(currentContext, StateFactory)
-    {
-        //_isRootState = true;
-    }
+    public ToCopy(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory)
+            : base(currentContext, playerStateFactory) { }
     public override void EnterState()
     {
         //base.EnterState();
     }
     public override void UpdateState()
     {
-        CheckSwitchState();
         //base.UpdateState();
     }
     public override void FixedUpdateState()
     {
         //base.FixedUpdateState();
+    }
+    public override void LateUpdateState()
+    {
+        //base.LateUpdateState();
     }
     public override void ExitState()
     {

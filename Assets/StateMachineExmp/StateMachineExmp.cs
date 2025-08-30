@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using StateMachine;
 using UnityEngine;
 
 public class StateMachineExmp : MonoBehaviour

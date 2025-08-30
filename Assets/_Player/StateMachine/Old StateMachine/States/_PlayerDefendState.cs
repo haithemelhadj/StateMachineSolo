@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class AiAttackState : AiActionState
+[CreateAssetMenu(fileName = "Defend State", menuName = "Player/States/Defend")]
+public class _PlayerDefendState : _PlayerActionState // _PlayerMovementState
 {
-    public AiAttackState(AiStateMachine currentContext, AiStateFactory StateFactory) : base(currentContext, StateFactory) { }
-
+    public _PlayerDefendState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("attack started");
-        SwitchState(_factory.Chase());
     }
     public override void UpdateState()
     {
@@ -27,5 +25,5 @@ public class AiAttackState : AiActionState
     {
         base.CheckSwitchState();
     }
-
 }
+

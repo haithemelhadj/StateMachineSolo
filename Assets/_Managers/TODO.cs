@@ -29,4 +29,13 @@ public class TODO
     * add slopes
     * find a way to make parallel states work
     */
+
+    /*
+     * 
+     * 
+     */
+
+    //make wall jump on the same wall can go higher like HK = make player can move during jump and can jump heigher 
+    //add new mechanic to wall slide is that the player can run to the wall and gain extra hight and jump distance 
+    //wall jump doesnt continue jumping like a normal jump = wall jumping only adds X force and player jumps normally
 }

@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class AiAttackState : AiActionState
+[CreateAssetMenu(fileName = "Parry State", menuName = "Player/States/Parry")]
+public class _PlayerParryState : _PlayerActionState
 {
-    public AiAttackState(AiStateMachine currentContext, AiStateFactory StateFactory) : base(currentContext, StateFactory) { }
-
+    public _PlayerParryState(_PlayerStateMachine currentContext, _PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) { }
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("attack started");
-        SwitchState(_factory.Chase());
     }
     public override void UpdateState()
     {
@@ -27,5 +25,5 @@ public class AiAttackState : AiActionState
     {
         base.CheckSwitchState();
     }
-
 }
+
