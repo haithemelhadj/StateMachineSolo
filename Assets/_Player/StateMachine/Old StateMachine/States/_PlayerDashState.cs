@@ -58,9 +58,9 @@ public class _PlayerDashState : _PlayerActionState
         _cntx.playerRb.gravityScale = 0f;
         _cntx.playerRb.constraints = (RigidbodyConstraints2D.FreezePositionY);
         //stop jumping
-        _cntx.isJumping = false;
+        //_cntx.isJumping = false;
         //set jumping animation to stop
-        _cntx.playerAnimator.SetBool("isJumping", _cntx.isJumping);
+        _cntx.playerAnimator.SetBool("isJumping", false);
         //null velocity           
         _cntx.playerRb.velocity = Vector2.zero;
         //set dash direction if is wall sliding
@@ -97,7 +97,7 @@ public class _PlayerDashState : _PlayerActionState
 
         //stop jumping and set jumping animation to stop
         //_cntx.playerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
-        _cntx.isJumping = false;
+        //_cntx.isJumping = false;
         _cntx.playerAnimator.SetBool("isJumping", false);
 
         //null velocity

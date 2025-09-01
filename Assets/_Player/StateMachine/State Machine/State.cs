@@ -1,17 +1,26 @@
 using UnityEngine;
-using SM;
+//using SM;
 
-public abstract class State
+public abstract class State : ScriptableObject
 {
     protected float time { get; set; }
-    protected float fixedtime { get; set; }
-    protected float latetime { get; set; }
+    protected float fixedTime { get; set; }
+    protected float lateTime { get; set; }
+    protected float exitTime { get; set; }
 
-    public StateMachine stateMachine;
+    protected StateMachine stateMachine;
+    protected StateFactory factory;
+    protected Context currentContext;
 
-    public virtual void OnEnter(StateMachine _stateMachine)
+    public void Initialize(StateMachine stateMachine, StateFactory factory,Context currentContext)
     {
-        stateMachine = _stateMachine;
+        this.stateMachine = stateMachine;
+        this.factory = factory;
+        this.currentContext = currentContext;
+    }
+    public virtual void OnEnter()
+    {
+        stateMachine.currentStateName = this.ToString();
     }
 
 
@@ -22,17 +31,54 @@ public abstract class State
 
     public virtual void OnFixedUpdate()
     {
-        fixedtime += Time.deltaTime;
+        fixedTime += Time.deltaTime;
     }
     public virtual void OnLateUpdate()
     {
-        latetime += Time.deltaTime;
+        lateTime += Time.deltaTime;
+        CheckSwitchState();
     }
 
     public virtual void OnExit()
     {
+        exitTime = Time.time;
+    }
+    public virtual void CheckSwitchState()
+    {
 
     }
+
+
+    protected void SwitchState(State newState)
+    {
+        OnExit();
+        newState.OnEnter();
+        stateMachine.currentState = newState;
+    }
+
+
+    //public void SetNextStateToMain()
+    //{
+    //    nextState = mainStateType;
+    //}
+
+    //private void SetState(State _newState)
+    //{
+    //    if (currentState != null)
+    //    {
+    //        currentState.OnExit();
+    //    }
+    //    currentState = _newState;
+    //    currentState.OnEnter(this);
+    //}
+
+    //public void SetNextState(State _newState)
+    //{
+    //    if (_newState != null)
+    //    {
+    //        nextState = _newState;
+    //    }
+    //}
 
     #region Passthrough Methods
 

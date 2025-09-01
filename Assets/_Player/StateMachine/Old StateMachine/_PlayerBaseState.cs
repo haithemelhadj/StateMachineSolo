@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Base State", menuName = "Player/States/Base")]
+//[CreateAssetMenu(fileName = "Base State", menuName = "Player/States/Base")]
 public abstract class _PlayerBaseState : ScriptableObject
 {
     protected _PlayerStateMachine _cntx;

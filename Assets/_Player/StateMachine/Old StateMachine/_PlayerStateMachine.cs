@@ -156,7 +156,6 @@ public class _PlayerStateMachine : MonoBehaviour
     [Header("Ground check")]
     public LayerMask whatIsGround;
     [SerializeField] public bool isGrounded;
-    [SerializeField] public bool isHeadBumping;
     public float extraGroundCheckDistance = 0.01f;
 
     public void GroundCheck()
@@ -190,7 +189,8 @@ public class _PlayerStateMachine : MonoBehaviour
 
     #region Head Check
     [Header("Head Check")]
-    [SerializeField] public bool isHeadBumped;
+    //[SerializeField] public bool isHeadBumped;
+    [SerializeField] public bool isHeadBumping;
     public float extraHeadCheckDistance = 0.01f;
 
     public void HeadCheck()
@@ -330,7 +330,7 @@ public class _PlayerStateMachine : MonoBehaviour
     [SerializeField] public bool jumpInput;
     [SerializeField] public bool jumpInputDown;
     [SerializeField] public bool jumpInputUp;
-    [SerializeField] public bool isJumping;
+    //[SerializeField] public bool isJumping;
 
     public void GetJumpInput()
     {

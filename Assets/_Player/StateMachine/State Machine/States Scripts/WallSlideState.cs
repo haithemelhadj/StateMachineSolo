@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "WallSlide State", menuName = "States List/Wall Slide")]
+public class WallSlideState : LocomotionState
+{
+    public override void CheckSwitchState()
+    {
+        base.CheckSwitchState();
+        if (currentContext.isGrounded)
+        {
+            SwitchState(factory.GetState(_States.Grounded));
+        }
+        if (currentContext.jumpInput || currentContext.willBufferJump)
+        {
+            currentContext.wallJumpPressTime = Time.time;
+            SwitchState(factory.GetState(_States.Jump));
+            //Debug.Log("Wall Jumping");
+            //SwitchState(_factory.WallJump());
+        }
+        if (!currentContext.isGrounded && !currentContext.isHuggingWall)
+        {
+            SwitchState(factory.GetState(_States.Fall));
+        }
+    }
+
+    public override void OnEnter()
+    {
+        base.OnEnter();
+        currentContext.isWallSliding = true;
+        currentContext.dashReset = true;
+        currentContext.Animator.SetBool("isWallSliding", currentContext.isWallSliding);
+    }
+
+    public override void OnExit()
+    {
+        base.OnExit();
+        currentContext.isWallSliding = false;
+        currentContext.Animator.SetBool("isWallSliding", currentContext.isWallSliding);
+
+    }
+
+    public override void OnFixedUpdate()
+    {
+        base.OnFixedUpdate();
+        currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, -currentContext.wallSlidingSpeed);
+    }
+
+    public override void OnLateUpdate()
+    {
+        base.OnLateUpdate();
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+    }
+}

@@ -11,10 +11,13 @@ public class _PlayerMovementState : _PlayerBaseState
     }
     public override void UpdateState()
     {
-        //LedgeBump();
+
     }
     public override void FixedUpdateState()
     {
+        _cntx.playerAnimator.SetFloat("Hvelocity", _cntx.playerRb.velocity.x);
+        _cntx.playerAnimator.SetFloat("Yvelocity", _cntx.playerRb.velocity.y);
+
         Move();
         CheckSwitchState();
     }
@@ -29,9 +32,6 @@ public class _PlayerMovementState : _PlayerBaseState
 
     public override void CheckSwitchState()
     {
-        _cntx.playerAnimator.SetFloat("Hvelocity", _cntx.playerRb.velocity.x);
-        _cntx.playerAnimator.SetFloat("Yvelocity", _cntx.playerRb.velocity.y);
-
         if (_cntx.dashInputDown && _cntx.canDashCheck())
         {
             SwitchState(_factory.GetState(_States.Dash));
