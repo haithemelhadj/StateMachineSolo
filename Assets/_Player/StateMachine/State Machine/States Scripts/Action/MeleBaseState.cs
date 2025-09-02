@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "Enter Attack State", menuName = "States List/Enter Attack")]
-public class EnterAttackState : MeleConbatState
+public class MeleBaseState : ActionState
 {
+    
+    public bool shouldCombo;
+    public string attackName;
+    public int attackIndex;
+
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -33,5 +33,9 @@ public class EnterAttackState : MeleConbatState
     public override void OnUpdate()
     {
         base.OnUpdate();
+        if (currentContext.attackInputDown)
+        {
+            shouldCombo = true;
+        }
     }
 }

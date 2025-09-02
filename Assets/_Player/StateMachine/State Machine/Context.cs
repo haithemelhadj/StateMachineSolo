@@ -39,26 +39,15 @@ public class Context : MonoBehaviour
     #region Values
     [Header("-----VALUES-----")]
     public bool HoldToWalk;
-    public float Height;
-    public float Width;
-    public Vector3 localScale;
+    [HideInInspector] public float Height;
+    [HideInInspector] public float Width;
+    [HideInInspector] public Vector3 localScale;
     public LayerMask whatIsGround;
     public float extraGroundCheckDistance = 0.01f;
     public float extraHeadCheckDistance = 0.01f;
     #endregion
 
 
-
-    #region Flags
-    [Header("-----FLAGS-----")]
-    public bool isFacingRight;
-    public bool isHeadBumping;
-    public bool canDoubleJump;
-    public bool isTouchingWall;
-    public bool isWallSliding;
-    public bool isWallJumping;
-    public bool isDashing;
-    #endregion
 
     #region Get Inputs
 
@@ -77,10 +66,11 @@ public class Context : MonoBehaviour
     [Header("-----Input FLAGS-----")]
     public float hInput;
     public float vInput;
-    //public bool speedChangeInputDown;
     public bool walkSpeedInput;
     public bool interactionInputDown;
     public bool jumpInput;
+    public bool jumpInputDown;
+    public bool jumpInputUp;
     public bool dashInputDown;
     public bool attackInputDown;
     public bool defendInput;
@@ -88,18 +78,23 @@ public class Context : MonoBehaviour
     #endregion
     public void GetInputs(InputsHandler handler)
     {
-        hInput = handler.GetAxisInputs(horizontalAxis);
-        vInput = handler.GetAxisInputs(verticalAxis);
+        hInput = handler.GetRawAxisInputs(horizontalAxis);
+        vInput = handler.GetRawAxisInputs(verticalAxis);
         SetAnimatorMoveSpeed();
+        SetAnimatorMoveVelocitySpeed();
 
         if (HoldToWalk)
             walkSpeedInput = handler.GetKey(speedChangeKey);
         else if (handler.GetKeyDown(speedChangeKey))
             walkSpeedInput = !walkSpeedInput;
 
+        //Jump
+        jumpInputDown = handler.GetKeyDown(jumpKey);
         jumpInput = handler.GetKey(jumpKey);
+        jumpInputUp= handler.GetKeyUp(jumpKey);
         if (handler.GetKeyUp(jumpKey))
             willBufferJump = false;
+
         defendInput = handler.GetKey(defendKey);
 
         dashInputDown = handler.GetKeyDown(dashKey);
@@ -114,18 +109,23 @@ public class Context : MonoBehaviour
         Animator.SetFloat("HInput", Mathf.Abs(hInput * currentMoveSpeed));
         Animator.SetFloat("YInput", Mathf.Abs(vInput * currentMoveSpeed));
     }
+    public void SetAnimatorMoveVelocitySpeed()
+    {
+        Animator.SetFloat("Hvelocity", Rb.velocity.x);
+        Animator.SetFloat("Yvelocity", Rb.velocity.y);
+    }
 
     #endregion
 
     #endregion
 
+    public bool isHeadBumping;
     #region Checks 
     //checks
     #region Ground check
     [Header("Ground check")]
-    public float LastTimeGrounded;
-    public float LastGrounded;
-    public bool isGrounded;
+    [HideInInspector] public float LastTimeGrounded;
+    [HideInInspector] public bool isGrounded;
     public void Checks()
     {
         GroundCheck();
@@ -141,14 +141,17 @@ public class Context : MonoBehaviour
         if (hitLeft.collider != null || hitRight.collider != null)
         {
             isGrounded = true;
+            Animator.SetBool("isGrounded", true);
         }
         else
         {
             isGrounded = false;
+            Animator.SetBool("isGrounded", false);
         }
     }
     void OnDrawGizmos()
     {
+        // draw ground check ray cast
         Vector3 rightRayOrigin = transform.position + new Vector3(Width / 2, 0, 0);
         Vector3 leftRayOrigin = transform.position - new Vector3(Width / 2, 0, 0);
 
@@ -157,6 +160,21 @@ public class Context : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(rightRayOrigin, rightRayOrigin + Vector3.down * rayLength);
         Gizmos.DrawLine(leftRayOrigin, leftRayOrigin + Vector3.down * rayLength);
+
+        //draw wall detection ray cast
+        Vector3 wallRayUpOrigin = transform.position + new Vector3(0, Height / 2, 0);
+        Vector3 wallRayOrigin = transform.position;// + new Vector3(0, Height / 2, 0);
+        Vector3 wallRayBotOrigin = transform.position - new Vector3(0, Height / 2, 0);
+        Vector3 wallRayDirection = new Vector3(transform.localScale.x, 0f, 0f).normalized;
+
+        float wallRayLength = Width / 2 + extraGroundCheckDistance;
+
+        Gizmos.color = Color.blue; // Different color for clarity
+        Gizmos.DrawLine(wallRayUpOrigin, wallRayUpOrigin + wallRayDirection * wallRayLength);
+        Gizmos.DrawLine(wallRayOrigin, wallRayOrigin + wallRayDirection * wallRayLength);
+        Gizmos.DrawLine(wallRayBotOrigin, wallRayBotOrigin + wallRayDirection * wallRayLength);
+
+
     }
 
     #endregion
@@ -190,8 +208,8 @@ public class Context : MonoBehaviour
     #region Wall Detection
     [Header("Wall Check")]
     public LayerMask whatIsWall;
-    public bool isHuggingWall = false;
-    public float LastTimeWalled;
+    [HideInInspector] public bool isHuggingWall = false;
+    [HideInInspector] public float LastTimeWalled;
     public void WallCheck()
     {
         isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle()) || (WallDetectionLower() && WallDetectionMiddle());
@@ -218,34 +236,40 @@ public class Context : MonoBehaviour
 
     #region Move
     [Header("Move")]
-    public float currentMoveSpeed;
-    public float currentMaxMoveSpeed;
-    public float currentAcceleration;
-    public float currentDeceleration;
-
-    #endregion
-    #region 
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentMaxMoveSpeed;
+    [HideInInspector] public float currentAcceleration;
+    [HideInInspector] public float currentDeceleration;
 
     #endregion
 
     #region Fall
     [Header("Fall")]
-    public float fasterFallMultiplier;
     public float maxFallSpeed;
+    public float fasterFallMultiplier;
 
     #endregion
 
     #region Jump
     [Header("Jump")]
-    public float jumpPressTime;
-    public float jumpTimeCounter;
     public float jumpForce;
-    public float maxJumpTime;
-    public Vector2 jumpDirection;
+    [HideInInspector] public Vector2 jumpDirection;
 
+
+    #region Double Jump
+    [Header("Variable Jump")]
+    public bool canDoubleJump;
+    public int numberOfJumps;
+    [HideInInspector] public int remaningJumps;
+
+
+    #endregion
 
     #region Variable Jump
     [Header("Variable Jump")]
+    public float maxJumpTime;
+    [HideInInspector] public float jumpTimeCounter;
+    [HideInInspector] public float jumpPressTime;
 
 
     #endregion
@@ -253,20 +277,20 @@ public class Context : MonoBehaviour
 
     #region Buffer Jump
     [Header("Buffer Jump")]
-    public bool willBufferJump;
+    [HideInInspector] public bool willBufferJump;
     public float jumpBufferTime = 0.1f;
 
     #endregion
 
     #region Cyote Jump
     [Header("Cyote Jump")]
-    public bool canCyoteJump;
+    [HideInInspector] public bool canCyoteJump;
     public float cyoteTime;
 
     #endregion
     #region wall jump
     [Header("Wall Jump")]
-    public float wallJumpPressTime;
+    [HideInInspector] public float wallJumpPressTime;
     public float wallJumpDuration;
     public Vector2 wallJumpDirection;
 
@@ -274,7 +298,7 @@ public class Context : MonoBehaviour
 
     #endregion
 
-    #region
+    #region Wall Slide
     [Header("Wall Slide")]
     public float wallSlidingSpeed;
     #endregion
@@ -283,14 +307,11 @@ public class Context : MonoBehaviour
 
     [Header("Dash")]
     public float dashForce;
-    public float dashTime;
+    public float dashDuration;
     public float dashCd;
-
-    public float lastDashFinishTime;
-    public bool dashReset;
-    public float dashDirection;
-    public float lastDash;
-    public bool dashCounter;
+    [HideInInspector] public bool isDashing;
+    [HideInInspector] public float lastDashFinishTime;
+    [HideInInspector] public bool dashReset;
 
     public bool canDashCheck()
     {
@@ -309,6 +330,31 @@ public class Context : MonoBehaviour
         }
         return false;
     }
+    #endregion
+
+
+    #region Defend
+    [Header("Defend")]
+    public GameObject defendHitBox;
+    #endregion
+
+    #region Parry
+    [Header("Defend")]
+    public GameObject parryHitBox;
+    #endregion
+
+    #region Attack
+    [Header("Attack")]
+    public GameObject attackHitBox;
+    #endregion
+
+    #region Interact
+    [Header("Interact")]
+    public bool isInteracting;
+    #endregion
+
+    #region 
+
     #endregion
 }
 

@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7923bd3ae94bee341b881d64d25026f9, type: 3}
-  m_Name: Grounded State
+  m_Script: {fileID: 11500000, guid: ffc060ad62073d546bedd0822b83e29b, type: 3}
+  m_Name: Ground Attack State
   m_EditorClassIdentifier: 
-  walkMaxSpeed: 2.5
-  walkAcceleration: 80
-  walkDeceleration: 200
-  runMaxSpeed: 12
-  runAcceleration: 80
-  runDeceleration: 200
+  duration: 0.5
+  shouldCombo: 0
+  attackName: ground Attack
+  attackIndex: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Jump State
   m_EditorClassIdentifier: 
   jumpMaxSpeed: 12
-  jumpAcceleration: 40
-  jumpDeceleration: 50
+  jumpAcceleration: 80
+  jumpDeceleration: 100

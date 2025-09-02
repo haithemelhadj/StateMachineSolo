@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Exit Attack State", menuName = "States List/Exit Attack")]
-public class ExitAttackState : MeleConbatState
+public class ExitAttackState : MeleBaseState
 {
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
+        if (Time.time - enterTime >= duration)
+        {
+            SwitchState(factory.GetState(_States.Grounded));
+        }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
+        //attack
+        currentContext.animatorController.UpdateAnimatortrrigger(attackName);
+        Debug.Log("started attack " + attackName);
     }
 
     public override void OnExit()
@@ -33,5 +38,6 @@ public class ExitAttackState : MeleConbatState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
     }
 }

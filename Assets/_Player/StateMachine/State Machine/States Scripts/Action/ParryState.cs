@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Attack State", menuName = "States List/Attack")]
-public class AttackState : MeleConbatState
+public class ParryState : MeleBaseState
 {
     public override void CheckSwitchState()
     {

@@ -3,7 +3,8 @@ using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
-    protected float time { get; set; }
+    protected float enterTime { get; set; }
+    protected float updateTime { get; set; }
     protected float fixedTime { get; set; }
     protected float lateTime { get; set; }
     protected float exitTime { get; set; }
@@ -21,12 +22,13 @@ public abstract class State : ScriptableObject
     public virtual void OnEnter()
     {
         stateMachine.currentStateName = this.ToString();
+        enterTime=Time.time;
     }
 
 
     public virtual void OnUpdate()
     {
-        time += Time.deltaTime;
+        updateTime += Time.deltaTime;
     }
 
     public virtual void OnFixedUpdate()
@@ -55,30 +57,6 @@ public abstract class State : ScriptableObject
         newState.OnEnter();
         stateMachine.currentState = newState;
     }
-
-
-    //public void SetNextStateToMain()
-    //{
-    //    nextState = mainStateType;
-    //}
-
-    //private void SetState(State _newState)
-    //{
-    //    if (currentState != null)
-    //    {
-    //        currentState.OnExit();
-    //    }
-    //    currentState = _newState;
-    //    currentState.OnEnter(this);
-    //}
-
-    //public void SetNextState(State _newState)
-    //{
-    //    if (_newState != null)
-    //    {
-    //        nextState = _newState;
-    //    }
-    //}
 
     #region Passthrough Methods
 

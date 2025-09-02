@@ -12,12 +12,10 @@ public class WallSlideState : LocomotionState
         {
             SwitchState(factory.GetState(_States.Grounded));
         }
-        if (currentContext.jumpInput || currentContext.willBufferJump)
+        if (currentContext.jumpInputDown || currentContext.willBufferJump)
         {
             currentContext.wallJumpPressTime = Time.time;
             SwitchState(factory.GetState(_States.Jump));
-            //Debug.Log("Wall Jumping");
-            //SwitchState(_factory.WallJump());
         }
         if (!currentContext.isGrounded && !currentContext.isHuggingWall)
         {
@@ -28,16 +26,14 @@ public class WallSlideState : LocomotionState
     public override void OnEnter()
     {
         base.OnEnter();
-        currentContext.isWallSliding = true;
         currentContext.dashReset = true;
-        currentContext.Animator.SetBool("isWallSliding", currentContext.isWallSliding);
+        currentContext.Animator.SetBool("isWallSliding", true);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        currentContext.isWallSliding = false;
-        currentContext.Animator.SetBool("isWallSliding", currentContext.isWallSliding);
+        currentContext.Animator.SetBool("isWallSliding", false);
 
     }
 

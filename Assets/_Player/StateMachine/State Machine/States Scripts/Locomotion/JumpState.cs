@@ -14,7 +14,7 @@ public class JumpState : LocomotionState
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-        if (!currentContext.jumpInput || currentContext.jumpTimeCounter < 0 || currentContext.isHeadBumping)
+        if (currentContext.jumpInputUp || currentContext.jumpTimeCounter < 0 || currentContext.isHeadBumping)
         {
             SwitchState(factory.GetState(_States.Fall));
         }
@@ -33,14 +33,7 @@ public class JumpState : LocomotionState
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, 0f);
 
         // Apply initial jump impulse
-
         Jump();
-
-        //.
-        //set air movement speed
-        //currentContext.c_MaxHSpeed = currentContext.f_MaxHSpeed;
-        //currentContext.c_Acceleration = currentContext.f_Acceleration;
-        //currentContext.c_Deceleration = currentContext.f_Deceleration;
     }
 
     public override void OnUpdate()
@@ -63,9 +56,6 @@ public class JumpState : LocomotionState
         base.OnExit();
         currentContext.willBufferJump = false;
         currentContext.Animator.SetBool("isJumping", false);
-        //currentContext.c_MaxHSpeed = currentContext.j_MaxHSpeed;
-        //currentContext.c_Acceleration = currentContext.j_Acceleration;
-        //currentContext.c_Deceleration = currentContext.j_Deceleration;
 
 
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.Rb.velocity.y * 0.5f);
@@ -83,7 +73,7 @@ public class JumpState : LocomotionState
             currentContext.jumpDirection = new Vector2(currentContext.Rb.velocity.x, currentContext.jumpForce);
         }
 
-        currentContext.Rb.velocity = currentContext.jumpDirection;// * Time.deltaTime;
+        currentContext.Rb.velocity = currentContext.jumpDirection;
     }
 
     #region change Speed Input

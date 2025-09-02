@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class ActionState : State
+[CreateAssetMenu(fileName = "Attack State", menuName = "States List/Attack")]
+public class AttackState : MeleBaseState
 {
     public override void CheckSwitchState()
     {
@@ -13,6 +13,7 @@ public class ActionState : State
     public override void OnEnter()
     {
         base.OnEnter();
+
     }
 
     public override void OnExit()

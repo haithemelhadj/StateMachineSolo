@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "Movement State", menuName = "States List/Movement")]
 public class LocomotionState : State
 {
 
@@ -43,8 +42,9 @@ public class LocomotionState : State
     {
         if (currentContext.hInput != 0f)
         {
-            currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
+                currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
             
+
             //flip character and keep it that way when no inputs
             if (!currentContext.isHuggingWall)
                 Flip();
@@ -66,11 +66,11 @@ public class LocomotionState : State
 
     public virtual void SetMoveSpeed()
     {
-        
+
     }
     #endregion
 
-    
+
 
 
 

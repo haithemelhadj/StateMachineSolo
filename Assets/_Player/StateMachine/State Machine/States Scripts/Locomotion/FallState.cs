@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Fall State", menuName = "States List/Fall")]
@@ -11,6 +9,7 @@ public class FallState : LocomotionState
     public float fallMaxSpeed;
     public float fallAcceleration;
     public float fallDeceleration;
+    public bool highFall;
     #endregion
     public override void CheckSwitchState()
     {
@@ -18,9 +17,10 @@ public class FallState : LocomotionState
         if (currentContext.isGrounded)
         {
             SwitchState(factory.GetState(_States.Grounded));
-            //currentContext.playerAnimator.SetBool("isJumping", false);
+            currentContext.animatorController.UpdateAnimatorBool("highFall", highFall);
+
         }
-        if (currentContext.canCyoteJump && currentContext.jumpInput)
+        if (currentContext.canCyoteJump && currentContext.jumpInputDown)
         {
             SwitchState(factory.GetState(_States.Jump));
         }
@@ -28,7 +28,6 @@ public class FallState : LocomotionState
         if (!currentContext.isGrounded && currentContext.isHuggingWall)
         {
             SwitchState(factory.GetState(_States.WallSlide));
-            //currentContext.playerAnimator.SetBool("isJumping", false);
         }
     }
 
@@ -59,7 +58,7 @@ public class FallState : LocomotionState
     public override void OnUpdate()
     {
         base.OnUpdate();
-        if (currentContext.jumpInput)
+        if (currentContext.jumpInputDown)
         {
             currentContext.jumpPressTime = Time.time;
             currentContext.willBufferJump = true;
@@ -71,22 +70,16 @@ public class FallState : LocomotionState
     {
         if (currentContext.Rb.velocity.y <= 0f)
         {
-            //currentContext.playerAnimator.SetBool("isJumping", false);
             //make fall speed faster
             currentContext.Rb.velocity += Vector2.up * Physics2D.gravity.y * currentContext.fasterFallMultiplier * Time.deltaTime;
             //limit fall speed 
             if (currentContext.Rb.velocity.y < currentContext.maxFallSpeed)
             {
+                highFall = true;
                 currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.maxFallSpeed);
             }
-
-        }
-        else//JumpApexControll
-        {
-            //Debug.Log("jump Apex");
-            //currentContext.playerAnimator.SetBool("isJumping", true);
-            //currentContext.playerRb.velocity= 
-            //Vector2.Lerp(currentContext.playerRb.velocity, new Vector2(currentContext.playerRb.velocity.x, 0f,0.2f);
+            else
+                highFall = false;
 
         }
 
@@ -94,7 +87,7 @@ public class FallState : LocomotionState
 
     public void CyoteTime()
     {
-        if (Time.time - currentContext.LastGrounded > currentContext.cyoteTime)// || Time.time - currentContext.LastTimeWalled > currentContext.cyoteTime)
+        if (Time.time - currentContext.LastTimeGrounded > currentContext.cyoteTime)// || Time.time - currentContext.LastTimeWalled > currentContext.cyoteTime)
         {
             currentContext.canCyoteJump = false;
         }

@@ -21,7 +21,7 @@ public class GroundedState : LocomotionState
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-        if (currentContext.jumpInput || currentContext.willBufferJump)
+        if (currentContext.jumpInputDown || currentContext.willBufferJump)
         {
             SwitchState(factory.GetState(_States.Jump));
         }
@@ -29,13 +29,18 @@ public class GroundedState : LocomotionState
         {
             SwitchState(factory.GetState(_States.Fall));
         }
+        if(currentContext.attackInputDown)
+        {
+            SwitchState(factory.GetState(_States.EnterAttack));
+
+        }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
         //animation
-        currentContext.Animator.SetBool("isGrounded", true);
+        
         //cyote time
         currentContext.canCyoteJump = false;
         currentContext.dashReset = true;
@@ -49,7 +54,6 @@ public class GroundedState : LocomotionState
     public override void OnExit()
     {
         base.OnExit();
-        currentContext.Animator.SetBool("isGrounded", false);
         currentContext.LastTimeGrounded = Time.time;
     }
 

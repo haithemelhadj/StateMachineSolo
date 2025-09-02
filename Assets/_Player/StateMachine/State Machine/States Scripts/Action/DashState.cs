@@ -10,12 +10,10 @@ public class DashState : ActionState
         if (currentContext.isHuggingWall)
         {
             SwitchState(factory.GetState(_States.WallSlide));
-            //Debug.Log("Switching to WallSlide from Dash");
         }
         else if (!currentContext.isDashing)
         {
             SwitchState(factory.GetState(_States.Fall));
-            //Debug.Log("Switching to Fall from Dash");
         }
     }
 
@@ -60,8 +58,6 @@ public class DashState : ActionState
         float originalGravity = currentContext.Rb.gravityScale;
         currentContext.Rb.gravityScale = 0f;
 
-        //stop jumping and set jumping animation to stop
-        currentContext.Animator.SetBool("isJumping", false);
 
         //null velocity
         currentContext.Rb.velocity = Vector2.zero;
@@ -74,7 +70,7 @@ public class DashState : ActionState
         currentContext.Rb.velocity = new Vector2(Mathf.Sign(currentContext.transform.localScale.x) * currentContext.dashForce, 0f);
 
         // Wait for dash duration (FPS-independent)
-        yield return new WaitForSeconds(currentContext.dashTime);
+        yield return new WaitForSeconds(currentContext.dashDuration);
 
         // Reset physics and gravity
         currentContext.Rb.gravityScale = originalGravity;
