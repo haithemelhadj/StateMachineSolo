@@ -234,13 +234,13 @@ MonoBehaviour:
   willBufferJump: 0
   jumpBufferTime: 0.1
   canCyoteJump: 0
-  cyoteTime: 0
+  cyoteTime: 0.6
   wallJumpPressTime: 0
   wallJumpDuration: 0.5
   wallJumpDirection: {x: 15, y: 25}
   wallSlidingSpeed: 0
   dashForce: 30
-  dashDuration: 0
+  dashDuration: 0.2
   dashCd: 0.2
   isDashing: 0
   lastDashFinishTime: 0

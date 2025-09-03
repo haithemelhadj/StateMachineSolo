@@ -27,6 +27,7 @@ public class GroundedState : LocomotionState
         }
         if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0f)
         {
+            currentContext.canCyoteJump = true;
             SwitchState(factory.GetState(_States.Fall));
         }
         if(currentContext.attackInputDown)

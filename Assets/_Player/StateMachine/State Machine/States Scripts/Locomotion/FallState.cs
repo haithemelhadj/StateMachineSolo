@@ -35,7 +35,6 @@ public class FallState : LocomotionState
     {
         base.OnEnter();
         SetMoveSpeed();
-        currentContext.canCyoteJump = true;
         if (currentContext.fasterFallMultiplier == 0f) currentContext.fasterFallMultiplier = 1f;
     }
 

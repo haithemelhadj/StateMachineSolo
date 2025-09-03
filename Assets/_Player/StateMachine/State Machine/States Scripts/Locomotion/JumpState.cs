@@ -26,6 +26,7 @@ public class JumpState : LocomotionState
         SetMoveSpeed();
         //set jump start counter
         currentContext.willBufferJump = false;
+        currentContext.canCyoteJump = false;
         currentContext.jumpTimeCounter = currentContext.maxJumpTime;
         //animator
         currentContext.Animator.SetBool("isJumping", true);

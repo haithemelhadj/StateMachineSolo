@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    float fps;
     public Text fpscounter;
 
     private void Awake()
@@ -12,6 +13,13 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        fpscounter.text = " FPS" + (1f / Time.deltaTime).ToString("F1");
+        //int fps = (int)(1f / Time.unscaledDeltaTime);
+        fps = (1f / Time.unscaledDeltaTime);
+
+    }
+    private void FixedUpdate()
+    {
+        fpscounter.text = " FPS" + fps.ToString("F1");
+        
     }
 }
