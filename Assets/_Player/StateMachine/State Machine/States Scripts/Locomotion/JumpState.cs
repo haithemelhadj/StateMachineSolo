@@ -29,7 +29,7 @@ public class JumpState : LocomotionState
         currentContext.canCyoteJump = false;
         currentContext.jumpTimeCounter = currentContext.maxJumpTime;
         //animator
-        currentContext.Animator.SetBool("isJumping", true);
+        currentContext.animatorController.UpdateAnimatorBool("isJumping", true);
         //null y velocity
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, 0f);
 
@@ -56,7 +56,7 @@ public class JumpState : LocomotionState
     {
         base.OnExit();
         currentContext.willBufferJump = false;
-        currentContext.Animator.SetBool("isJumping", false);
+        currentContext.animatorController.UpdateAnimatorBool("isJumping", false);
 
 
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.Rb.velocity.y * 0.5f);

@@ -1,9 +1,7 @@
 public class MeleBaseState : ActionState
 {
     
-    public bool shouldCombo;
-    public string attackName;
-    public int attackIndex;
+    public bool willCombo;
 
     public override void CheckSwitchState()
     {
@@ -35,7 +33,7 @@ public class MeleBaseState : ActionState
         base.OnUpdate();
         if (currentContext.attackInputDown)
         {
-            shouldCombo = true;
+            willCombo = true;
         }
     }
 }

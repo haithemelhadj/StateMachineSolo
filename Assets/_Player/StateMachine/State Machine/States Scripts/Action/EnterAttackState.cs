@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enter Attack State", menuName = "States List/Enter Attack")]
 public class EnterAttackState : MeleBaseState
 {
-
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -19,8 +18,9 @@ public class EnterAttackState : MeleBaseState
         //attack
         Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
         currentContext.Rb.velocity = newVelocity;
-        currentContext.animatorController.UpdateAnimatortrrigger(attackName);
-        Debug.Log("started attack " + attackName);
+        currentContext.animatorController.PlayAnimation(animationName);
+
+        Debug.Log("started attack " + animationName);
 
     }
 

@@ -12,6 +12,7 @@ public class Context : MonoBehaviour
     {
         GetInputs(inputsHandler);
         Checks();
+        SetAnimatorMoveVelocitySpeed();
     }
 
     #region Refrences
@@ -24,12 +25,10 @@ public class Context : MonoBehaviour
     [Header("-----GEt COMPONENTS-----")]
     public Rigidbody2D Rb;
     public CapsuleCollider2D capsuleCollider;
-    public Animator Animator;
     public void GetComponents()
     {
         Rb = GetComponent<Rigidbody2D>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        Animator = GetComponent<Animator>();
         Width = capsuleCollider.size.x * transform.localScale.x;
         Height = capsuleCollider.size.y * transform.localScale.y;
         localScale = transform.localScale;
@@ -80,8 +79,6 @@ public class Context : MonoBehaviour
     {
         hInput = handler.GetRawAxisInputs(horizontalAxis);
         vInput = handler.GetRawAxisInputs(verticalAxis);
-        SetAnimatorMoveSpeed();
-        SetAnimatorMoveVelocitySpeed();
 
         if (HoldToWalk)
             walkSpeedInput = handler.GetKey(speedChangeKey);
@@ -91,7 +88,7 @@ public class Context : MonoBehaviour
         //Jump
         jumpInputDown = handler.GetKeyDown(jumpKey);
         jumpInput = handler.GetKey(jumpKey);
-        jumpInputUp= handler.GetKeyUp(jumpKey);
+        jumpInputUp = handler.GetKeyUp(jumpKey);
         if (handler.GetKeyUp(jumpKey))
             willBufferJump = false;
 
@@ -106,20 +103,19 @@ public class Context : MonoBehaviour
     #region animator move input update
     public void SetAnimatorMoveSpeed()
     {
-        Animator.SetFloat("HInput", Mathf.Abs(hInput * currentMoveSpeed));
-        Animator.SetFloat("YInput", Mathf.Abs(vInput * currentMoveSpeed));
+        //Animator.SetFloat("HInput", Mathf.Abs(hInput * currentMoveSpeed));
+        //Animator.SetFloat("YInput", Mathf.Abs(vInput * currentMoveSpeed));
     }
     public void SetAnimatorMoveVelocitySpeed()
     {
-        Animator.SetFloat("Hvelocity", Rb.velocity.x);
-        Animator.SetFloat("Yvelocity", Rb.velocity.y);
+        animatorController.UpdateAnimatorFloat("Hvelocity", Rb.velocity.x);
+        animatorController.UpdateAnimatorFloat("Yvelocity", Rb.velocity.y);
     }
 
     #endregion
 
     #endregion
 
-    public bool isHeadBumping;
     #region Checks 
     //checks
     #region Ground check
@@ -141,13 +137,12 @@ public class Context : MonoBehaviour
         if (hitLeft.collider != null || hitRight.collider != null)
         {
             isGrounded = true;
-            Animator.SetBool("isGrounded", true);
         }
         else
         {
             isGrounded = false;
-            Animator.SetBool("isGrounded", false);
         }
+        animatorController.UpdateAnimatorBool("isGrounded", isGrounded);
     }
     void OnDrawGizmos()
     {
@@ -180,6 +175,8 @@ public class Context : MonoBehaviour
     #endregion
 
     #region Head Check
+    [Header("Head check")]
+    public bool isHeadBumping;
 
     public void HeadCheck()
     {

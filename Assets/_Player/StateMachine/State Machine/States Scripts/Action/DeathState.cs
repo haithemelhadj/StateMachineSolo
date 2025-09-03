@@ -18,13 +18,13 @@ public class DeathState : ActionState
     {
         base.OnEnter();
         Debug.Log("dead");
-        currentContext.animatorController.UpdateAnimatorBool("Dead", true);
+        currentContext.animatorController.PlayAnimation("Dead");
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        currentContext.animatorController.UpdateAnimatorBool("Dead", false);
+        //currentContext.animatorController.UpdateAnimatorBool("Dead", false);
     }
 
     public override void OnFixedUpdate()

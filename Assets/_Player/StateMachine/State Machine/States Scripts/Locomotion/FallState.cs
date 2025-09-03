@@ -17,7 +17,7 @@ public class FallState : LocomotionState
         if (currentContext.isGrounded)
         {
             SwitchState(factory.GetState(_States.Grounded));
-            currentContext.animatorController.UpdateAnimatorBool("highFall", highFall);
+            currentContext.animatorController.PlayAnimation("Fall Recovery");
 
         }
         if (currentContext.canCyoteJump && currentContext.jumpInputDown)

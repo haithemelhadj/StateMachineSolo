@@ -329,7 +329,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isWallSliding
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: YInput
+    m_ConditionEvent: Yvelocity
     m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6372006451216361419}
@@ -399,7 +399,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: HInput
+  m_BlendParameter: Hvelocity
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 12
@@ -702,7 +702,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: HInput
+  m_BlendParameter: Hvelocity
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 12
@@ -1034,7 +1034,7 @@ AnimatorStateMachine:
     m_Position: {x: 380, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4909042128007503065}
-    m_Position: {x: -180, y: 460, z: 0}
+    m_Position: {x: -190, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4130387876855905366}
     m_Position: {x: 30, y: 460, z: 0}
@@ -1673,19 +1673,7 @@ AnimatorController:
   m_Name: _SF AnimatiorControllerV1 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Blend
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: HInput
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: YInput
+  - m_Name: Hvelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1697,13 +1685,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Hvelocity
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Dashing
+  - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1721,20 +1703,14 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: isGrounded
+  - m_Name: Dashing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: WalkSpeed
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: RunSpeed
-    m_Type: 1
+  - m_Name: highFall
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -1746,12 +1722,6 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Dead
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1771,12 +1741,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Exit ground Attack
     m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: highFall
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -1946,7 +1910,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isWallSliding
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: YInput
+    m_ConditionEvent: Yvelocity
     m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4212080662924301719}
@@ -2323,7 +2287,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: HInput
+  m_BlendParameter: Hvelocity
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 12
@@ -3280,8 +3244,8 @@ AnimatorStateMachine:
     second:
     - {fileID: -1367790006869815261}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 360, y: -200, z: 0}
+  m_AnyStatePosition: {x: 350, y: -200, z: 0}
   m_EntryPosition: {x: 350, y: -140, z: 0}
-  m_ExitPosition: {x: 380, y: -250, z: 0}
+  m_ExitPosition: {x: 350, y: -250, z: 0}
   m_ParentStateMachinePosition: {x: 100, y: 200, z: 0}
   m_DefaultState: {fileID: -4929786563335786186}

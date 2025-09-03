@@ -2,27 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetHitState : ActionState
+
+[CreateAssetMenu(fileName = "Transition State", menuName = "States List/Transition State")]
+public class TransitionState : ActionState
 {
+    _States transitionToState;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-        if (Time.time - enterTime > duration)
+        if (Time.time - enterTime >= duration)
         {
-            Debug.Log(this.name + "duration has ended");
+            SwitchState(factory.GetState(transitionToState));
         }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        currentContext.animatorController.PlayAnimation("GetHit");
+        //attack
+        Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
+        currentContext.Rb.velocity = newVelocity;
+        currentContext.animatorController.PlayAnimation(animationName);
+        Debug.Log("started transition to " + animationName);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        //currentContext.animatorController.UpdateAnimatorBool("GetHit", false);
     }
 
     public override void OnFixedUpdate()
@@ -38,5 +44,6 @@ public class GetHitState : ActionState
     public override void OnUpdate()
     {
         base.OnUpdate();
+
     }
 }
