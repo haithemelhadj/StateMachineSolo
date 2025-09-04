@@ -27,13 +27,13 @@ public class WallSlideState : LocomotionState
     {
         base.OnEnter();
         currentContext.dashReset = true;
-        currentContext.animatorController.UpdateAnimatorBool("isWallSliding", true);
+        //currentContext.animatorController.PlayAnimation(animationName="wall Slinding");
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        currentContext.animatorController.UpdateAnimatorBool("isWallSliding", false);
+        //currentContext.animatorController.UpdateAnimatorBool("isWallSliding", false);
 
     }
 

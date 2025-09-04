@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71ffc352911878439a3e83246f26943, type: 3}
   m_Name: WallSlide State
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
-  currentContext: {fileID: 0}
+  duration: 0
+  animationName: wall Slinding

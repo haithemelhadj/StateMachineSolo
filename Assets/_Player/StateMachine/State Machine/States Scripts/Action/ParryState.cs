@@ -2,21 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParryState : MeleBaseState
+[CreateAssetMenu(fileName = "Parry State", menuName = "States List/Parry State")]
+public class ParryState : TransitionState
 {
     public override void CheckSwitchState()
     {
+        if(!currentContext.defendInput)
+        {
+            SwitchState(factory.GetState(_States.Grounded));
+
+        }
         base.CheckSwitchState();
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
+        currentContext.parryHitBox.SetActive(true);
     }
 
     public override void OnExit()
     {
         base.OnExit();
+        currentContext.parryHitBox.SetActive(false);
     }
 
     public override void OnFixedUpdate()

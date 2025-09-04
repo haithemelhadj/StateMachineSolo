@@ -181,7 +181,6 @@ MonoBehaviour:
   inputsHandler: {fileID: 11891808}
   Rb: {fileID: 11891811}
   capsuleCollider: {fileID: 11891812}
-  Animator: {fileID: 11891810}
   HoldToWalk: 0
   Height: 2
   Width: 0.6
@@ -209,15 +208,15 @@ MonoBehaviour:
   dashInputDown: 0
   attackInputDown: 0
   defendInput: 0
-  isHeadBumping: 0
   LastTimeGrounded: 0
   isGrounded: 0
+  isHeadBumping: 0
   whatIsWall:
     serializedVersion: 2
     m_Bits: 192
   isHuggingWall: 0
   LastTimeWalled: 0
-  currentMoveSpeed: 0
+  currentMoveSpeed: {x: 0, y: 0, z: 0}
   currentMaxMoveSpeed: 0
   currentAcceleration: 0
   currentDeceleration: 0
@@ -236,7 +235,7 @@ MonoBehaviour:
   canCyoteJump: 0
   cyoteTime: 0.6
   wallJumpPressTime: 0
-  wallJumpDuration: 0.5
+  wallJumpDuration: 0.1
   wallJumpDirection: {x: 15, y: 25}
   wallSlidingSpeed: 0
   dashForce: 30
@@ -268,6 +267,7 @@ MonoBehaviour:
   c_Acceleration: 0
   c_Deceleration: 0
   currentContext: {fileID: 11891806}
+  currentEnumState: 0
   playerStates: {fileID: 11400000, guid: 1a5d14b006d727e45a057eee860b163d, type: 2}
   mainState: {fileID: 0}
   currentState: {fileID: 0}
@@ -31373,7 +31373,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.53396225, g: 0.9347939, b: 1, a: 1}
+  m_Color: {r: 0.53333336, g: 1, b: 0.5580261, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LocomotionState : State
 {
-
+    protected float speedFlipModifier = 0.5f;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -15,6 +15,7 @@ public class LocomotionState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        //currentContext.animatorController.PlayAnimation(animationName);
     }
 
     public override void OnUpdate()
@@ -42,16 +43,32 @@ public class LocomotionState : State
     {
         if (currentContext.hInput != 0f)
         {
-                currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
-            
+            currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
+
+            //if flip while moving fast, flip speed instantly to avoid sliding
+            if (Mathf.Abs(currentContext.Rb.velocity.x) >= (currentContext.currentMaxMoveSpeed/2) && Mathf.Sign(currentContext.Rb.velocity.x) != Mathf.Sign(currentContext.hInput))
+            {
+                float currentMoveSpeed = currentContext.hInput * currentContext.currentMaxMoveSpeed;
+                currentContext.Rb.velocity = new Vector3(currentMoveSpeed, currentContext.Rb.velocity.y, 0f);
+                //Debug.Log("a flip has happened: " + currentContext.currentMoveSpeed +" in state: "+ this.name );
+                //### another way of doing it is to increase acceleration when flip is detected
+                //float speedDif = currentContext.currentMaxMoveSpeed - Mathf.Abs(currentContext.currentMoveSpeed.x);
+                //float movement = speedDif * currentContext.currentAcceleration;
+                //currentContext.currentMoveSpeed = (new Vector3(currentContext.hInput * movement, currentContext.Rb.velocity.y, 0f));
+            }
+
+
 
             //flip character and keep it that way when no inputs
             if (!currentContext.isHuggingWall)
                 Flip();
         }
         else if (currentContext.Rb.velocity.x != 0f) //slow player to stop
+        {
             currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(0f, currentContext.Rb.velocity.y, 0f), currentContext.currentDeceleration * Time.deltaTime);
-        currentContext.currentMoveSpeed = currentContext.Rb.velocity.x; //set current horizontal speed
+        }
+
+        //currentContext.Rb.velocity = currentContext.currentMoveSpeed; //apply movement
     }
 
     public void Flip()

@@ -18,7 +18,7 @@ public class DeathState : ActionState
     {
         base.OnEnter();
         Debug.Log("dead");
-        currentContext.animatorController.PlayAnimation("Dead");
+        //currentContext.animatorController.PlayAnimation(animationName = "Death");
     }
 
     public override void OnExit()

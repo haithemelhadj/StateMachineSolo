@@ -24,6 +24,7 @@ public class StateMachine : MonoBehaviour
     [Header("-----STATE MACHINE-----")]
     public StateFactory factory;
     public Context currentContext;
+    public _States currentEnumState;
 
 
     public StatesList playerStates;

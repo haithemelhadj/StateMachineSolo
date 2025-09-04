@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6875b18bc12f4424ca4a5ac3f3cc7c9b, type: 3}
-  m_Name: Enter Attack State
+  m_Script: {fileID: 11500000, guid: b88b41b9b3b32da4dae48a9ca8ae89c5, type: 3}
+  m_Name: Defend State
   m_EditorClassIdentifier: 
-  duration: 0.5
-  animationName: Enter Melee Grounded Atk
-  willCombo: 0
+  duration: 0
+  animationName: Defend
+  walkMaxSpeed: 0
+  walkAcceleration: 0
+  walkDeceleration: 0
+  runMaxSpeed: 0
+  runAcceleration: 0
+  runDeceleration: 0

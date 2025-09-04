@@ -16,7 +16,7 @@ public class GetHitState : ActionState
     public override void OnEnter()
     {
         base.OnEnter();
-        currentContext.animatorController.PlayAnimation("GetHit");
+        //currentContext.animatorController.PlayAnimation(animationName = "Get Hit");
     }
 
     public override void OnExit()

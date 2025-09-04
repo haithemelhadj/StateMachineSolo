@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Jump State", menuName = "States List/Jump")]
@@ -29,18 +27,18 @@ public class JumpState : LocomotionState
         currentContext.canCyoteJump = false;
         currentContext.jumpTimeCounter = currentContext.maxJumpTime;
         //animator
-        currentContext.animatorController.UpdateAnimatorBool("isJumping", true);
+        
         //null y velocity
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, 0f);
-
-        // Apply initial jump impulse
-        Jump();
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
         currentContext.jumpTimeCounter -= Time.deltaTime;
+
+        // Apply initial jump impulse
+        Jump();
     }
 
     public override void OnFixedUpdate()
@@ -56,7 +54,7 @@ public class JumpState : LocomotionState
     {
         base.OnExit();
         currentContext.willBufferJump = false;
-        currentContext.animatorController.UpdateAnimatorBool("isJumping", false);
+        //currentContext.animatorController.UpdateAnimatorBool("Jump Anticipation", false);
 
 
         currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.Rb.velocity.y * 0.5f);
@@ -68,6 +66,8 @@ public class JumpState : LocomotionState
         if (Time.time - currentContext.wallJumpPressTime < currentContext.wallJumpDuration)
         {
             currentContext.jumpDirection = new Vector2(-currentContext.transform.localScale.x * currentContext.wallJumpDirection.x, currentContext.wallJumpDirection.y);
+
+            Debug.Log("wall juming");
         }
         else // else if is normal jumping
         {

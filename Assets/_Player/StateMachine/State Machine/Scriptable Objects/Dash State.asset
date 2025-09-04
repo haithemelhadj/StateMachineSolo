@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbe8ab1d73362946a95818c3955249f, type: 3}
   m_Name: Dash State
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
-  currentContext: {fileID: 0}
+  duration: 0
+  animationName: Dash

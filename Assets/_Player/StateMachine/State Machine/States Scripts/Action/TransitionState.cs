@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Transition State", menuName = "States List/Transition State")]
 public class TransitionState : ActionState
 {
-    _States transitionToState;
+    public _States transitionToState;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -19,10 +19,8 @@ public class TransitionState : ActionState
     public override void OnEnter()
     {
         base.OnEnter();
-        //attack
         Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
         currentContext.Rb.velocity = newVelocity;
-        currentContext.animatorController.PlayAnimation(animationName);
         Debug.Log("started transition to " + animationName);
     }
 

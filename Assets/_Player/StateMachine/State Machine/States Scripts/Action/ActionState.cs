@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ActionState : State
 {
-    public float duration;
-    public string animationName;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();

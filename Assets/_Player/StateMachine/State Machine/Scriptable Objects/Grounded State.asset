@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7923bd3ae94bee341b881d64d25026f9, type: 3}
   m_Name: Grounded State
   m_EditorClassIdentifier: 
+  duration: 0
+  animationName: walking blend tree
   walkMaxSpeed: 2.5
   walkAcceleration: 80
   walkDeceleration: 200

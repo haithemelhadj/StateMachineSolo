@@ -52,7 +52,7 @@ public class DashState : ActionState
     {
         //set dash vars
         currentContext.isDashing = true;
-        currentContext.animatorController.UpdateAnimatorBool("Dashing", true);
+        //currentContext.animatorController.PlayAnimation(animationName = "Dashing");
 
         //save gravity
         float originalGravity = currentContext.Rb.gravityScale;
@@ -77,7 +77,7 @@ public class DashState : ActionState
         currentContext.Rb.velocity = Vector2.zero;
 
         currentContext.isDashing = false;
-        currentContext.animatorController.UpdateAnimatorBool("Dashing", false);
+        //currentContext.animatorController.UpdateAnimatorBool("Dashing", false);
     }
 
     #endregion

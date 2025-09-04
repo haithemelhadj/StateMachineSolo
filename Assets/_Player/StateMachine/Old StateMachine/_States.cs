@@ -17,9 +17,5 @@ public enum _States
     GoundAttack,
     GetHit,
     Death,
-    EnterParry,
-    ExitParry,
-    EnterDefend,
-    Defeend,
-    ExitDefend,
+    FallRecovery,
 }

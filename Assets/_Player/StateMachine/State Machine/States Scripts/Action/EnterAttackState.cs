@@ -18,7 +18,7 @@ public class EnterAttackState : MeleBaseState
         //attack
         Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
         currentContext.Rb.velocity = newVelocity;
-        currentContext.animatorController.PlayAnimation(animationName);
+        //currentContext.animatorController.PlayAnimation(animationName);
 
         Debug.Log("started attack " + animationName);
 

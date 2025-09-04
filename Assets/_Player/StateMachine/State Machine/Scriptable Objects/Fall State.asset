@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad22a31b676ca594c8e882a962f522c2, type: 3}
   m_Name: Fall State
   m_EditorClassIdentifier: 
+  duration: 0
+  animationName: Fall
   fallMaxSpeed: 12
   fallAcceleration: 40
   fallDeceleration: 50
+  highFall: 0

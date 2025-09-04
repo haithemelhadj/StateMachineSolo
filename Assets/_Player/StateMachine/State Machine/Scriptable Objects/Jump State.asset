@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9a27a387b04ae49aada265671ec958, type: 3}
   m_Name: Jump State
   m_EditorClassIdentifier: 
+  duration: 0
+  animationName: Jump
   jumpMaxSpeed: 12
   jumpAcceleration: 80
   jumpDeceleration: 100

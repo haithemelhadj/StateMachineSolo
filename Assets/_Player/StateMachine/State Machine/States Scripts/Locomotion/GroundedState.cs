@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Grounded State", menuName = "States List/Grounded")]
@@ -30,10 +28,13 @@ public class GroundedState : LocomotionState
             currentContext.canCyoteJump = true;
             SwitchState(factory.GetState(_States.Fall));
         }
-        if(currentContext.attackInputDown)
+        if (currentContext.attackInputDown)
         {
             SwitchState(factory.GetState(_States.EnterAttack));
-
+        }
+        if (currentContext.defendInput && !(stateMachine.currentState is DefendState))
+        {
+            SwitchState(factory.GetState(_States.Parry));
         }
     }
 
@@ -41,7 +42,7 @@ public class GroundedState : LocomotionState
     {
         base.OnEnter();
         //animation
-        
+
         //cyote time
         currentContext.canCyoteJump = false;
         currentContext.dashReset = true;
@@ -72,6 +73,7 @@ public class GroundedState : LocomotionState
     {
         base.OnUpdate();
         SetMoveSpeed();
+        
     }
 
     #region chnage Speed Input

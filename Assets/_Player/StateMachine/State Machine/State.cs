@@ -3,6 +3,9 @@ using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
+
+    public float duration;
+    public string animationName;
     protected float enterTime { get; set; }
     protected float updateTime { get; set; }
     protected float fixedTime { get; set; }
@@ -23,6 +26,7 @@ public abstract class State : ScriptableObject
     {
         stateMachine.currentStateName = this.ToString();
         enterTime=Time.time;
+        currentContext.animatorController.PlayAnimation(animationName);
     }
 
 

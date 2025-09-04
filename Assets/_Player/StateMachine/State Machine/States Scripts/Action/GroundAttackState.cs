@@ -17,7 +17,7 @@ public class GroundAttackState : MeleBaseState
         base.OnEnter();
         //attack
         currentContext.attackHitBox.SetActive(true);
-        currentContext.animatorController.PlayAnimation(animationName);
+        //currentContext.animatorController.PlayAnimation(animationName);
         Debug.Log("started attack " + animationName);
 
     }

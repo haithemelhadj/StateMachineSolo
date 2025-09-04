@@ -108,7 +108,7 @@ public class Context : MonoBehaviour
     }
     public void SetAnimatorMoveVelocitySpeed()
     {
-        animatorController.UpdateAnimatorFloat("Hvelocity", Rb.velocity.x);
+        animatorController.UpdateAnimatorFloat("Hvelocity", Mathf.Abs(Rb.velocity.x));
         animatorController.UpdateAnimatorFloat("Yvelocity", Rb.velocity.y);
     }
 
@@ -233,7 +233,7 @@ public class Context : MonoBehaviour
 
     #region Move
     [Header("Move")]
-    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public Vector3 currentMoveSpeed;
     [HideInInspector] public float currentMaxMoveSpeed;
     [HideInInspector] public float currentAcceleration;
     [HideInInspector] public float currentDeceleration;

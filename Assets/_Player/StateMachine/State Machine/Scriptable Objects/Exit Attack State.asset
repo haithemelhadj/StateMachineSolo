@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Exit Attack State
   m_EditorClassIdentifier: 
   duration: 0.5
-  shouldCombo: 1
-  attackName: Exit ground Attack
-  attackIndex: 3
+  animationName: Exit Melee Grounded Atk
+  willCombo: 0
