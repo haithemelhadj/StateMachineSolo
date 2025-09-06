@@ -18,12 +18,16 @@ public class DefendState : GroundedState
     {
         base.OnEnter();
         currentContext.defendHitBox.SetActive(true);
+        currentContext.canFlip = false;
+
     }
 
     public override void OnExit()
     {
         base.OnExit();
         currentContext.defendHitBox.SetActive(false);
+        currentContext.canFlip = true;
+
     }
 
     public override void OnFixedUpdate()
@@ -40,4 +44,5 @@ public class DefendState : GroundedState
     {
         base.OnUpdate();
     }
+
 }

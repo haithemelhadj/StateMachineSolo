@@ -73,8 +73,8 @@ public class GroundedState : LocomotionState
     {
         base.OnUpdate();
         SetMoveSpeed();
-        
     }
+
 
     #region chnage Speed Input
 

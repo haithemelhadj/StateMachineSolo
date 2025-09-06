@@ -210,6 +210,7 @@ MonoBehaviour:
   defendInput: 0
   LastTimeGrounded: 0
   isGrounded: 0
+  canFlip: 0
   isHeadBumping: 0
   whatIsWall:
     serializedVersion: 2

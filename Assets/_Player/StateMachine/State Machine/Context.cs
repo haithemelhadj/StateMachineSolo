@@ -32,6 +32,7 @@ public class Context : MonoBehaviour
         Width = capsuleCollider.size.x * transform.localScale.x;
         Height = capsuleCollider.size.y * transform.localScale.y;
         localScale = transform.localScale;
+        canFlip = true;
     }
     #endregion
 
@@ -122,6 +123,7 @@ public class Context : MonoBehaviour
     [Header("Ground check")]
     [HideInInspector] public float LastTimeGrounded;
     [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool canFlip;
     public void Checks()
     {
         GroundCheck();

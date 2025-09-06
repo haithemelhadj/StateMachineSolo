@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Defend State
   m_EditorClassIdentifier: 
   duration: 0
-  animationName: Defend
-  walkMaxSpeed: 0
-  walkAcceleration: 0
-  walkDeceleration: 0
-  runMaxSpeed: 0
-  runAcceleration: 0
-  runDeceleration: 0
+  animationName: Defend Blend Tree
+  walkMaxSpeed: 2
+  walkAcceleration: 200
+  walkDeceleration: 200
+  runMaxSpeed: 2
+  runAcceleration: 200
+  runDeceleration: 200
