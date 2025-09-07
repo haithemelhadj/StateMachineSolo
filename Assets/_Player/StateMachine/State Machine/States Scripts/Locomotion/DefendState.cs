@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Defend State", menuName = "States List/Defend")]
-public class DefendState : GroundedState
+public class DefendState : LocomotionState
 {
+
+    #region  Movement speed
+    [Header("Movement Speed")]
+    public float deffendMaxSpeed;
+    public float deffendAcceleration;
+    public float deffendDeceleration;
+    #endregion
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -17,6 +22,7 @@ public class DefendState : GroundedState
     public override void OnEnter()
     {
         base.OnEnter();
+        SetMoveSpeed();
         currentContext.defendHitBox.SetActive(true);
         currentContext.canFlip = false;
 
@@ -44,5 +50,15 @@ public class DefendState : GroundedState
     {
         base.OnUpdate();
     }
+
+    #region chnage Speed Input
+
+    public override void SetMoveSpeed()
+    {
+        currentContext.currentMaxMoveSpeed = deffendMaxSpeed;
+        currentContext.currentAcceleration = deffendAcceleration;
+        currentContext.currentDeceleration = deffendDeceleration;
+    }
+    #endregion
 
 }

@@ -15,9 +15,6 @@ public class ExitAttackState : MeleBaseState
     public override void OnEnter()
     {
         base.OnEnter();
-        //attack
-        //currentContext.animatorController.PlayAnimation(animationName);
-        Debug.Log("started attack " + animationName);
     }
 
     public override void OnExit()

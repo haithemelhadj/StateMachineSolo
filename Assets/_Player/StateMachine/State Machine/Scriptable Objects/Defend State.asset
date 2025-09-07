@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   animationName: Defend Blend Tree
-  walkMaxSpeed: 2
-  walkAcceleration: 200
-  walkDeceleration: 200
-  runMaxSpeed: 2
-  runAcceleration: 200
-  runDeceleration: 200
+  deffendMaxSpeed: 2.5
+  deffendAcceleration: 200
+  deffendDeceleration: 200

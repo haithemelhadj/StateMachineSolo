@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Grounded State", menuName = "States List/Grounded")]
 public class GroundedState : LocomotionState
 {
-    #region  walk Movement 
-    [Header("Walk Movement")]
+    #region  Movement Speed
+    [Header("Movement Speed")]
     public float walkMaxSpeed;
     public float walkAcceleration;
     public float walkDeceleration;
@@ -25,7 +25,6 @@ public class GroundedState : LocomotionState
         }
         if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0f)
         {
-            currentContext.canCyoteJump = true;
             SwitchState(factory.GetState(_States.Fall));
         }
         if (currentContext.attackInputDown)

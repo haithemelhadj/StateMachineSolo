@@ -15,5 +15,5 @@ MonoBehaviour:
   duration: 0
   animationName: Jump
   jumpMaxSpeed: 12
-  jumpAcceleration: 80
-  jumpDeceleration: 100
+  jumpAcceleration: 200
+  jumpDeceleration: 200

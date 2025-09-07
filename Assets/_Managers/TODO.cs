@@ -6,10 +6,9 @@ public class TODO
 {
    /*
     * #########PRIORITY#######"
-    * add slide ground when direction flip animation and logic
-    * add ledge grab + animation 
     * getHit & death
     * add combo attack system
+    * add ledge grab + animation 
     * 
     * create a script that allows to create scriptable objects of the same state type for multiple uses of that same state (like attack combo)
     * 

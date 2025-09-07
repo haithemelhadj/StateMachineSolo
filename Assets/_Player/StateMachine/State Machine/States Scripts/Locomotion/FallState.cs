@@ -4,8 +4,8 @@ using UnityEngine;
 public class FallState : LocomotionState
 {
 
-    #region  walk Movement 
-    [Header("Walk Movement")]
+    #region  Movement Speed
+    [Header("Movement Speed")]
     public float fallMaxSpeed;
     public float fallAcceleration;
     public float fallDeceleration;
@@ -16,8 +16,12 @@ public class FallState : LocomotionState
         base.CheckSwitchState();
         if (currentContext.isGrounded)
         {
-            SwitchState(factory.GetState(_States.Grounded));
-            //currentContext.animatorController.PlayAnimation(animationName="Fall Recovery");
+            if (highFall)
+            {
+                SwitchState(factory.GetState(_States.FallRecovery));
+            }
+            else
+                SwitchState(factory.GetState(_States.Grounded));
 
         }
         if (currentContext.canCyoteJump && currentContext.jumpInputDown)
@@ -36,11 +40,15 @@ public class FallState : LocomotionState
         base.OnEnter();
         SetMoveSpeed();
         if (currentContext.fasterFallMultiplier == 0f) currentContext.fasterFallMultiplier = 1f;
+        currentContext.canCyoteJump = true;
+        highFall = false;
     }
 
     public override void OnExit()
     {
         base.OnExit();
+        currentContext.canCyoteJump = false;
+        highFall = false;
     }
 
     public override void OnFixedUpdate()
@@ -72,13 +80,11 @@ public class FallState : LocomotionState
             //make fall speed faster
             currentContext.Rb.velocity += Vector2.up * Physics2D.gravity.y * currentContext.fasterFallMultiplier * Time.deltaTime;
             //limit fall speed 
-            if (currentContext.Rb.velocity.y < currentContext.maxFallSpeed)
+            if (currentContext.Rb.velocity.y <= currentContext.maxFallSpeed)
             {
                 highFall = true;
                 currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.maxFallSpeed);
             }
-            else
-                highFall = false;
 
         }
 

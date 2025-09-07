@@ -10,6 +10,10 @@ public class GroundAttackState : MeleBaseState
         {
             SwitchState(factory.GetState(_States.ExitAttack));
         }
+        if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0.1f)
+        {
+            SwitchState(factory.GetState(_States.Fall));
+        }
     }
 
     public override void OnEnter()
@@ -17,8 +21,6 @@ public class GroundAttackState : MeleBaseState
         base.OnEnter();
         //attack
         currentContext.attackHitBox.SetActive(true);
-        //currentContext.animatorController.PlayAnimation(animationName);
-        Debug.Log("started attack " + animationName);
 
     }
 

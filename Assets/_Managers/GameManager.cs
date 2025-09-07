@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        //int fps = (int)(1f / Time.unscaledDeltaTime);
         fps = (1f / Time.unscaledDeltaTime);
 
     }

@@ -21,7 +21,6 @@ public class TransitionState : ActionState
         base.OnEnter();
         Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
         currentContext.Rb.velocity = newVelocity;
-        Debug.Log("started transition to " + animationName);
     }
 
     public override void OnExit()

@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Jump State", menuName = "States List/Jump")]
 public class JumpState : LocomotionState
 {
-    #region  walk Movement 
-    [Header("Walk Movement")]
+    #region  Movement Speed
+    [Header("Movement Speed")]
     public float jumpMaxSpeed;
     public float jumpAcceleration;
     public float jumpDeceleration;
@@ -37,13 +37,13 @@ public class JumpState : LocomotionState
         base.OnUpdate();
         currentContext.jumpTimeCounter -= Time.deltaTime;
 
-        // Apply initial jump impulse
-        Jump();
     }
 
     public override void OnFixedUpdate()
     {
         base.OnFixedUpdate();
+        // Apply initial jump impulse
+        Jump();
     }
 
     public override void OnLateUpdate()
@@ -54,10 +54,9 @@ public class JumpState : LocomotionState
     {
         base.OnExit();
         currentContext.willBufferJump = false;
-        //currentContext.animatorController.UpdateAnimatorBool("Jump Anticipation", false);
 
 
-        currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.Rb.velocity.y * 0.5f);
+        currentContext.Rb.velocity = new Vector2(currentContext.Rb.velocity.x, currentContext.Rb.velocity.y * 0.3f);
     }
 
     private void Jump()
@@ -67,7 +66,7 @@ public class JumpState : LocomotionState
         {
             currentContext.jumpDirection = new Vector2(-currentContext.transform.localScale.x * currentContext.wallJumpDirection.x, currentContext.wallJumpDirection.y);
 
-            Debug.Log("wall juming");
+            //Debug.Log("wall juming");
         }
         else // else if is normal jumping
         {

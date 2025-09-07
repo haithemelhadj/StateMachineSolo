@@ -28,14 +28,12 @@ public class WallSlideState : LocomotionState
         base.OnEnter();
         currentContext.dashReset = true;
         currentContext.canFlip = false;
-        //currentContext.animatorController.PlayAnimation(animationName="wall Slinding");
     }
 
     public override void OnExit()
     {
         base.OnExit();
         currentContext.canFlip = true;
-        //currentContext.animatorController.UpdateAnimatorBool("isWallSliding", false);
 
     }
 

@@ -211,7 +211,7 @@ public class Context : MonoBehaviour
     [HideInInspector] public float LastTimeWalled;
     public void WallCheck()
     {
-        isHuggingWall = (WallDetectionUpper() && WallDetectionMiddle()) || (WallDetectionLower() && WallDetectionMiddle());
+        isHuggingWall = WallDetectionMiddle() && (WallDetectionUpper() || (WallDetectionLower()));
         if (isHuggingWall)
         {
             LastTimeWalled = Time.time;
@@ -235,7 +235,7 @@ public class Context : MonoBehaviour
 
     #region Move
     [Header("Move")]
-    [HideInInspector] public Vector3 currentMoveSpeed;
+    [HideInInspector] public float currentMoveSpeed;
     [HideInInspector] public float currentMaxMoveSpeed;
     [HideInInspector] public float currentAcceleration;
     [HideInInspector] public float currentDeceleration;
@@ -246,6 +246,7 @@ public class Context : MonoBehaviour
     [Header("Fall")]
     public float maxFallSpeed;
     public float fasterFallMultiplier;
+    public float FallDuration;
 
     #endregion
 

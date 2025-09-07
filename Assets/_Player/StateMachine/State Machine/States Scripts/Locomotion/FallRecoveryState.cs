@@ -1,24 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Enter Attack State", menuName = "States List/Enter Attack")]
-public class EnterAttackState : MeleBaseState
+
+[CreateAssetMenu(fileName = "FallRecovery State", menuName = "States List/Fall Recovery State")]
+public class FallRecoveryState : TransitionState
 {
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-        if (Time.time - enterTime >= duration)
-        {
-            SwitchState(factory.GetState(_States.GoundAttack));
-        }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        //attack
-        Vector2 newVelocity = new Vector3(0, currentContext.Rb.velocity.y, 0);
-        currentContext.Rb.velocity = newVelocity;
-
     }
 
     public override void OnExit()
@@ -39,6 +34,5 @@ public class EnterAttackState : MeleBaseState
     public override void OnUpdate()
     {
         base.OnUpdate();
-
     }
 }

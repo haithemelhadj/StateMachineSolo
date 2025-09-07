@@ -15,6 +15,6 @@ MonoBehaviour:
   duration: 0
   animationName: Fall
   fallMaxSpeed: 12
-  fallAcceleration: 40
-  fallDeceleration: 50
+  fallAcceleration: 200
+  fallDeceleration: 200
   highFall: 0

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class InputsHandler : MonoBehaviour
 {
-    //public Dictionary<string, KeyCode> keyBinds = new Dictionary<string, KeyCode>();
-
-
     #region get Key Presses
     public void GetKeyPresses(KeyCode key)
     {

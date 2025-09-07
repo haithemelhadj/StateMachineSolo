@@ -16,13 +16,11 @@ public class GetHitState : ActionState
     public override void OnEnter()
     {
         base.OnEnter();
-        //currentContext.animatorController.PlayAnimation(animationName = "Get Hit");
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        //currentContext.animatorController.UpdateAnimatorBool("GetHit", false);
     }
 
     public override void OnFixedUpdate()
