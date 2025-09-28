@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Fall State", menuName = "States List/Fall")]
+[CreateAssetMenu(fileName = "Fall State", menuName = "States List/Player/Fall")]
 public class FallState : LocomotionState
 {
 

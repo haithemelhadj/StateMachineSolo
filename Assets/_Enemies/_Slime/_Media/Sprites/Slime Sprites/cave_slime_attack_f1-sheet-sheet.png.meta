@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 530bfbe762ed8144d903d8d8f335988c
+guid: 2fc4375c8bae3db49b26fd2c68060a2b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,110 +119,186 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_slime_f1-sheet_0
+      name: cave_slime_attack_f1-sheet-sheet_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 17
+        width: 25
         height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e37b66d8670d649804cd727fc5ae0d
-      internalID: -772246521
+      spriteID: ac5796c08fec78748906cc84f67bf5da
+      internalID: -1397220979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_f1-sheet_1
+      name: cave_slime_attack_f1-sheet-sheet_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 26
         y: 0
-        width: 15
+        width: 23
         height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57c2fa814f2eef441a54146994bc5463
-      internalID: -1531015127
+      spriteID: bd62857f969f34a49a15f6d4f70b84e6
+      internalID: 2064953620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_f1-sheet_2
+      name: cave_slime_attack_f1-sheet-sheet_2
       rect:
         serializedVersion: 2
-        x: 56
+        x: 54
         y: 0
-        width: 13
+        width: 19
         height: 17
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d526db4ff90081d4c9b28a92eb0e39ed
-      internalID: 2116067316
+      spriteID: 85c809a7163377d4281bf0abf818b54f
+      internalID: -1999286380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_f1-sheet_3
+      name: cave_slime_attack_f1-sheet-sheet_3
       rect:
         serializedVersion: 2
-        x: 79
+        x: 80
         y: 0
-        width: 17
+        width: 18
         height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.42, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b643c35c37614e14f92074a1f346d666
-      internalID: -1895947160
+      spriteID: d3fb8016109b84e41a79f4f206197a4f
+      internalID: 484944805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_f1-sheet_4
+      name: cave_slime_attack_f1-sheet-sheet_4
       rect:
         serializedVersion: 2
         x: 103
         y: 0
         width: 19
         height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 742cb1f1b7ad4384ebecd170bf1e661b
-      internalID: -1675567043
+      spriteID: a101ec15bc070b24381dd2c4a9057ab4
+      internalID: 560740244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cave_slime_attack_f1-sheet-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f263ecc12ae560b488d90ae34d8adc4f
+      internalID: 1460965589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cave_slime_attack_f1-sheet-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a35f39a18d6864fa1cb17df928658f
+      internalID: -1127750020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cave_slime_attack_f1-sheet-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 9
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90680ebe071ae740822acb54ec9e38f
+      internalID: -817724899
       vertices: []
       indices: 
       edges: []
@@ -238,11 +314,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cave_slime_f1-sheet_0: -772246521
-      cave_slime_f1-sheet_1: -1531015127
-      cave_slime_f1-sheet_2: 2116067316
-      cave_slime_f1-sheet_3: -1895947160
-      cave_slime_f1-sheet_4: -1675567043
+      cave_slime_attack_f1-sheet-sheet_0: -1397220979
+      cave_slime_attack_f1-sheet-sheet_1: 2064953620
+      cave_slime_attack_f1-sheet-sheet_2: -1999286380
+      cave_slime_attack_f1-sheet-sheet_3: 484944805
+      cave_slime_attack_f1-sheet-sheet_4: 560740244
+      cave_slime_attack_f1-sheet-sheet_5: 1460965589
+      cave_slime_attack_f1-sheet-sheet_6: -1127750020
+      cave_slime_attack_f1-sheet-sheet_7: 1047758255
+      cave_slime_attack_f1-sheet-sheet_8: 2090863020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

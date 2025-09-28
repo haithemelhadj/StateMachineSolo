@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LocomotionState : State
 {
+    private float lastTimeMoved;
+    private int lastTimeMovedSign;
+
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -43,6 +46,8 @@ public class LocomotionState : State
         {
             currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
             CheckFlip();
+            lastTimeMoved = Time.time;
+            lastTimeMovedSign = (int)Mathf.Sign(currentContext.hInput);
         }
         else if (currentContext.Rb.velocity.x != 0f) //slow player to stop
         {
@@ -53,7 +58,10 @@ public class LocomotionState : State
     private void CheckFlip()
     {
         //if flip while moving fast, flip speed instantly to avoid sliding
-        if (Mathf.Sign(currentContext.Rb.velocity.x) != Mathf.Sign(currentContext.hInput) && Mathf.Abs(currentContext.Rb.velocity.x) >= currentContext.currentMaxMoveSpeed / 3)
+        if (Mathf.Sign(currentContext.Rb.velocity.x) != Mathf.Sign(currentContext.hInput) 
+            && (Time.time - lastTimeMoved <= 0.1f  && lastTimeMovedSign != Mathf.Sign(currentContext.hInput))
+            //&& Mathf.Abs(currentContext.Rb.velocity.x) >= currentContext.currentMaxMoveSpeed / 3
+            )
         {
             float currentMoveSpeed = currentContext.hInput * currentContext.Rb.velocity.x;
             currentContext.Rb.velocity = new Vector3(currentMoveSpeed, currentContext.Rb.velocity.y, 0f);

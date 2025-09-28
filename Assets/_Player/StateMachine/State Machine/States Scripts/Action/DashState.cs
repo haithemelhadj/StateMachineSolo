@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Dash State", menuName = "States List/Dash")]
+[CreateAssetMenu(fileName = "Dash State", menuName = "States List/Player/Dash")]
 public class DashState : ActionState
 {
     public override void CheckSwitchState()

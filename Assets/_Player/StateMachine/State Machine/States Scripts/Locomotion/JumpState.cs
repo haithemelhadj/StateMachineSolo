@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Jump State", menuName = "States List/Jump")]
+[CreateAssetMenu(fileName = "Jump State", menuName = "States List/Player/Jump")]
 public class JumpState : LocomotionState
 {
     #region  Movement Speed

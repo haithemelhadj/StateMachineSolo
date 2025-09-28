@@ -18,4 +18,9 @@ public enum _States
     GetHit,
     Death,
     FallRecovery,
+    //Basic Npc States
+    Idle,
+    Patrol,
+    Chase,
+    Search,
 }

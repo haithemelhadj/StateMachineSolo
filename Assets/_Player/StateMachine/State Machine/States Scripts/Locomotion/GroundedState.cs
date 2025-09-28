@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Grounded State", menuName = "States List/Grounded")]
+[CreateAssetMenu(fileName = "Grounded State", menuName = "States List/Player/Grounded")]
 public class GroundedState : LocomotionState
 {
     #region  Movement Speed
@@ -29,7 +29,7 @@ public class GroundedState : LocomotionState
         }
         if (currentContext.attackInputDown)
         {
-            SwitchState(factory.GetState(_States.EnterAttack));
+            SwitchState(factory.GetState(_States.GoundAttack));
         }
         if (currentContext.defendInput && !(stateMachine.currentState is DefendState))
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Ground Attack State", menuName = "States List/Ground Attack")]
+[CreateAssetMenu(fileName = "Ground Attack State", menuName = "States List/Player/Ground Attack")]
 public class GroundAttackState : MeleBaseState
 {
     public override void CheckSwitchState()

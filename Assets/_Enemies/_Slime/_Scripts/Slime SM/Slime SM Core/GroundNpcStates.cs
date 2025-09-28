@@ -1,16 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "States List", menuName = "States List/States")]
+[CreateAssetMenu(fileName = "Ground Npc States", menuName = "States Config/Ground Npc States")]
 
-public class StatesList : ScriptableObject
+public class GroundNpcStates : ScriptableObject
 {
     [System.Serializable]
     public class StateEntry
     {
         public _States state;
-        public State stateClass;
+        public GroundNpcState stateClass;
 
     }
 

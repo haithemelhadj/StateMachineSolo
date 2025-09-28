@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8ced13c321e824997b9dae0180c6fb, type: 3}
+  m_Name: Ground Npc States
+  m_EditorClassIdentifier: 
+  states:
+  - state: 19
+    stateClass: {fileID: 11400000, guid: 8cf8d807f9b74c2469e991e465ec1296, type: 2}
+  - state: 20
+    stateClass: {fileID: 11400000, guid: 4ac851263bcc6da448baf9a4c8465db0, type: 2}
+  - state: 21
+    stateClass: {fileID: 11400000, guid: 876a3c177ae8fb64296501821fa327fe, type: 2}
+  - state: 8
+    stateClass: {fileID: 11400000, guid: 0288ba63f97fe3940a962b76cf22d271, type: 2}
+  - state: 18
+    stateClass: {fileID: 11400000, guid: da5d660d1b0cb0c45b3a3b8589078fe4, type: 2}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2fc4375c8bae3db49b26fd2c68060a2b
+guid: 530bfbe762ed8144d903d8d8f335988c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,101 +119,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_0
+      name: cave_slime_f1-sheet_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 17
+        width: 25
         height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac5796c08fec78748906cc84f67bf5da
-      internalID: -1397220979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 0
-        width: 16
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd62857f969f34a49a15f6d4f70b84e6
-      internalID: 2064953620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_a0
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 9
-        width: 6
-        height: 8
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30821ce3029e06f408eadd26167f1209
-      internalID: 1693649150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_2
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 0
-        width: 16
-        height: 17
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85c809a7163377d4281bf0abf818b54f
-      internalID: -1999286380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_a1
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 2
-        width: 7
-        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,71 +150,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05c0669e8c3cf0147b8c9958b8d1ad9c
-      internalID: 497731080
+      spriteID: 01e37b66d8670d649804cd727fc5ae0d
+      internalID: -772246521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_3
+      name: cave_slime_f1-sheet_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 25
         y: 0
-        width: 18
+        width: 25
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c2fa814f2eef441a54146994bc5463
+      internalID: -1531015127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cave_slime_f1-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d526db4ff90081d4c9b28a92eb0e39ed
+      internalID: 2116067316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cave_slime_f1-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
         height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3fb8016109b84e41a79f4f206197a4f
-      internalID: 484944805
+      spriteID: b643c35c37614e14f92074a1f346d666
+      internalID: -1895947160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_4
+      name: cave_slime_f1-sheet_4
       rect:
         serializedVersion: 2
-        x: 103
+        x: 100
         y: 0
-        width: 19
+        width: 25
         height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a101ec15bc070b24381dd2c4a9057ab4
-      internalID: 560740244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_slime_attack_f1-sheet-sheet_a2
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 2
-        width: 4
-        height: 5
-      alignment: 3
-      pivot: {x: 1, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b88420e26fa3894b89356cb3f36b555
-      internalID: -771598347
+      spriteID: 742cb1f1b7ad4384ebecd170bf1e661b
+      internalID: -1675567043
       vertices: []
       indices: 
       edges: []
@@ -301,14 +251,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cave_slime_attack_f1-sheet-sheet_0: -1397220979
-      cave_slime_attack_f1-sheet-sheet_1: 2064953620
-      cave_slime_attack_f1-sheet-sheet_2: -1999286380
-      cave_slime_attack_f1-sheet-sheet_3: 484944805
-      cave_slime_attack_f1-sheet-sheet_4: 560740244
-      cave_slime_attack_f1-sheet-sheet_a0: 1693649150
-      cave_slime_attack_f1-sheet-sheet_a1: 497731080
-      cave_slime_attack_f1-sheet-sheet_a2: -771598347
+      cave_slime_f1-sheet_0: -772246521
+      cave_slime_f1-sheet_1: -1531015127
+      cave_slime_f1-sheet_2: 2116067316
+      cave_slime_f1-sheet_3: -1895947160
+      cave_slime_f1-sheet_4: -1675567043
+      cave_slime_f1-sheet_5: 1335762498
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

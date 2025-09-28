@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Parry State", menuName = "States List/Parry State")]
+[CreateAssetMenu(fileName = "Parry State", menuName = "States List/Player/Parry State")]
 public class ParryState : TransitionState
 {
     public override void CheckSwitchState()

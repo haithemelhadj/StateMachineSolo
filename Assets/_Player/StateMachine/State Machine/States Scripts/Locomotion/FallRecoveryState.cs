@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "FallRecovery State", menuName = "States List/Fall Recovery State")]
+[CreateAssetMenu(fileName = "FallRecovery State", menuName = "States List/Player/Fall Recovery State")]
 public class FallRecoveryState : TransitionState
 {
     public override void CheckSwitchState()

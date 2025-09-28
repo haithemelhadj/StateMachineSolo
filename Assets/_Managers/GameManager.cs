@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     float fps;
     public Text fpscounter;
 
+    private float timer = 0f;
     private void Awake()
     {
         //Application.targetFrameRate = 20;
@@ -14,11 +15,21 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         fps = (1f / Time.unscaledDeltaTime);
+        UpdateFpsText(0.5f);
+    }
 
-    }
-    private void FixedUpdate()
+    private void UpdateFpsText(float time)
     {
-        fpscounter.text = " FPS" + fps.ToString("F1");
-        
+        // Accumulate time
+        timer += Time.deltaTime;
+
+        // If enough time has passed, update the text
+        if (timer >= time)
+        {
+            fpscounter.text = " FPS" + fps.ToString("F1");//update Fps text
+            timer = 0f; // Reset timer
+        }
     }
+
+
 }

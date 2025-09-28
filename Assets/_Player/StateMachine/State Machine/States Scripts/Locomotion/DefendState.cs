@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Defend State", menuName = "States List/Defend")]
+[CreateAssetMenu(fileName = "Defend State", menuName = "States List/Player/Defend")]
 public class DefendState : LocomotionState
 {
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WallSlide State", menuName = "States List/Wall Slide")]
+[CreateAssetMenu(fileName = "WallSlide State", menuName = "States List/Player/Wall Slide")]
 public class WallSlideState : LocomotionState
 {
     public override void CheckSwitchState()

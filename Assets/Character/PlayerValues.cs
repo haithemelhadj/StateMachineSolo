@@ -1,5 +1,6 @@
 using UnityEngine;
-[CreateAssetMenu]
+
+[CreateAssetMenu(fileName = "Player Values", menuName = "Player/Player Values")]
 public class PlayerValues : ScriptableObject
 {
 

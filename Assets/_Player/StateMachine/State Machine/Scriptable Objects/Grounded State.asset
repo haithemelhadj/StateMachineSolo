@@ -17,6 +17,6 @@ MonoBehaviour:
   walkMaxSpeed: 2.5
   walkAcceleration: 80
   walkDeceleration: 200
-  runMaxSpeed: 12
+  runMaxSpeed: 8
   runAcceleration: 80
   runDeceleration: 200

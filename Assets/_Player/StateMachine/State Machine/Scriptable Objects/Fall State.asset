@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   animationName: Fall
-  fallMaxSpeed: 12
+  fallMaxSpeed: 8
   fallAcceleration: 200
   fallDeceleration: 200
   highFall: 0

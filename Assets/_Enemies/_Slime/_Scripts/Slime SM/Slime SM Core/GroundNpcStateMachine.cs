@@ -1,8 +1,7 @@
 using UnityEngine;
-
 //namespace SM
 //{
-public class StateMachine : MonoBehaviour
+public class GroundNpcStateMachine : MonoBehaviour
 {
     public string customName;
     [Header("-----DEBUGGING-----")]
@@ -18,25 +17,26 @@ public class StateMachine : MonoBehaviour
 
 
 
-    
+
 
     #region Refrences
     [Header("-----STATE MACHINE-----")]
-    public StateFactory factory;
-    public Context currentContext;
-    public _States currentEnumState;
+    public GroundNpcStateFactory factory;
+    public GroundNpcContext currentContext;
+    //public _States currentEnumState;
 
 
-    public StatesList playerStates;
-    [HideInInspector] public State mainState;
-    [HideInInspector] public State currentState;
-    [HideInInspector] public State currentParallelState;
+    public GroundNpcStates StatesList;
+    public _States initalState;
+    [HideInInspector] public GroundNpcState mainState;
+    [HideInInspector] public GroundNpcState currentState;
+    [HideInInspector] public GroundNpcState currentParallelState;
     #endregion
 
     private void Initialize()
     {
-        factory = new StateFactory(this, playerStates);
-        currentState = factory.GetState(_States.Fall);
+        factory = new GroundNpcStateFactory(this, StatesList);
+        currentState = factory.GetState(initalState);
         currentState.OnEnter();
     }
     private void Awake()

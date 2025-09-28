@@ -1,7 +1,7 @@
 using BehaviorDesigner.Runtime;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Enemy type", menuName = "Enemy/Enemy type")]
 public class EnemyType : ScriptableObject
 {
     //public enum _currentState { patrol, chase, attack }

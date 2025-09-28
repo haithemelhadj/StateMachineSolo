@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Transition State", menuName = "States List/Transition State")]
-public class TransitionState : ActionState
+public class TransitionState : State
 {
     public _States transitionToState;
     public override void CheckSwitchState()
