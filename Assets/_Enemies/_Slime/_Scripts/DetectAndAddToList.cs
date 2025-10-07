@@ -5,6 +5,7 @@ public class DetectAndAddToList : MonoBehaviour
     public GroundNpcContext groundNpcContext;
     private void Start()
     {
+
         if (groundNpcContext == null)
         {
             groundNpcContext = GetComponentInParent<GroundNpcContext>();

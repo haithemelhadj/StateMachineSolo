@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,11 @@ using UnityEngine;
 
 public class GroundNpcContext : MonoBehaviour
 {
+    public Transform detectionRangeGO;
     public float tickRate = 0.2f;
     public void ContextStart()
     {
+        if(detectionRangeGO != null) detectionRange = detectionRangeGO.localScale.x * 0.5f;
         //Get Components
         GetComponents();
         StartCoroutine(ChecksCoortine(tickRate));
@@ -79,9 +82,95 @@ public class GroundNpcContext : MonoBehaviour
         hasTarget = targetInSight != null;
         if (hasTarget)
         {
+            lookDirection = GetLookDirectionToTarget(targetInSight);
             Debug.Log("Target in sight: " + targetInSight.name);
 
         }
+        else
+        {
+            lookDirection = patrolLookDirection;
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        // draw ground check ray cast
+        #region ground check 
+        Vector3 rightRayOrigin = transform.position + new Vector3(Width / 2, 0, 0);
+        Vector3 leftRayOrigin = transform.position - new Vector3(Width / 2, 0, 0);
+
+        float rayLength = Height / 2 + extraGroundCheckDistance;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(rightRayOrigin, rightRayOrigin + Vector3.down * rayLength);
+        Gizmos.DrawLine(leftRayOrigin, leftRayOrigin + Vector3.down * rayLength);
+        #endregion
+        //draw wall detection ray cast
+        #region wall detection 
+        Vector3 wallRayUpOrigin = transform.position + new Vector3(0, Height / 2, 0);
+        Vector3 wallRayOrigin = transform.position;// + new Vector3(0, Height / 2, 0);
+        Vector3 wallRayBotOrigin = transform.position - new Vector3(0, Height / 2, 0);
+        Vector3 wallRayDirection = new Vector3(transform.localScale.x, 0f, 0f).normalized;
+
+        float wallRayLength = Width / 2 + extraGroundCheckDistance;
+
+        Gizmos.color = Color.blue; // Different color for clarity
+        Gizmos.DrawLine(wallRayUpOrigin, wallRayUpOrigin + wallRayDirection * wallRayLength);
+        Gizmos.DrawLine(wallRayOrigin, wallRayOrigin + wallRayDirection * wallRayLength);
+        Gizmos.DrawLine(wallRayBotOrigin, wallRayBotOrigin + wallRayDirection * wallRayLength);
+        #endregion
+        // Draw Ledge check ray cast
+        #region Ledge check 
+
+        Vector3 ledgeOrigin = transform.position + (Vector3)capsuleCollider.offset +
+                         new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0);
+
+        Vector3 direction = Vector2.down * (Height / 2 + extraCheckDistance);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(ledgeOrigin, ledgeOrigin + direction);
+
+        #endregion
+
+        //draw FOV detection range
+        #region FOV 
+        Transform origin = transform;
+
+        // Draw detection range circle
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(origin.position, detectionRange);
+
+
+        // Convert lookDirection (degrees) into a vector
+        //float radians = lookDirection * Mathf.Deg2Rad;
+        float radians = lookDirection * Mathf.Deg2Rad;
+
+        Vector2 forward = new Vector2(MathF.Sign(transform.localScale.x) * Mathf.Cos(radians), Mathf.Sin(radians));
+        //Vector2 forward = currentContext.transform.right * Mathf.Sign(currentContext.transform.localScale.x);
+
+        // Forward direction (taking scale into account)
+        //Vector2 forward = origin.right * Mathf.Sign(origin.localScale.x);
+
+        // Half angle
+        float halfFOV = fovAngle / 2f;
+
+        // Left boundary
+        Quaternion leftRot = Quaternion.AngleAxis(-halfFOV, Vector3.forward);
+        Vector3 leftBoundary = leftRot * forward * detectionRange;
+
+        // Right boundary
+        Quaternion rightRot = Quaternion.AngleAxis(halfFOV, Vector3.forward);
+        Vector3 rightBoundary = rightRot * forward * detectionRange;
+
+        // Draw FOV lines
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(origin.position, origin.position + leftBoundary);
+        Gizmos.DrawLine(origin.position, origin.position + rightBoundary);
+
+        // Optional: forward line
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(origin.position, origin.position + (Vector3)forward * detectionRange);
+        #endregion
     }
 
     public Transform IsAnObjectInSight()
@@ -123,13 +212,59 @@ public class GroundNpcContext : MonoBehaviour
 
         // Convert lookDirection (degrees) into a vector
         float radians = lookDirection * Mathf.Deg2Rad;
-        Vector2 forward = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+        Vector2 forward = new Vector2(MathF.Sign(transform.localScale.x) * Mathf.Cos(radians), Mathf.Sin(radians));
 
         // Calculate angle between forward and direction to target
         float angle = Vector2.Angle(forward, directionToTarget);
 
         return angle < (fovAngle / 2f);
+
+        //
+        //SortTransformsByDistance();
+
+        //Vector2 directionToTarget = target.position - transform.position;
+        //float distance = directionToTarget.magnitude;
+
+        //if (distance > detectionRange)
+        //    return false;
+
+        //Vector2 forward = transform.right; // automatically respects flip and rotation
+
+        //float angle = Vector2.Angle(forward, directionToTarget);
+
+        //return angle < (fovAngle / 2f);
     }
+
+    public float GetLookDirectionToTarget(Transform target)
+    {
+        Vector2 dirToTarget = (target.position - transform.position).normalized;
+        float angleToTarget = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg;
+
+        // Adjust based on facing direction (flip)
+        if (transform.localScale.x < 0)
+            angleToTarget = 180f - angleToTarget;
+
+        // Clamp to -90° / +90° so it’s always “in front”
+        angleToTarget = Mathf.Clamp(Mathf.DeltaAngle(0, angleToTarget), -90f, 90f);
+
+        return angleToTarget;
+        //// Direction vector from AI to target
+        //Vector2 dirToTarget = (target.position - transform.position).normalized;
+
+        //// Compute raw angle in degrees (0° = right, 90° = up, etc.)
+        //float angleToTarget = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg;
+
+        //// Adjust for facing flip
+        //if (transform.localScale.x < 0)
+        //    angleToTarget += 180f;
+
+        //// Normalize to 0–360 range (optional but neat)
+        //if (angleToTarget < 0)
+        //    angleToTarget += 360f;
+
+        //return angleToTarget;
+    }
+
 
     private bool HasLineOfSight(Transform target)
     {
@@ -154,7 +289,7 @@ public class GroundNpcContext : MonoBehaviour
         foreach (Vector2 point in targetPoints)
         {
             RaycastHit2D hit = Physics2D.Raycast(eye, point - eye, detectionRange, visionMask);
-            
+
             if (hit.collider != null && hit.collider.transform == target) // this if always returns false
             {
                 return true; // at least one ray has clear vision
@@ -326,86 +461,6 @@ public class GroundNpcContext : MonoBehaviour
     #endregion
 
 
-    private void OnDrawGizmos()
-
-    {
-        // draw ground check ray cast
-        #region ground check 
-        Vector3 rightRayOrigin = transform.position + new Vector3(Width / 2, 0, 0);
-        Vector3 leftRayOrigin = transform.position - new Vector3(Width / 2, 0, 0);
-
-        float rayLength = Height / 2 + extraGroundCheckDistance;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(rightRayOrigin, rightRayOrigin + Vector3.down * rayLength);
-        Gizmos.DrawLine(leftRayOrigin, leftRayOrigin + Vector3.down * rayLength);
-        #endregion
-        //draw wall detection ray cast
-        #region wall detection 
-        Vector3 wallRayUpOrigin = transform.position + new Vector3(0, Height / 2, 0);
-        Vector3 wallRayOrigin = transform.position;// + new Vector3(0, Height / 2, 0);
-        Vector3 wallRayBotOrigin = transform.position - new Vector3(0, Height / 2, 0);
-        Vector3 wallRayDirection = new Vector3(transform.localScale.x, 0f, 0f).normalized;
-
-        float wallRayLength = Width / 2 + extraGroundCheckDistance;
-
-        Gizmos.color = Color.blue; // Different color for clarity
-        Gizmos.DrawLine(wallRayUpOrigin, wallRayUpOrigin + wallRayDirection * wallRayLength);
-        Gizmos.DrawLine(wallRayOrigin, wallRayOrigin + wallRayDirection * wallRayLength);
-        Gizmos.DrawLine(wallRayBotOrigin, wallRayBotOrigin + wallRayDirection * wallRayLength);
-        #endregion
-        // Draw Ledge check ray cast
-        #region Ledge check 
-
-        Vector3 ledgeOrigin = transform.position + (Vector3)capsuleCollider.offset +
-                         new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0);
-
-        Vector3 direction = Vector2.down * (Height / 2 + extraCheckDistance);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(ledgeOrigin, ledgeOrigin + direction);
-
-        #endregion
-
-        //draw FOV detection range
-        #region FOV 
-        Transform origin = transform;
-
-        // Draw detection range circle
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(origin.position, detectionRange);
-
-
-        // Convert lookDirection (degrees) into a vector
-        float radians = lookDirection * Mathf.Deg2Rad;
-        Vector2 forward = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
-        //Vector2 forward = currentContext.transform.right * Mathf.Sign(currentContext.transform.localScale.x);
-
-        // Forward direction (taking scale into account)
-        //Vector2 forward = origin.right * Mathf.Sign(origin.localScale.x);
-
-        // Half angle
-        float halfFOV = fovAngle / 2f;
-
-        // Left boundary
-        Quaternion leftRot = Quaternion.AngleAxis(-halfFOV, Vector3.forward);
-        Vector3 leftBoundary = leftRot * forward * detectionRange;
-
-        // Right boundary
-        Quaternion rightRot = Quaternion.AngleAxis(halfFOV, Vector3.forward);
-        Vector3 rightBoundary = rightRot * forward * detectionRange;
-
-        // Draw FOV lines
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(origin.position, origin.position + leftBoundary);
-        Gizmos.DrawLine(origin.position, origin.position + rightBoundary);
-
-        // Optional: forward line
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin.position, origin.position + (Vector3)forward * detectionRange);
-        #endregion
-    }
 
 
     #region Dectection
@@ -413,8 +468,11 @@ public class GroundNpcContext : MonoBehaviour
     [Header("---------FOV & Detection-------------")]
     public float detectionRange = 1f;
     public float ledgeDtectionRange = 1f;
-    public float fovAngle = 60f;
+    [Range(0f, 180f)] public float fovAngle = 60f;
+    //[HideInInspector]
     public float lookDirection;
+    [Range(-90f, 90f)] public float patrolLookDirection;
+    [Range(-90f, 90f)] public float chaseLookDirection;
     public float reactionTime = 0.2f;
     #endregion
 

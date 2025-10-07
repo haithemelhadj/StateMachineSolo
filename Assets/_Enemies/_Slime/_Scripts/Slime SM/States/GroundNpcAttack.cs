@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ground Npc Attack", menuName = "States List/Ground Npc/Attack")]
-public class GroundNpcAttack : GroundNpcLocomotion
+public class GroundNpcAttack : GroundNpcLocomotion//TransitionState
 {
     public override void CheckSwitchState()
     {
