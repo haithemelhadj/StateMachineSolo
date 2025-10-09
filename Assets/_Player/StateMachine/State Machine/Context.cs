@@ -15,6 +15,19 @@ public class Context : MonoBehaviour
         SetAnimatorMoveVelocitySpeed();
     }
 
+    public LayerMask EnemyLayerMask;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == EnemyLayerMask)
+        {
+            isGettingHit = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+    }
+
     #region Refrences
     [Header("-----REFRENCES-----")]
     public AnimatorController animatorController;
@@ -100,6 +113,9 @@ public class Context : MonoBehaviour
         attackInputDown = handler.GetKeyDown(attackKey);
 
     }
+
+
+
 
     #region animator move input update
     public void SetAnimatorMoveSpeed()
@@ -211,7 +227,7 @@ public class Context : MonoBehaviour
     [HideInInspector] public float LastTimeWalled;
     public void WallCheck()
     {
-        isHuggingWall = WallDetectionMiddle() && (WallDetectionUpper() || (WallDetectionLower()));
+        isHuggingWall = WallDetectionMiddle() && (WallDetectionUpper() || WallDetectionLower());
         if (isHuggingWall)
         {
             LastTimeWalled = Time.time;
@@ -288,6 +304,7 @@ public class Context : MonoBehaviour
     public float cyoteTime;
 
     #endregion
+
     #region wall jump
     [Header("Wall Jump")]
     [HideInInspector] public float wallJumpPressTime;
@@ -351,6 +368,19 @@ public class Context : MonoBehaviour
     #region Interact
     [Header("Interact")]
     public bool isInteracting;
+    #endregion
+
+    #region Get Hit 
+    public float dmgAmount;
+    public bool isGettingHit;
+    public float getHitInvunDuration;
+    #endregion
+
+    #region Death
+    public float maxHealth;
+    public float currentHealth;
+    public bool isDead;
+
     #endregion
 
     #region 

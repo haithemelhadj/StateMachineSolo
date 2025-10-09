@@ -21,7 +21,7 @@ public class GroundNpcSearch : GroundNpcLocomotion
 
     public override void OnEnter()
     {
-        Debug.Log("Search");
+        //Debug.Log("Search");
         base.OnEnter();
         ChangeColor(color: Color.yellow);
         duration = Random.Range(minrandSearchTime, maxrandSearchTime);

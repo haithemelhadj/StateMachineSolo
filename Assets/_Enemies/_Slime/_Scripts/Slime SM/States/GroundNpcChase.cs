@@ -18,7 +18,7 @@ public class GroundNpcChase : GroundNpcLocomotion
 
     public override void OnEnter()
     {
-        Debug.Log("Chase");
+        //Debug.Log("Chase");
         base.OnEnter();
         ChangeColor(color: Color.red);
     }

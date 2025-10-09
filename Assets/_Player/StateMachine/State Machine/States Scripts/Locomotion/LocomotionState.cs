@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LocomotionState : State
@@ -99,8 +100,13 @@ public class LocomotionState : State
 
 
 
-
-
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("MovingPlatform"))
+    //    {
+    //        currentContext.transform.parent = collision.transform;
+    //    }
+    //}
 
 
 }

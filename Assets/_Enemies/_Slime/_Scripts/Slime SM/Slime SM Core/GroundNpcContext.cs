@@ -179,7 +179,7 @@ public class GroundNpcContext : MonoBehaviour
         {
             if (target == null) continue;
 
-            Debug.Log("los: " + HasLineOfSight(target));
+            //Debug.Log("los: " + HasLineOfSight(target));
             if (IsInFOV(target) && HasLineOfSight(target))
             {
                 return target;
@@ -515,9 +515,6 @@ public class GroundNpcContext : MonoBehaviour
     public float attackDistance = 1f;
 
     #endregion
-
-
-
 
 
 

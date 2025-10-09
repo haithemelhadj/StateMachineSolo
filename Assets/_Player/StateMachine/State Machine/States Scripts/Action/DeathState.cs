@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static Sentry.MeasurementUnit;
 
+[CreateAssetMenu(fileName = "Death State", menuName = "States List/Player/Death")]
 public class DeathState : ActionState
 {
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-        if(Time.time-enterTime > duration)
+        if (Time.time - enterTime > duration)
         {
             Debug.Log(this.name + "duration has ended");
         }
