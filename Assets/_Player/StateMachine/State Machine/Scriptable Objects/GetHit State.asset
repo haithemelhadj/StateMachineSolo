@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11954d0e80685ed4ca3c959570729dbf, type: 3}
-  m_Name: Death State
+  m_Script: {fileID: 11500000, guid: 827d44c4caeb8794e9b7631c9e51c43f, type: 3}
+  m_Name: GetHit State
   m_EditorClassIdentifier: 
   duration: 1
-  animationName: Death
+  animationName: Get Hit

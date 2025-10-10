@@ -70,7 +70,27 @@ public class StateMachine : MonoBehaviour
         if (currentState != null)
             currentState.OnLateUpdate();
     }
+    // Physics event forwarding
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        currentState?.OnTriggerEnter2D(other);
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        currentState?.OnTriggerExit2D(other);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentState?.OnCollisionEnter2D(collision);
+    }
+
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        currentState?.OnCollisionExit2D(collision);
+    }
 
 }
 

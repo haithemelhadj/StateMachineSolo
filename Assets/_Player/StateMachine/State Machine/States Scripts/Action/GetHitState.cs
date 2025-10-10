@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "GetHit State", menuName = "States List/Player/GetHit")]
 public class GetHitState : ActionState
 {
     public override void CheckSwitchState()
@@ -9,13 +10,19 @@ public class GetHitState : ActionState
         base.CheckSwitchState();
         if (Time.time - enterTime > duration)
         {
-            Debug.Log(this.name + "duration has ended");
+            SwitchState(factory.GetState(_States.Grounded));
+        }
+        if(currentContext.currentHealth<=0f)
+        {
+            SwitchState(factory.GetState(_States.Death));
         }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
+        //Debug.Log("hit");
+        currentContext.currentHealth -= currentContext.dmgAmount;
     }
 
     public override void OnExit()

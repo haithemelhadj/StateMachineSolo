@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 348cef670bbad8f4f993858c5cf5010d, type: 3}
-  m_Name: GetHitState
+  m_Name: GetHitState Transition
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 1
   animationName: Get Hit
   transitionToState: 2

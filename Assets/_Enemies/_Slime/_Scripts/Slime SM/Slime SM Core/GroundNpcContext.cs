@@ -83,8 +83,6 @@ public class GroundNpcContext : MonoBehaviour
         if (hasTarget)
         {
             lookDirection = GetLookDirectionToTarget(targetInSight);
-            Debug.Log("Target in sight: " + targetInSight.name);
-
         }
         else
         {

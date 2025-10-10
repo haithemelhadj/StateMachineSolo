@@ -7,6 +7,7 @@ public class Context : MonoBehaviour
     {
         //Get Components
         GetComponents();
+        currentHealth = maxHealth;
     }
     public void ContextUpdate()
     {
@@ -15,18 +16,8 @@ public class Context : MonoBehaviour
         SetAnimatorMoveVelocitySpeed();
     }
 
-    public LayerMask EnemyLayerMask;
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == EnemyLayerMask)
-        {
-            isGettingHit = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
 
-    }
+
 
     #region Refrences
     [Header("-----REFRENCES-----")]
@@ -371,8 +362,8 @@ public class Context : MonoBehaviour
     #endregion
 
     #region Get Hit 
+    public LayerMask damagingLayer;
     public float dmgAmount;
-    public bool isGettingHit;
     public float getHitInvunDuration;
     #endregion
 
@@ -380,7 +371,7 @@ public class Context : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public bool isDead;
-
+    public Transform respawnPoint;
     #endregion
 
     #region 

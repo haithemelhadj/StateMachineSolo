@@ -99,14 +99,23 @@ public class LocomotionState : State
     #endregion
 
 
+    
+    public override void OnCollisionEnter2D(Collision2D other)
+    {
+        base.OnCollisionEnter2D(other);
+        //if (other.gameObject.layer == currentContext.damagingLayer.value)
+        //{
 
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("MovingPlatform"))
-    //    {
-    //        currentContext.transform.parent = collision.transform;
-    //    }
-    //}
+        //    SwitchState(factory.GetState(_States.GetHit));
+        //}
+        //Debug.Log("1");
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            //Debug.Log("2");
+            SwitchState(factory.GetState(_States.GetHit));
+        }
+    }
+
 
 
 }

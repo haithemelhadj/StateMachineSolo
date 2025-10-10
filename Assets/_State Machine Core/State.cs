@@ -53,14 +53,19 @@ public abstract class State : ScriptableObject
     {
 
     }
-
-
     protected void SwitchState(State newState)
     {
         OnExit();
         newState.OnEnter();
         stateMachine.currentState = newState;
     }
+
+
+    public virtual void OnTriggerEnter2D(Collider2D other) { /*Debug.Log("te");*/ }
+    public virtual void OnTriggerExit2D(Collider2D other) { /*Debug.Log("tx");*/ }
+    public virtual void OnCollisionEnter2D(Collision2D collision) { /*Debug.Log("ce");*/ }
+    public virtual void OnCollisionExit2D(Collision2D collision) { /*Debug.Log("cx");*/ }
+
 
     #region Passthrough Methods
 
@@ -93,5 +98,7 @@ public abstract class State : ScriptableObject
     /// <param name="type">The type of Component to retrieve.</param>
     /// <returns></returns>
     protected Component GetComponent(string type) { return stateMachine.GetComponent(type); }
+
+    
     #endregion
 }
