@@ -370,7 +370,7 @@ public class Context : MonoBehaviour
     #region Death
     public float maxHealth;
     public float currentHealth;
-    public bool isDead;
+    //public bool isDead;
     public Transform respawnPoint;
     #endregion
 

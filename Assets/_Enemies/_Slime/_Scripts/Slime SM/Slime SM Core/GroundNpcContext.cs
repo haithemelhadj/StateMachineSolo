@@ -4,18 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ground Npc Context", menuName = "States List/Ground Npc /Context")]
-
 public class GroundNpcContext : MonoBehaviour
 {
     public Transform detectionRangeGO;
     public float tickRate = 0.2f;
     public void ContextStart()
     {
-        if(detectionRangeGO != null) detectionRange = detectionRangeGO.localScale.x * 0.5f;
+        currentHealth = maxHealth;
+        if (detectionRangeGO != null) detectionRange = detectionRangeGO.localScale.x * 0.5f;
         //Get Components
         GetComponents();
         StartCoroutine(ChecksCoortine(tickRate));
-
     }
     public void ContextUpdate()
     {
@@ -56,9 +55,9 @@ public class GroundNpcContext : MonoBehaviour
     public void GetComponents()
     {
         Rb = GetComponent<Rigidbody2D>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
-        Width = capsuleCollider.size.x * transform.localScale.x;
-        Height = capsuleCollider.size.y * transform.localScale.y;
+        boxCollider = GetComponent<BoxCollider2D>();
+        Width = boxCollider.size.x * transform.localScale.x;
+        Height = boxCollider.size.y * transform.localScale.y;
         localScale = transform.localScale;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animatorController = GetComponent<AnimatorController>();
@@ -119,7 +118,7 @@ public class GroundNpcContext : MonoBehaviour
         // Draw Ledge check ray cast
         #region Ledge check 
 
-        Vector3 ledgeOrigin = transform.position + (Vector3)capsuleCollider.offset +
+        Vector3 ledgeOrigin = transform.position + (Vector3)boxCollider.offset/2 +
                          new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0);
 
         Vector3 direction = Vector2.down * (Height / 2 + extraCheckDistance);
@@ -348,7 +347,7 @@ public class GroundNpcContext : MonoBehaviour
     public Transform currentTarget;
 
     [Header("Components")]
-    public CapsuleCollider2D capsuleCollider;
+    public BoxCollider2D boxCollider;
     public AnimatorController animatorController;
     public Rigidbody2D Rb;
     public SpriteRenderer spriteRenderer;
@@ -380,10 +379,10 @@ public class GroundNpcContext : MonoBehaviour
     public void LedgeCheck()
     {
         RaycastHit2D ldgeCheck = Physics2D.Raycast(
-            transform.position + (Vector3)capsuleCollider.offset + new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0)
-            , Vector2.down
-            , Height / 2 + extraCheckDistance
-            , whatIsGround);
+            transform.position + (Vector3)boxCollider.offset + new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0) //oirgin
+            , Vector2.down //direction
+            , Height / 2 + extraCheckDistance//distance
+            , whatIsGround);//layermask
         //Debug.DrawRay(transform.position + (Vector3)capsuleCollider.offset + new Vector3((Width / 2 + ledgeDtectionRange) * Mathf.Sign(transform.localScale.x), 0, 0), Vector2.down * (Height / 2 + extraCheckDistance), color: Color.red);
         isNearEdge = !ldgeCheck;
     }
@@ -513,6 +512,20 @@ public class GroundNpcContext : MonoBehaviour
     public float attackDistance = 1f;
 
     #endregion
+
+    #region Get Hit 
+    public LayerMask damagingLayer;
+    public float dmgAmount;
+    public float getHitInvunDuration;
+    #endregion
+
+    #region Death
+    public float maxHealth;
+    public float currentHealth;
+    //public bool isDead;
+    //public Transform respawnPoint;
+    #endregion
+
 
 
 

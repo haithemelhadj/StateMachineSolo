@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Death State", menuName = "States List/Player/Death")]
 public class DeathState : ActionState
 {
-    
+
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -23,7 +23,7 @@ public class DeathState : ActionState
     public override void OnExit()
     {
         base.OnExit();
-            currentContext.transform.position = currentContext.respawnPoint.position;
+        currentContext.transform.position = currentContext.respawnPoint.position;
     }
 
     public override void OnFixedUpdate()
