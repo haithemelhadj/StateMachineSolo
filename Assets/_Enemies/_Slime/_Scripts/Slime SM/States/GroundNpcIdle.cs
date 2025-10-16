@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Ground Npc Attack", menuName = "States List/Ground Npc/Attack")]
-public class GroundNpcAttack : GroundNpcTransition//TransitionState
+[CreateAssetMenu(fileName = "Ground Npc Idle", menuName = "States List/Ground Npc /Idle")]
+public class GroundNpcIdle : GroundNpcLocomotion
 {
+    public float minRandIdleTime;
+    public float maxRandIdleTime;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
-
+        if (Time.time - enterTime >= duration)
+        {
+            SwitchState(factory.GetState(_States.Patrol));
+        }
     }
+
 
     public override void OnEnter()
     {
         base.OnEnter();
+        ChangeColor(color: Color.green);
+        duration = Random.Range(minRandIdleTime, maxRandIdleTime);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        currentContext.lastAttackTime = Time.time;
     }
 
     public override void OnFixedUpdate()
@@ -31,6 +38,7 @@ public class GroundNpcAttack : GroundNpcTransition//TransitionState
     {
         base.OnLateUpdate();
     }
+
 
     public override void OnUpdate()
     {

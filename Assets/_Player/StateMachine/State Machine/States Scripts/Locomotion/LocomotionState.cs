@@ -103,7 +103,7 @@ public class LocomotionState : State
     public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Attack"))
         {
             SwitchState(factory.GetState(_States.GetHit));
         }

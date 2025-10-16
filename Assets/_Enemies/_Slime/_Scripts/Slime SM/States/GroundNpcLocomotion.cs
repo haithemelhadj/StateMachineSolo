@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class GroundNpcLocomotion : GroundNpcState
 {
-    public float catchDistance = 1;
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
@@ -50,18 +49,23 @@ public class GroundNpcLocomotion : GroundNpcState
         currentContext.spriteRenderer.color = color;
     }
 
-    
+
 
     public void MoveTowardsTargetPosition(Vector2 target, float speed)
     {
-        if (Mathf.Abs(target.x - currentContext.transform.position.x) < catchDistance)//calculate x distance for grounded mob (abs for both sides)
+        if (Mathf.Abs(target.x - currentContext.transform.position.x) < currentContext.catchDistance)//calculate x distance for grounded mob (abs for both sides)
         {
             //stand idle
             currentContext.Rb.velocity = Vector3.zero;
             if (Vector2.Distance(currentContext.transform.position, target) < currentContext.attackDistance)
             {
-                Debug.Log("attack!");
-                //SwitchState(_factory.Attack());
+                if (Time.time - currentContext.lastAttackTime >= currentContext.attackCooldown)
+                {
+
+                    Debug.Log("attack!");
+                    //SwitchState(_factory.Attack());
+                    SwitchState(factory.GetState(_States.Attack));
+                }
             }
         }
         else

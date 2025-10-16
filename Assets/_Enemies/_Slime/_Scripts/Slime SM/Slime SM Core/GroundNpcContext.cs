@@ -510,16 +510,20 @@ public class GroundNpcContext : MonoBehaviour
     #region Attack
     [Header("Attack")]
     public float attackDistance = 1f;
-
+    public float catchDistance = 1f;
+    public float attackCooldown = 1f;
+    public float lastAttackTime;
     #endregion
 
     #region Get Hit 
+    [Header("Get Hit")]
     public LayerMask damagingLayer;
     public float dmgAmount;
     public float getHitInvunDuration;
     #endregion
 
     #region Death
+    [Header("Death")]
     public float maxHealth;
     public float currentHealth;
     //public bool isDead;

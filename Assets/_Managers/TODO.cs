@@ -6,11 +6,8 @@ public class TODO
 {
     /*
      * ########AI#######
-     * BUG : ai doesn't detect player on left side only on right side
-     * BUG : ai detection and logic between chase  and search is buggy
      * 
      * #########PRIORITY#######"
-     * getHit & death
      * add combo attack system
      * add ledge grab + animation 
      * 

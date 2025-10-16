@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 123b37c4b19ee844eb1a6adf5bbbe4a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad33d24d70dc3a94cb03b7933d18b7b7
+      internalID: 1963145242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37245bfe0f0591849a4e8ed5275e8f6a
+      internalID: 1596957784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b19b02a9b6ccc49b57302562107f97
+      internalID: 23551815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6b35650b566d54fa6068836f835b1f
+      internalID: 610815573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdcb0c9baaa7c140ad920c0b4cd0a4d
+      internalID: 874957023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_5
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95d34fbb191b7145b5ff71c4f42b45a
+      internalID: 719388535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2f06b3c40b49c45bc6fe4971c4cac4
+      internalID: -1378337709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_7
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140e9f9b561277345a375f17c450c2ba
+      internalID: 511420037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_8
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 888
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911b9c1a072d10b4baf22f5c502fb6dc
+      internalID: 535996503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 601
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6885c7ecad45454486c5f3547c33f2b
+      internalID: -1358095915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 379
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02c8051df72c3f49bc9ab07dc6b449f
+      internalID: 579819023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 378
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f5852e1ff16134982ed0d530317595
+      internalID: 304088220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 378
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4080b60957e14a40a199ac8b0648d8f
+      internalID: 880500737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f26aa76050d7334c9498e9093bd8841
+      internalID: -1831494972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 123
+        width: 128
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9274d04754686a844b47b3680d449af7
+      internalID: -539374332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_24
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 123
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3bfda862950603449f2666faa2ab38f
+      internalID: 2086457166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 120
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e580175bfd5128e4ebae11ca79c5964c
+      internalID: -1357137368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 120
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892d340446771eb47820e099eef2bbeb
+      internalID: -782967359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 120
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242e4050b85871c4c8f1d609d4efe08f
+      internalID: -116036464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 120
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85242b45c59d6f54fa1f6c7bfa85f46e
+      internalID: 1063158032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _SF Full sprite sheet - Attack_0002_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 123
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b19aa4aa7811c489bdb3f72f37ab4d
+      internalID: -386447065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _SF Full sprite sheet - Attack_0002_0: 1963145242
+      _SF Full sprite sheet - Attack_0002_1: 1596957784
+      _SF Full sprite sheet - Attack_0002_10: -386447065
+      _SF Full sprite sheet - Attack_0002_11: -1510914674
+      _SF Full sprite sheet - Attack_0002_12: -518290724
+      _SF Full sprite sheet - Attack_0002_13: 1005941906
+      _SF Full sprite sheet - Attack_0002_14: -826837765
+      _SF Full sprite sheet - Attack_0002_15: 424286677
+      _SF Full sprite sheet - Attack_0002_16: -2128383527
+      _SF Full sprite sheet - Attack_0002_17: 579819023
+      _SF Full sprite sheet - Attack_0002_18: 304088220
+      _SF Full sprite sheet - Attack_0002_19: 880500737
+      _SF Full sprite sheet - Attack_0002_2: 23551815
+      _SF Full sprite sheet - Attack_0002_20: -763672917
+      _SF Full sprite sheet - Attack_0002_21: -1831494972
+      _SF Full sprite sheet - Attack_0002_22: -539374332
+      _SF Full sprite sheet - Attack_0002_23: 134534365
+      _SF Full sprite sheet - Attack_0002_24: 2086457166
+      _SF Full sprite sheet - Attack_0002_25: -1798494528
+      _SF Full sprite sheet - Attack_0002_26: -1357137368
+      _SF Full sprite sheet - Attack_0002_27: -782967359
+      _SF Full sprite sheet - Attack_0002_28: -116036464
+      _SF Full sprite sheet - Attack_0002_29: 1063158032
+      _SF Full sprite sheet - Attack_0002_3: 610815573
+      _SF Full sprite sheet - Attack_0002_4: 874957023
+      _SF Full sprite sheet - Attack_0002_5: 719388535
+      _SF Full sprite sheet - Attack_0002_6: -1378337709
+      _SF Full sprite sheet - Attack_0002_7: 511420037
+      _SF Full sprite sheet - Attack_0002_8: 535996503
+      _SF Full sprite sheet - Attack_0002_9: -1358095915
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

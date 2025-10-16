@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Move Ground Attack State
   m_EditorClassIdentifier: 
   duration: 0.5
-  animationName: Mele Grounded Atk1
+  animationName: Mele Grounded Atk2
   walkMaxSpeed: 2.5
   walkAcceleration: 80
   walkDeceleration: 200

@@ -20,7 +20,7 @@ public class MovingAttackState : GroundedState
     {
         base.OnEnter();
         //attack
-        currentContext.attackHitBox.SetActive(true);
+        //currentContext.attackHitBox.SetActive(true);
         currentContext.canFlip = false;
 
     }
