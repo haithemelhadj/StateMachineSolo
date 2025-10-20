@@ -24,6 +24,6 @@ MonoBehaviour:
   - state: 18
     stateClass: {fileID: 11400000, guid: da5d660d1b0cb0c45b3a3b8589078fe4, type: 2}
   - state: 15
-    stateClass: {fileID: 11400000, guid: da5d660d1b0cb0c45b3a3b8589078fe4, type: 2}
+    stateClass: {fileID: 11400000, guid: 3d5dee06e9bafcd49ab70a39806506ac, type: 2}
   - state: 16
-    stateClass: {fileID: 11400000, guid: da5d660d1b0cb0c45b3a3b8589078fe4, type: 2}
+    stateClass: {fileID: 11400000, guid: ea2bf61f915325c4d93aa2644d285937, type: 2}

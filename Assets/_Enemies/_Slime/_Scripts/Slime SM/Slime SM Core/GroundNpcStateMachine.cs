@@ -71,6 +71,28 @@ public class GroundNpcStateMachine : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        currentState?.OnTriggerEnter2D(other);
+        //Debug.Log("0Trigger Entered on " + other.name);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        currentState?.OnTriggerExit2D(other);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentState?.OnCollisionEnter2D(collision);
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        currentState?.OnCollisionExit2D(collision);
+    }
+
 }
 
 //}

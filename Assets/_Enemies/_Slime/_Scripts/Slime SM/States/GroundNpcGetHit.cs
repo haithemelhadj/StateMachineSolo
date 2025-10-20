@@ -10,7 +10,7 @@ public class GroundNpcGetHit : GroundNpcState
         base.CheckSwitchState();
         if (Time.time - enterTime > duration)
         {
-            SwitchState(factory.GetState(_States.Grounded));
+            SwitchState(factory.GetState(_States.Patrol));
         }
         if (currentContext.currentHealth <= 0f)
         {
@@ -31,6 +31,8 @@ public class GroundNpcGetHit : GroundNpcState
     public override void OnEnter()
     {
         base.OnEnter();
+        //Debug.Log("Get Hit");
+        currentContext.currentHealth -= currentContext.dmgAmount;
     }
 
     public override void OnExit()

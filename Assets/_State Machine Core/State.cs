@@ -24,6 +24,7 @@ public abstract class State : ScriptableObject
     }
     public virtual void OnEnter()
     {
+        Debug.Log("Enter State: " + this.ToString());
         stateMachine.currentStateName = this.ToString();
         enterTime=Time.time;
         currentContext.animatorController.PlayAnimation(animationName);

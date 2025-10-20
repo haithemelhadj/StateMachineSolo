@@ -70,7 +70,7 @@ public class StateMachine : MonoBehaviour
         if (currentState != null)
             currentState.OnLateUpdate();
     }
-    // Physics event forwarding
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         currentState?.OnTriggerEnter2D(other);

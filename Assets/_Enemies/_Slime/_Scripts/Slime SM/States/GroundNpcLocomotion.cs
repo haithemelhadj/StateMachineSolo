@@ -62,7 +62,7 @@ public class GroundNpcLocomotion : GroundNpcState
                 if (Time.time - currentContext.lastAttackTime >= currentContext.attackCooldown)
                 {
 
-                    Debug.Log("attack!");
+                    //Debug.Log("attack!");
                     //SwitchState(_factory.Attack());
                     SwitchState(factory.GetState(_States.Attack));
                 }
@@ -84,8 +84,22 @@ public class GroundNpcLocomotion : GroundNpcState
         if (other.gameObject.CompareTag("Attack"))
         {
             SwitchState(factory.GetState(_States.GetHit));
+            Debug.Log("hit!");
         }
     }
 
+    public override void OnTriggerExit2D(Collider2D other)
+    {
+        base.OnTriggerExit2D(other);
+    }
 
+    public override void OnCollisionEnter2D(Collision2D collision)
+    {
+        base.OnCollisionEnter2D(collision);
+    }
+
+    public override void OnCollisionExit2D(Collision2D collision)
+    {
+        base.OnCollisionExit2D(collision);
+    }
 }
