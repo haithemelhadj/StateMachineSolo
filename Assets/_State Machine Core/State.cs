@@ -4,17 +4,19 @@ using UnityEngine;
 public abstract class State : ScriptableObject
 {
 
+    protected StateMachine stateMachine;
+    protected StateFactory factory;
+    protected Context currentContext;
+
     public float duration;
     public string animationName;
+
     protected float enterTime { get; set; }
     protected float updateTime { get; set; }
     protected float fixedTime { get; set; }
     protected float lateTime { get; set; }
     protected float exitTime { get; set; }
 
-    protected StateMachine stateMachine;
-    protected StateFactory factory;
-    protected Context currentContext;
 
     public void Initialize(StateMachine stateMachine, StateFactory factory,Context currentContext)
     {

@@ -4,16 +4,16 @@ using UnityEngine;
 //{
 public class StateMachine : MonoBehaviour
 {
-    public string customName;
+    //[HideInInspector] public string customName;
     [Header("-----DEBUGGING-----")]
     public string currentStateName;
 
     #region  Current Movement Values
-    [Header("Current Movement")]
-    [SerializeField] public float c_HSpeed;
-    [SerializeField] public float c_MaxHSpeed;
-    [SerializeField] public float c_Acceleration;
-    [SerializeField] public float c_Deceleration;
+    //[Header("Current Movement")]
+    //[HideInInspector] public float c_HSpeed;
+    //[HideInInspector] public float c_MaxHSpeed;
+    //[HideInInspector] public float c_Acceleration;
+    //[HideInInspector] public float c_Deceleration;
     #endregion
 
 
@@ -21,10 +21,11 @@ public class StateMachine : MonoBehaviour
     
 
     #region Refrences
+
     [Header("-----STATE MACHINE-----")]
-    public StateFactory factory;
     public Context currentContext;
-    public _States currentEnumState;
+    [SerializeField] public StateFactory factory;
+    [HideInInspector] public _States currentEnumState;
 
 
     public StatesList playerStates;

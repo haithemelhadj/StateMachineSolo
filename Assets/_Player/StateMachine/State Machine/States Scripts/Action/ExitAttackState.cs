@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Exit Attack State", menuName = "States List/Player/Exit Attack")]
+[CreateAssetMenu(fileName = "Exit Attack State", menuName = "States List/Player/Attacks/Exit Attack")]
 public class ExitAttackState : MeleBaseState
 {
     public override void CheckSwitchState()

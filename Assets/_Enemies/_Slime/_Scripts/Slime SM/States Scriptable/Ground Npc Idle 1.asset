@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780cf7141960c854f85d27a3cba9f291, type: 3}
   m_Name: Ground Npc Idle 1
   m_EditorClassIdentifier: 
-  duration: 0
-  animationName: 
+  duration: 2
+  animationName: Idle
+  minRandIdleTime: 2
+  maxRandIdleTime: 5

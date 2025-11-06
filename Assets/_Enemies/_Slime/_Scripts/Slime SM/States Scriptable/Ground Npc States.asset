@@ -22,7 +22,7 @@ MonoBehaviour:
   - state: 8
     stateClass: {fileID: 11400000, guid: 0288ba63f97fe3940a962b76cf22d271, type: 2}
   - state: 18
-    stateClass: {fileID: 11400000, guid: da5d660d1b0cb0c45b3a3b8589078fe4, type: 2}
+    stateClass: {fileID: 11400000, guid: b98cf83b5b0c5344d99365f345a184b7, type: 2}
   - state: 15
     stateClass: {fileID: 11400000, guid: 3d5dee06e9bafcd49ab70a39806506ac, type: 2}
   - state: 16

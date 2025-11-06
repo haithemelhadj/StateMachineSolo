@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Enter Attack State", menuName = "States List/Player/Enter Attack")]
+[CreateAssetMenu(fileName = "Enter Attack State", menuName = "States List/Player/Attacks/Enter Attack")]
 public class EnterAttackState : MeleBaseState
 {
     public override void CheckSwitchState()

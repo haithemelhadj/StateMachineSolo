@@ -23,4 +23,8 @@ public enum _States
     Patrol,
     Chase,
     Search,
+    //attack sequance
+    AttackAnticipation,
+    AttackRecovery,
+
 }
