@@ -63,16 +63,16 @@ A ScriptableObject used as a dictionary mapping a **State Enum** to a **State Sc
 Each state is a class inheriting from `BaseState`.
 You can also inherit states from each other to form a behavior tree.
 
+
+![Alt text](Assets/Readme_Recources/states.PNG)
+![Alt text](Assets/Readme_Recources/StatesInstpector.PNG)
+![Alt text](Assets/Readme_Recources/StateCode.PNG)
+
 Common example methods:
 
 * `Enter()`
 * `Update()`
 * `Exit()`
-
-![Alt text](Assets/Readme_Recources/States.PNG)
-
-
-![Alt text](Assets/Readme_Recources/StateCode.PNG)
 
 ---
 
