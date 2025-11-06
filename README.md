@@ -37,10 +37,7 @@ This component lives on your GameObject and handles:
 * Updating the active state
 * Changing states
 
-**Image placeholder:**
-![Alt text](Assets/Readme_Recources/state machine component.PNG)
-`[Insert image of the StateMachine component in the Unity Inspector]`
-*The picture should show the GameObject with the StateMachine component, the reference to the Context script, and the assigned StateList ScriptableObject.*
+![Alt text](Assets/Readme_Recources/state_machine_component.PNG)
 
 ### Context
 
@@ -57,10 +54,7 @@ Holds values like:
 
 A ScriptableObject used as a dictionary mapping a **State Enum** to a **State Script**.
 
-**GIF placeholder:**
-![Alt text](Assets/Readme_Recources/states list.PNG)
-`[Insert GIF showing creation of a StateList ScriptableObject via Right‑click > Create > StateList]`
-*Show the inspector view where states are added, each with their enum assignment.*
+![Alt text](Assets/Readme_Recources/states_list.PNG)
 
 ---
 
@@ -75,13 +69,10 @@ Common example methods:
 * `Update()`
 * `Exit()`
 
-**Image placeholder:**
 ![Alt text](Assets/Readme_Recources/states.PNG)
-`[Insert image of folder structure: BaseState.cs, IdleState.cs, MoveState.cs, AttackState.cs, etc.]`
 
-**Optional GIF placeholder:**
-![Alt text](Assets/Readme_Recources/state code.PNG)
-`[Insert GIF demonstrating switching between states in Play Mode using Debug logs or UI]`
+
+![Alt text](Assets/Readme_Recources/state_code.PNG)
 
 ---
 
