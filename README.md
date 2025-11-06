@@ -42,7 +42,7 @@ This component lives on your GameObject and handles:
 ### Context
 
 A separate script inheriting from `Context`.
-Holds values like:
+Holds values that the state machine needs to be aware of at all times like:
 
 * Animator
 * References to other components
@@ -91,8 +91,9 @@ Example:
 
 ```csharp
 public class PlayerContext : Context {
-    public float moveSpeed;
     public Animator animator;
+    public RigidBody rb;
+    public bool isGrounded;
 }
 ```
 
