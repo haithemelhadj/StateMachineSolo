@@ -37,7 +37,7 @@ This component lives on your GameObject and handles:
 * Updating the active state
 * Changing states
 
-![Alt text](Assets/Readme_Recources/state_machine_component.PNG)
+![Alt text](Assets/Readme_Recources/StateMachineComponent.PNG)
 
 ### Context
 
@@ -54,7 +54,7 @@ Holds values like:
 
 A ScriptableObject used as a dictionary mapping a **State Enum** to a **State Script**.
 
-![Alt text](Assets/Readme_Recources/states_list.PNG)
+![Alt text](Assets/Readme_Recources/StatesList.PNG)
 
 ---
 
@@ -69,10 +69,10 @@ Common example methods:
 * `Update()`
 * `Exit()`
 
-![Alt text](Assets/Readme_Recources/states.PNG)
+![Alt text](Assets/Readme_Recources/States.PNG)
 
 
-![Alt text](Assets/Readme_Recources/state_code.PNG)
+![Alt text](Assets/Readme_Recources/StateCode.PNG)
 
 ---
 
@@ -146,7 +146,7 @@ Open your custom Context script fields in the inspector and fill in your gamepla
 ---
 
 ## License
-opyright (c) 2025 Haithem Elhadj
+Copyright (c) 2025 Haithem Elhadj
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
