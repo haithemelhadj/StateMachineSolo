@@ -1,10 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     float fps;
-    public Text fpscounter;
+    //public Text fpscounter;
+    public TextMeshProUGUI fpscounterTMP;
 
     private float timer = 0f;
     private void Awake()
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
         // If enough time has passed, update the text
         if (timer >= time)
         {
-            fpscounter.text = " FPS" + fps.ToString("F1");//update Fps text
+            fpscounterTMP.text = " FPS" + fps.ToString("F1");//update Fps text
             timer = 0f; // Reset timer
         }
     }
