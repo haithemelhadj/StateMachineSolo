@@ -2136,7 +2136,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309827277}
-  - component: {fileID: 309827278}
   m_Layer: 0
   m_Name: ENVIROMENT
   m_TagString: Untagged
@@ -2162,20 +2161,6 @@ Transform:
   - {fileID: 619394802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &309827278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309827276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f9f154c1d0b2942b47a59acef6a662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &330048788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2581,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358201976}
-  - component: {fileID: 358201977}
   m_Layer: 0
   m_Name: MANAGERS
   m_TagString: Untagged
@@ -2621,20 +2605,6 @@ Transform:
   - {fileID: 1221819374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &358201977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358201975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f9f154c1d0b2942b47a59acef6a662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &396011434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,28 +3060,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 481597034}
-  - component: {fileID: 481597033}
   m_Layer: 0
-  m_Name: PLAYER TEST
+  m_Name: ===== PLAYER TEST=====
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &481597033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481597032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f455846e72d53e44da0075887218c07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 0, g: 0, b: 0, a: 1}
-  backgroundColor: {r: 0, g: 0.254308, b: 1, a: 1}
 --- !u!4 &481597034
 Transform:
   m_ObjectHideFlags: 0
@@ -3308,28 +3263,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 522220624}
-  - component: {fileID: 522220623}
   m_Layer: 0
-  m_Name: ENVIROMENT SETUP
+  m_Name: ===== ENVIROMENT SETUP =====
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &522220623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522220622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f455846e72d53e44da0075887218c07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 0, g: 0, b: 0, a: 1}
-  backgroundColor: {r: 0, g: 0.254308, b: 1, a: 1}
 --- !u!4 &522220624
 Transform:
   m_ObjectHideFlags: 0
@@ -29341,7 +29281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148663585}
-  - component: {fileID: 1148663586}
   m_Layer: 0
   m_Name: SETUP
   m_TagString: Untagged
@@ -29370,20 +29309,6 @@ Transform:
   - {fileID: 1986858168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1148663586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148663584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f9f154c1d0b2942b47a59acef6a662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &1187867893
 GameObject:
   m_ObjectHideFlags: 0
@@ -30448,7 +30373,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389203491}
-  - component: {fileID: 1389203492}
   m_Layer: 0
   m_Name: CANVAS
   m_TagString: Untagged
@@ -30474,20 +30398,6 @@ Transform:
   - {fileID: 1502559430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1389203492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389203490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f9f154c1d0b2942b47a59acef6a662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &1394470590
 GameObject:
   m_ObjectHideFlags: 0

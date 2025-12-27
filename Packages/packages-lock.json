@@ -8,12 +8,12 @@
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       }
     },
-    "com.inf.my-hierarchy": {
-      "version": "https://github.com/INFGameDev/My-Hierarchy.git",
+    "com.febucci.custom-hierarchy": {
+      "version": "https://github.com/febucci/unitypackage-custom-hierarchy.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "49fd57a9e777b07a5f2904583abf1ee3c6818696"
+      "hash": "845f7521c4695bc30d9efe0c3168b616cc51454a"
     },
     "com.unity.2d.animation": {
       "version": "9.2.0",
