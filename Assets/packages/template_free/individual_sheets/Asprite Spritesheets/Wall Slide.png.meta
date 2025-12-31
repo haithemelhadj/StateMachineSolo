@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,10 +113,10 @@ TextureImporter:
       name: Wall Slide_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 39
+        x: 70
+        y: 43
         width: 64
-        height: 128
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Wall Slide_1
       rect:
         serializedVersion: 2
-        x: 343
-        y: 39
+        x: 342
+        y: 43
         width: 64
-        height: 128
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84687532aa663484781fc00d4b209328
+      spriteID: dec4bdfe2ab306d45a22a16e6b86255c
       internalID: 1373907149
       vertices: []
       indices: 
@@ -155,10 +155,10 @@ TextureImporter:
       name: Wall Slide_2
       rect:
         serializedVersion: 2
-        x: 616
-        y: 39
+        x: 614
+        y: 43
         width: 64
-        height: 128
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b215cf1a77d28f943a437bf3e6297c74
+      spriteID: 946e1a6148fa2a54eb6558524dc08c0a
       internalID: -643638415
       vertices: []
       indices: 
@@ -176,10 +176,10 @@ TextureImporter:
       name: Wall Slide_3
       rect:
         serializedVersion: 2
-        x: 887
-        y: 38
+        x: 886
+        y: 43
         width: 64
-        height: 128
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cdda12c4b515f646bd188fa8c24a54d
+      spriteID: 6c8e32ac19c106a4ca522587e3437735
       internalID: -35723972
       vertices: []
       indices: 
