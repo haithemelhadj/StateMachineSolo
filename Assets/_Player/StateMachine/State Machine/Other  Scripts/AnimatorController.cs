@@ -34,6 +34,12 @@ public class AnimatorController : MonoBehaviour
         anim.CrossFade(targetAnim, 0.2f);
     }
 
+    public void PlayAnimation(string targetAnim, float fadeDuration)
+    {
+        anim.CrossFade(targetAnim, fadeDuration);
+    }
+
+
     public void ExitAnimation()
     {
         anim.CrossFade("Empty", 0.2f);

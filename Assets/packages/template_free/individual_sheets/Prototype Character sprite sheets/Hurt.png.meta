@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5c608f0ccf74ca4cacb5bb64c826849
+guid: 26914c44a7380a144ad645587e307311
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,232 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Combo 2 slash_0
+      name: Hurt_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 46
+        x: 49
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 660f566f98b187646967392d9aea53f9
-      internalID: -706698080
+      spriteID: a992e3375ecb1cd449351e1e05777aa2
+      internalID: 1119686531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_2
+      name: Hurt_1
       rect:
         serializedVersion: 2
-        x: 321
-        y: 46
+        x: 319
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64027a3c7a5e3f740a3b2b308183dde0
-      internalID: 1424553257
+      spriteID: 0c95aa3c7780a424ea532a3bada2ea26
+      internalID: 1098941051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_4
+      name: Hurt_2
       rect:
         serializedVersion: 2
         x: 591
-        y: 45
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 166340689a322084fa48826091324039
-      internalID: 1263767558
+      spriteID: d9c394606bd1a874c890eda47885e239
+      internalID: 1164427076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_7
+      name: Hurt_3
       rect:
         serializedVersion: 2
-        x: 867
-        y: 46
+        x: 869
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a8223e640310b45b931a50184a30cb
-      internalID: -1559026014
+      spriteID: 1c5fbbaa047b78e40ad78f774e7ac6d4
+      internalID: 1178361233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_8
+      name: Hurt_4
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 46
+        x: 1140
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58956b333acbda4594e7c302bd93c76
-      internalID: -6607933
+      spriteID: 25fbf503b727fe74f84b8d5f801112af
+      internalID: 1978892770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_10
+      name: Hurt_5
       rect:
         serializedVersion: 2
-        x: 1402
-        y: 46
+        x: 1414
+        y: 42
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c1d7e40184447d4fa09e478a5ad09d8
-      internalID: -1677181402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_13
-      rect:
-        serializedVersion: 2
-        x: 1677
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f64026ea1761e248aa5a06567128653
-      internalID: -1612542483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_15
-      rect:
-        serializedVersion: 2
-        x: 1949
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aed83b710edd0d34a825047eb2616d6d
-      internalID: -1995990917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_17
-      rect:
-        serializedVersion: 2
-        x: 2224
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26dd71a3cb947654a8174cc6fddb132e
-      internalID: 1456405483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_19
-      rect:
-        serializedVersion: 2
-        x: 2495
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e518907026576f47a14d50beec8ad4c
-      internalID: -727750955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_20
-      rect:
-        serializedVersion: 2
-        x: 2766
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eebf8423fb08a34d9bf53b092d02f32
-      internalID: 1044606689
+      spriteID: 86eceae1c5e839f44b7c6900e7e1ddf3
+      internalID: 881379726
       vertices: []
       indices: 
       edges: []
@@ -351,27 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Combo 2 slash_0: -706698080
-      Combo 2 slash_1: -138621023
-      Combo 2 slash_10: -1677181402
-      Combo 2 slash_11: -544520706
-      Combo 2 slash_12: 195681136
-      Combo 2 slash_13: -1612542483
-      Combo 2 slash_14: 2139013075
-      Combo 2 slash_15: -1995990917
-      Combo 2 slash_16: 1814544386
-      Combo 2 slash_17: 1456405483
-      Combo 2 slash_18: 1944450945
-      Combo 2 slash_19: -727750955
-      Combo 2 slash_2: 1424553257
-      Combo 2 slash_20: 1044606689
-      Combo 2 slash_3: 787359163
-      Combo 2 slash_4: 1263767558
-      Combo 2 slash_5: -1054999850
-      Combo 2 slash_6: 1053947349
-      Combo 2 slash_7: -1559026014
-      Combo 2 slash_8: -6607933
-      Combo 2 slash_9: 348459935
+      Hurt_0: 1119686531
+      Hurt_1: 1098941051
+      Hurt_2: 1164427076
+      Hurt_3: 1178361233
+      Hurt_4: 1978892770
+      Hurt_5: 881379726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

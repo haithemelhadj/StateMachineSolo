@@ -29,7 +29,7 @@ public abstract class State : ScriptableObject
         Debug.Log("Enter State: " + this.ToString());
         stateMachine.currentStateName = this.ToString();
         enterTime=Time.time;
-        currentContext.animatorController.PlayAnimation(animationName);
+        currentContext.animatorController.PlayAnimation(animationName,0f);
     }
 
 

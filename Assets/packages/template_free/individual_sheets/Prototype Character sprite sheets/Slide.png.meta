@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5c608f0ccf74ca4cacb5bb64c826849
+guid: 385b34831c6229a448e02c40625b9d60
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,232 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Combo 2 slash_0
+      name: Slide_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 46
+        x: 49
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 660f566f98b187646967392d9aea53f9
-      internalID: -706698080
+      spriteID: c035a116f7dfd064c9bf88e1b438f37f
+      internalID: 669704212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_2
+      name: Slide_1
       rect:
         serializedVersion: 2
-        x: 321
-        y: 46
+        x: 329
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64027a3c7a5e3f740a3b2b308183dde0
-      internalID: 1424553257
+      spriteID: 9672d81884893824fbd8660d90f4a441
+      internalID: -311142649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_4
+      name: Slide_2
       rect:
         serializedVersion: 2
-        x: 591
-        y: 45
+        x: 603
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 166340689a322084fa48826091324039
-      internalID: 1263767558
+      spriteID: 28ec2d6e2ccb45244be85ecc2a31eb5d
+      internalID: 788953854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_7
+      name: Slide_4
       rect:
         serializedVersion: 2
-        x: 867
-        y: 46
+        x: 875
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a8223e640310b45b931a50184a30cb
-      internalID: -1559026014
+      spriteID: 2058900ac10c81e45a4d7718817d2411
+      internalID: -867002761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_8
+      name: Slide_6
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 46
+        x: 1147
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58956b333acbda4594e7c302bd93c76
-      internalID: -6607933
+      spriteID: cb1385c2bd64792499e20cd60774a0da
+      internalID: 6145466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_10
+      name: Slide_8
       rect:
         serializedVersion: 2
-        x: 1402
-        y: 46
+        x: 1419
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c1d7e40184447d4fa09e478a5ad09d8
-      internalID: -1677181402
+      spriteID: 919fa481f16f3b5469dfca1d4923d046
+      internalID: 1282365472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_13
+      name: Slide_10
       rect:
         serializedVersion: 2
-        x: 1677
-        y: 46
+        x: 1681
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f64026ea1761e248aa5a06567128653
-      internalID: -1612542483
+      spriteID: c220b503d1771e845bf9dfb551354371
+      internalID: 1452443053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combo 2 slash_15
+      name: Slide_12
       rect:
         serializedVersion: 2
-        x: 1949
-        y: 46
+        x: 1944
+        y: 49
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed83b710edd0d34a825047eb2616d6d
-      internalID: -1995990917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_17
-      rect:
-        serializedVersion: 2
-        x: 2224
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26dd71a3cb947654a8174cc6fddb132e
-      internalID: 1456405483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_19
-      rect:
-        serializedVersion: 2
-        x: 2495
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e518907026576f47a14d50beec8ad4c
-      internalID: -727750955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combo 2 slash_20
-      rect:
-        serializedVersion: 2
-        x: 2766
-        y: 46
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eebf8423fb08a34d9bf53b092d02f32
-      internalID: 1044606689
+      spriteID: 5ef2f8fa339cb2e4d9fac862fbddbb47
+      internalID: -1838077900
       vertices: []
       indices: 
       edges: []
@@ -351,27 +288,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Combo 2 slash_0: -706698080
-      Combo 2 slash_1: -138621023
-      Combo 2 slash_10: -1677181402
-      Combo 2 slash_11: -544520706
-      Combo 2 slash_12: 195681136
-      Combo 2 slash_13: -1612542483
-      Combo 2 slash_14: 2139013075
-      Combo 2 slash_15: -1995990917
-      Combo 2 slash_16: 1814544386
-      Combo 2 slash_17: 1456405483
-      Combo 2 slash_18: 1944450945
-      Combo 2 slash_19: -727750955
-      Combo 2 slash_2: 1424553257
-      Combo 2 slash_20: 1044606689
-      Combo 2 slash_3: 787359163
-      Combo 2 slash_4: 1263767558
-      Combo 2 slash_5: -1054999850
-      Combo 2 slash_6: 1053947349
-      Combo 2 slash_7: -1559026014
-      Combo 2 slash_8: -6607933
-      Combo 2 slash_9: 348459935
+      Slide_0: 669704212
+      Slide_1: -311142649
+      Slide_10: 1452443053
+      Slide_11: 1212513641
+      Slide_12: -1838077900
+      Slide_2: 788953854
+      Slide_3: -27436039
+      Slide_4: -867002761
+      Slide_5: 210908015
+      Slide_6: 6145466
+      Slide_7: 1382141292
+      Slide_8: 1282365472
+      Slide_9: -1413717181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

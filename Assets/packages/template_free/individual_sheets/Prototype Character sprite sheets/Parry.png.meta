@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7488c27f09b485488870618ba6f6c44
+guid: 07a7c946e97885d4096f253464066b09
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,7 +108,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Parry_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 46
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25d464e81e02dd4faa88274f93fa26b
+      internalID: 221106827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Parry_0: 221106827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

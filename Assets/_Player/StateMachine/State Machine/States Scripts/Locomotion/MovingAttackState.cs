@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Move Ground Attack State", menuName = "States List/Player/Attacks/Move Ground Attack")]
-public class MovingAttackState : GroundedState
+public class MovingAttackState : ActionState
 {
     public override void CheckSwitchState()
     {
@@ -22,6 +22,7 @@ public class MovingAttackState : GroundedState
         //attack
         //currentContext.attackHitBox.SetActive(true);
         currentContext.canFlip = false;
+        currentContext.Rb.velocity = Vector2.zero;
 
     }
 
