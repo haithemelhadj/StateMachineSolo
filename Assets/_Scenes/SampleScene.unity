@@ -29281,6 +29281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148663585}
+  - component: {fileID: 1148663586}
   m_Layer: 0
   m_Name: SETUP
   m_TagString: Untagged
@@ -29309,6 +29310,20 @@ Transform:
   - {fileID: 1986858168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1148663586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148663584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f9f154c1d0b2942b47a59acef6a662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fontColor: {r: 0.036261976, g: 0.04098225, b: 0.04150939, a: 1}
+  backgroundColor: {r: 0.092837244, g: 0.705071, b: 0.83396226, a: 1}
 --- !u!1 &1187867893
 GameObject:
   m_ObjectHideFlags: 0
@@ -33936,11 +33951,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 522220624}
+  - {fileID: 913861204}
   - {fileID: 309827277}
   - {fileID: 358201976}
   - {fileID: 1389203491}
   - {fileID: 481597034}
   - {fileID: 2006864676}
-  - {fileID: 1148663585}
   - {fileID: 1342431030}
-  - {fileID: 913861204}
+  - {fileID: 1148663585}
