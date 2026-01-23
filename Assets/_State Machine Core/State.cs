@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 //using SM;
 
@@ -63,10 +64,18 @@ public abstract class State : ScriptableObject
         stateMachine.currentState = newState;
     }
 
+    public virtual void OnTriggerStay2D()
+    {
+
+    }
+
 
     public virtual void OnTriggerEnter2D(Collider2D other) { /*Debug.Log("te");*/ }
+    public virtual void OnTriggerStay2D(Collider2D other) { /*Debug.Log("te");*/ }
     public virtual void OnTriggerExit2D(Collider2D other) { /*Debug.Log("tx");*/ }
+
     public virtual void OnCollisionEnter2D(Collision2D collision) { /*Debug.Log("ce");*/ }
+    public virtual void OnCollisionStay2D(Collision2D collision) { /*Debug.Log("ce");*/ }
     public virtual void OnCollisionExit2D(Collision2D collision) { /*Debug.Log("cx");*/ }
 
 

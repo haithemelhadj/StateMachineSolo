@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11954d0e80685ed4ca3c959570729dbf, type: 3}
   m_Name: Death State
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 1.3
   animationName: Death

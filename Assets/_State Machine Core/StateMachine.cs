@@ -77,6 +77,11 @@ public class StateMachine : MonoBehaviour
         currentState?.OnTriggerEnter2D(other);
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        currentState?.OnTriggerStay2D(other);
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         currentState?.OnTriggerExit2D(other);
@@ -86,8 +91,11 @@ public class StateMachine : MonoBehaviour
     {
         currentState?.OnCollisionEnter2D(collision);
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        currentState?.OnCollisionStay2D(collision);
+    }
 
-    
     private void OnCollisionExit2D(Collision2D collision)
     {
         currentState?.OnCollisionExit2D(collision);

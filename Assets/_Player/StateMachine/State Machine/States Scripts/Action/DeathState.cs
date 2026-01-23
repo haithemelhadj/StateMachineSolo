@@ -17,6 +17,7 @@ public class DeathState : ActionState
     public override void OnEnter()
     {
         base.OnEnter();
+        currentContext.Rb.velocity=Vector2.zero;
         //Debug.Log("dead");
     }
 

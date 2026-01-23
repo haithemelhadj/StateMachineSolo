@@ -113,7 +113,16 @@ public class LocomotionState : State
             SwitchState(factory.GetState(_States.GetHit));
         }
     }
-
-
-
+    public override void OnTriggerStay2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        if (currentContext.isInvunrable) return;
+        if (other.gameObject.CompareTag("Attack"))
+        {
+            currentContext.HitSource = other.gameObject;
+            SwitchState(factory.GetState(_States.GetHit));
+        }
+    }
 }
+
+

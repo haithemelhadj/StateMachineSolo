@@ -11,7 +11,7 @@ public class GetHitState : ActionState
         {
             SwitchState(factory.GetState(_States.Grounded));
         }
-        if (currentContext.currentHealth <= 0f)
+        if (currentContext.currentHealth <= 0f && Time.time - enterTime > duration)
         {
             SwitchState(factory.GetState(_States.Death));
         }
@@ -123,17 +123,23 @@ public class GetHitState : ActionState
     {
         if (Time.time - currentContext.lastTimeHit <= currentContext.getHitInvunDuration)
         {
+            //set invunrable
             currentContext.isInvunrable = true;
+            // start flickering loop
             yield return new WaitForSeconds(duration);
             currentContext.spriteRenderer.color = currentContext.spriteRenderer.color == Color.white ? Color.black : Color.white;
             currentContext.StartCoroutine(HitFlickering(duration));
         }
-        else if (currentContext.spriteRenderer.color != Color.white)
+        else
         {
-            currentContext.spriteRenderer.color = Color.white;
+            // if flickering ends on black make it white
+            if (currentContext.spriteRenderer.color != Color.white)
+                currentContext.spriteRenderer.color = Color.white;
+            // reset invunerability
             currentContext.isInvunrable = false;
         }
     }
+
     #endregion
 
     #region Stop Game On Hit
