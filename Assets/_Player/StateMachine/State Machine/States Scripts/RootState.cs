@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RootState : State
@@ -52,7 +50,15 @@ public class RootState : State
         if (other.gameObject.CompareTag("Attack"))
         {
             currentContext.HitSource = other.gameObject;
-            SwitchState(factory.GetState(_States.GetHit));
+            if (stateMachine.currentState is ParryState)
+            {
+                // do parry stuff
+            }
+            else // go to get hit state
+            {
+                SwitchState(factory.GetState(_States.GetHit));
+            }
         }
     }
 }
+

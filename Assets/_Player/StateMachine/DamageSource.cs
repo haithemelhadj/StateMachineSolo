@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDamageSource : MonoBehaviour
+public class DamageSource : MonoBehaviour
 {
     public float dmgAmount;
-    int Damage { get; }
-    GameObject Owner { get; }
 }

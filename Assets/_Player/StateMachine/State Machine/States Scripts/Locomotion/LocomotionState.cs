@@ -68,7 +68,7 @@ public class LocomotionState : RootState
         {
             float currentMoveSpeed = currentContext.hInput * currentContext.Rb.velocity.x;
             currentContext.Rb.velocity = new Vector3(currentMoveSpeed, currentContext.Rb.velocity.y, 0f);
-            if ((stateMachine.currentState is GroundedState))
+            if (stateMachine.currentState is GroundedState)
             {
                 //currentContext.animatorController.PlayAnimation("MoveFlip");
                 SwitchState(factory.GetState(_States.MovementFlip));
@@ -101,28 +101,6 @@ public class LocomotionState : RootState
     }
     #endregion
 
-
-
-    //public override void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    base.OnTriggerEnter2D(other);
-    //    //DetectGettingHit(other);
-    //}
-    //public override void OnTriggerStay2D(Collider2D other)
-    //{
-    //    base.OnTriggerEnter2D(other);
-    //    //DetectGettingHit(other);
-    //}
-
-    //public void DetectGettingHit(Collider2D other)
-    //{
-    //    if (currentContext.isInvunrable) return;
-    //    if (other.gameObject.CompareTag("Attack"))
-    //    {
-    //        currentContext.HitSource = other.gameObject;
-    //        SwitchState(factory.GetState(_States.GetHit));
-    //    }
-    //}
 }
 
 

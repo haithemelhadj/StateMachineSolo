@@ -9,7 +9,6 @@ public class DeathState : ActionState
         base.CheckSwitchState();
         if (Time.time - enterTime > duration)
         {
-            //Debug.Log(this.name + "duration has ended");
             SwitchState(factory.GetState(_States.Grounded));
         }
     }
@@ -18,14 +17,12 @@ public class DeathState : ActionState
     {
         base.OnEnter();
         currentContext.Rb.velocity=Vector2.zero;
-        //Debug.Log("dead");
     }
 
     public override void OnExit()
     {
         base.OnExit();
         currentContext.transform.position = currentContext.respawnPoint.position;
-        //currentContext.currentHealth = 0;
         currentContext.currentHealth = currentContext.maxHealth;
 
     }

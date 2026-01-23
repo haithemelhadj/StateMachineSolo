@@ -387,10 +387,8 @@ public class Context : MonoBehaviour
 
     [Header("Knockback Settings")]
     [SerializeField] public float knockbackForce = 10f;
-    //[SerializeField] public float knockbackDuration = 0.2f;
     public bool isKnockedBack = false;
     [Header("Knockback Options")]
-    //[SerializeField] public bool disableMovementDuringKnockback = true;
     [SerializeField] public bool useVerticalKnockback = true;
     [SerializeField] public float verticalKnockbackMultiplier = 0.5f;
 

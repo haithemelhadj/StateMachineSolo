@@ -67,7 +67,7 @@ public class GetHitState : ActionState
         {
             if (hitSource != null)
             {
-                IDamageSource damageData = hitSource.GetComponent<IDamageSource>();
+                DamageSource damageData = hitSource.GetComponent<DamageSource>();
                 if (damageData != null)
                 {
                     damageAmount = damageData.dmgAmount;
