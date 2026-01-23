@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LocomotionState : State
+public class LocomotionState : RootState
 {
     private float lastTimeMoved;
     private int lastTimeMovedSign;
@@ -103,26 +103,26 @@ public class LocomotionState : State
 
 
 
-    public override void OnTriggerEnter2D(Collider2D other)
-    {
-        base.OnTriggerEnter2D(other);
-        if (currentContext.isInvunrable) return;
-        if (other.gameObject.CompareTag("Attack"))
-        {
-            currentContext.HitSource = other.gameObject;
-            SwitchState(factory.GetState(_States.GetHit));
-        }
-    }
-    public override void OnTriggerStay2D(Collider2D other)
-    {
-        base.OnTriggerEnter2D(other);
-        if (currentContext.isInvunrable) return;
-        if (other.gameObject.CompareTag("Attack"))
-        {
-            currentContext.HitSource = other.gameObject;
-            SwitchState(factory.GetState(_States.GetHit));
-        }
-    }
+    //public override void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    base.OnTriggerEnter2D(other);
+    //    //DetectGettingHit(other);
+    //}
+    //public override void OnTriggerStay2D(Collider2D other)
+    //{
+    //    base.OnTriggerEnter2D(other);
+    //    //DetectGettingHit(other);
+    //}
+
+    //public void DetectGettingHit(Collider2D other)
+    //{
+    //    if (currentContext.isInvunrable) return;
+    //    if (other.gameObject.CompareTag("Attack"))
+    //    {
+    //        currentContext.HitSource = other.gameObject;
+    //        SwitchState(factory.GetState(_States.GetHit));
+    //    }
+    //}
 }
 
 

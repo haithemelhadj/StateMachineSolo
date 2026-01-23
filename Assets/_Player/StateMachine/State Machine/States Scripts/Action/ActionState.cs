@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ActionState : State
+public class ActionState : RootState
 {
     public override void CheckSwitchState()
     {

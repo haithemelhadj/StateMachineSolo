@@ -22,6 +22,7 @@ public class DashState : ActionState
         base.OnEnter();
         currentContext.isDashing = true;
         currentContext.dashReset = false;
+        if(currentContext.isInvunDuringDash) currentContext.isInvunrable = true;
         currentContext.StartCoroutine(Dash());
     }
 
@@ -29,7 +30,9 @@ public class DashState : ActionState
     {
         base.OnExit();
         currentContext.lastDashFinishTime = Time.time;
+        if (currentContext.isInvunDuringDash) currentContext.isInvunrable = false;
     }
+
 
     public override void OnFixedUpdate()
     {

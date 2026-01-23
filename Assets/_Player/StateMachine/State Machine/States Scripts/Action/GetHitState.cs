@@ -17,18 +17,19 @@ public class GetHitState : ActionState
         }
     }
 
+    GameObject hitSource;
     public override void OnEnter()
     {
         base.OnEnter();
-        //Debug.Log("hit");
+        // init
+        hitSource = currentContext.HitSource;
+        //
         currentContext.lastTimeHit = Time.time;
         TimeStop(stopTimeOnHitDuration);
         currentContext.StartCoroutine(HitFlickering(0.1f));
-        ApplyKnockback(currentContext.HitSource.transform.position);
-        Losehealth(currentContext.dmgAmount);
+        ApplyKnockback(hitSource.transform.position);
+        Losehealth(getDmgAmount());
     }
-
-
 
     public override void OnExit()
     {
@@ -50,23 +51,6 @@ public class GetHitState : ActionState
     public override void OnUpdate()
     {
         base.OnUpdate();
-        //if (isKnockedBack)
-        //        {
-        //            knockbackTimer -= Time.deltaTime;
-
-        //            if (knockbackTimer <= 0)
-        //            {
-        //                EndKnockback();
-        //            }
-        //            else
-        //            {
-        //                // Apply curve-based knockback for smooth deceleration
-        //                float normalizedTime = 1 - (knockbackTimer / knockbackDuration);
-        //                float curveValue = knockbackCurve.Evaluate(normalizedTime);
-
-        //                rb.velocity = knockbackDirection * knockbackForce * (1 - curveValue);
-        //            }
-        //        }
     }
 
     #region On Hit Lose Health 
@@ -74,6 +58,30 @@ public class GetHitState : ActionState
     public void Losehealth(float amount)
     {
         currentContext.currentHealth -= amount;
+    }
+    public float getDmgAmount()
+    {
+        float damageAmount = 0f;
+
+        if (currentContext != null)
+        {
+            if (hitSource != null)
+            {
+                IDamageSource damageData = hitSource.GetComponent<IDamageSource>();
+                if (damageData != null)
+                {
+                    damageAmount = damageData.dmgAmount;
+                }
+                else
+                    Debug.LogError("OnGetHit IDamageSource missing");
+            }
+            else
+                Debug.LogError("OnGetHit HitSource missing");
+        }
+        else
+            Debug.LogError("OnGetHit currentContext missing");
+
+        return damageAmount;
     }
 
 
@@ -164,5 +172,7 @@ public class GetHitState : ActionState
     }
     #endregion
 
+    #region 
 
+    #endregion
 }

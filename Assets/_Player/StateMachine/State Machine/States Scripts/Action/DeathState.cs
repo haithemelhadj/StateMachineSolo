@@ -25,6 +25,9 @@ public class DeathState : ActionState
     {
         base.OnExit();
         currentContext.transform.position = currentContext.respawnPoint.position;
+        //currentContext.currentHealth = 0;
+        currentContext.currentHealth = currentContext.maxHealth;
+
     }
 
     public override void OnFixedUpdate()

@@ -329,6 +329,7 @@ public class Context : MonoBehaviour
     public float dashForce;
     public float dashDuration;
     public float dashCd;
+    public bool isInvunDuringDash;
     [HideInInspector] public bool isDashing;
     [HideInInspector] public float lastDashFinishTime;
     [HideInInspector] public bool dashReset;
@@ -377,7 +378,7 @@ public class Context : MonoBehaviour
     [Header("Get Hit")]
     public LayerMask damagingLayer;
     public GameObject HitSource;
-    public float dmgAmount;
+    public float dmgAmount;// temporary
     public float lastTimeHit;
 
     [Header("On Hit Invulnerability")]
