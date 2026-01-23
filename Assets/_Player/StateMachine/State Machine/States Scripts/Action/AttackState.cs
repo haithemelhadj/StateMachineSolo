@@ -8,17 +8,29 @@ public class AttackState : MeleBaseState
     public override void CheckSwitchState()
     {
         base.CheckSwitchState();
+        if (Time.time - enterTime >= duration)
+        {
+            SwitchState(factory.GetState(_States.Grounded));
+        }
+        if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0.1f)
+        {
+            SwitchState(factory.GetState(_States.Fall));
+        }
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-
+        currentContext.attackHitBox.SetActive(true);
+        currentContext.canFlip = false;
+        currentContext.Rb.velocity = Vector2.zero;
     }
 
     public override void OnExit()
     {
         base.OnExit();
+        currentContext.attackHitBox.SetActive(false);
+        currentContext.canFlip = true;
     }
 
     public override void OnFixedUpdate()

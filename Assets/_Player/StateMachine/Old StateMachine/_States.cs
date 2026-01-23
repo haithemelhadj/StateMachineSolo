@@ -26,5 +26,6 @@ public enum _States
     //attack sequance
     AttackAnticipation,
     AttackRecovery,
+    MovementFlip,
 
 }

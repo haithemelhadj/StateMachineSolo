@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5bc59b1e49b5734d8c3947cff6ef0a7
+guid: f531485c56974fb46b4d3e9c6f1eab37
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,169 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slide_0
+      name: 16-bit-spike-Sheet_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 44
-        width: 128
-        height: 128
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 089967ee8d751bc4eb2724a53d35b6b3
-      internalID: 1241813725
+      spriteID: e38a856ee0dd71f41a127022b302fb3c
+      internalID: -1699161042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_1
+      name: 16-bit-spike-Sheet_1
       rect:
         serializedVersion: 2
-        x: 329
-        y: 44
-        width: 128
-        height: 128
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ef734f9a1b01843bd5720d59c768a9
-      internalID: -1190019148
+      spriteID: 8b28a162f812e954090bea38babb4507
+      internalID: -1593630828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_2
+      name: 16-bit-spike-Sheet_2
       rect:
         serializedVersion: 2
-        x: 602
-        y: 44
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75056384d82f58340bff567f2eecfc75
-      internalID: -1838640924
+      spriteID: 34a5c4c02bdd31d48b15a49464a62350
+      internalID: 2119539347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_3
+      name: 16-bit-spike-Sheet_3
       rect:
         serializedVersion: 2
-        x: 873
-        y: 45
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce0363086552a7947a5687d5aa3bd983
-      internalID: 238946923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slide_4
-      rect:
-        serializedVersion: 2
-        x: 1146
-        y: 45
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc4552701b9d7ef4bbe5af3e277b60c4
-      internalID: -1731050731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slide_5
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 44
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a5789a6ce6ef8c4493e31a8d61ec3d3
-      internalID: -1313856652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slide_6
-      rect:
-        serializedVersion: 2
-        x: 1694
-        y: 44
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.4, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a1956eecdcbc5449ab869ef81ba949c
-      internalID: -469751578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slide_7
-      rect:
-        serializedVersion: 2
-        x: 1948
-        y: 44
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 713e258047d33874084206ecae6c28f3
-      internalID: -806951331
+      spriteID: 38a80283f63810a4eb6b203f4356efbc
+      internalID: 1198210090
       vertices: []
       indices: 
       edges: []
@@ -288,15 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slide_0: 1241813725
-      Slide_1: -1190019148
-      Slide_2: -1838640924
-      Slide_3: 238946923
-      Slide_4: -1731050731
-      Slide_5: -1313856652
-      Slide_6: -469751578
-      Slide_7: -806951331
-      Slide_8: -1284733035
+      16-bit-spike-Sheet_0: -1699161042
+      16-bit-spike-Sheet_1: -1593630828
+      16-bit-spike-Sheet_2: 2119539347
+      16-bit-spike-Sheet_3: 1198210090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

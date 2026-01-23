@@ -79,17 +79,17 @@ public class GroundedState : LocomotionState
 
     public override void SetMoveSpeed()
     {
-        if (currentContext.walkSpeedInput)
-        {
-            currentContext.currentMaxMoveSpeed = walkMaxSpeed;
-            currentContext.currentAcceleration = walkAcceleration;
-            currentContext.currentDeceleration = walkDeceleration;
-        }
-        else
+        if (currentContext.sprintInput)
         {
             currentContext.currentMaxMoveSpeed = runMaxSpeed;
             currentContext.currentAcceleration = runAcceleration;
             currentContext.currentDeceleration = runDeceleration;
+        }
+        else
+        {
+            currentContext.currentMaxMoveSpeed = walkMaxSpeed;
+            currentContext.currentAcceleration = walkAcceleration;
+            currentContext.currentDeceleration = walkDeceleration;
         }
     }
     #endregion

@@ -8,6 +8,7 @@ public class Context : MonoBehaviour
         //Get Components
         GetComponents();
         currentHealth = maxHealth;
+        canMove = true;
     }
     public void ContextUpdate()
     {
@@ -28,13 +29,18 @@ public class Context : MonoBehaviour
     #region Get Components
     [Header("-----GEt COMPONENTS-----")]
     public Rigidbody2D Rb;
-    public CapsuleCollider2D capsuleCollider;
+    public Collider2D bodyCollider;
+    public SpriteRenderer spriteRenderer;
     public void GetComponents()
     {
         Rb = GetComponent<Rigidbody2D>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
-        Width = capsuleCollider.size.x * transform.localScale.x;
-        Height = capsuleCollider.size.y * transform.localScale.y;
+        bodyCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Vector2 size = bodyCollider.bounds.size;
+        Width = size.x;
+        Height = size.y;
+
         localScale = transform.localScale;
         canFlip = true;
     }
@@ -42,7 +48,7 @@ public class Context : MonoBehaviour
 
     #region Values
     [Header("-----VALUES-----")]
-    public bool HoldToWalk;
+    public bool HoldToSprint;
     [HideInInspector] public float Height;
     [HideInInspector] public float Width;
     [HideInInspector] public Vector3 localScale;
@@ -70,7 +76,7 @@ public class Context : MonoBehaviour
     [Header("-----Input FLAGS-----")]
     public float hInput;
     public float vInput;
-    public bool walkSpeedInput;
+    public bool sprintInput;
     public bool interactionInputDown;
     public bool jumpInput;
     public bool jumpInputDown;
@@ -82,13 +88,15 @@ public class Context : MonoBehaviour
     #endregion
     public void GetInputs(InputsHandler handler)
     {
+        //movement
         hInput = handler.GetRawAxisInputs(horizontalAxis);
         vInput = handler.GetRawAxisInputs(verticalAxis);
 
-        if (HoldToWalk)
-            walkSpeedInput = handler.GetKey(speedChangeKey);
+        //sprint
+        if (HoldToSprint)
+            sprintInput = handler.GetKey(speedChangeKey);
         else if (handler.GetKeyDown(speedChangeKey))
-            walkSpeedInput = !walkSpeedInput;
+            sprintInput = !sprintInput;
 
         //Jump
         jumpInputDown = handler.GetKeyDown(jumpKey);
@@ -96,12 +104,15 @@ public class Context : MonoBehaviour
         jumpInputUp = handler.GetKeyUp(jumpKey);
         if (handler.GetKeyUp(jumpKey))
             willBufferJump = false;
-
+        //dash
+        dashInputDown = handler.GetKeyDown(dashKey);
+        //interact
+        interactionInputDown = handler.GetKeyDown(interactionKey);
+        //attack
+        attackInputDown = handler.GetKeyDown(attackKey);
+        //defend / parry
         defendInput = handler.GetKey(defendKey);
 
-        dashInputDown = handler.GetKeyDown(dashKey);
-        interactionInputDown = handler.GetKeyDown(interactionKey);
-        attackInputDown = handler.GetKeyDown(attackKey);
 
     }
 
@@ -242,6 +253,7 @@ public class Context : MonoBehaviour
 
     #region Move
     [Header("Move")]
+    public bool canMove;
     [HideInInspector] public float currentMoveSpeed;
     [HideInInspector] public float currentMaxMoveSpeed;
     [HideInInspector] public float currentAcceleration;
@@ -362,17 +374,37 @@ public class Context : MonoBehaviour
     #endregion
 
     #region Get Hit 
+    [Header("Get Hit")]
     public LayerMask damagingLayer;
+    public GameObject HitSource;
     public float dmgAmount;
+    public float lastTimeHit;
+
+    [Header("On Hit Invulnerability")]
+    public bool isInvunrable;
     public float getHitInvunDuration;
+
+    [Header("Knockback Settings")]
+    [SerializeField] public float knockbackForce = 10f;
+    //[SerializeField] public float knockbackDuration = 0.2f;
+    public bool isKnockedBack = false;
+    [Header("Knockback Options")]
+    //[SerializeField] public bool disableMovementDuringKnockback = true;
+    [SerializeField] public bool useVerticalKnockback = true;
+    [SerializeField] public float verticalKnockbackMultiplier = 0.5f;
+
     #endregion
 
+
+
     #region Death
+    [Header("Death")]
     public float maxHealth;
     public float currentHealth;
     //public bool isDead;
     public Transform respawnPoint;
     #endregion
+
 
     #region 
 

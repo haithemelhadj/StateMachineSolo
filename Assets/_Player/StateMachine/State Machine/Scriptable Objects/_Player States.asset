@@ -15,6 +15,8 @@ MonoBehaviour:
   states:
   - state: 2
     stateClass: {fileID: 11400000, guid: fb8a7af0b89877a45afdf44de7f79bc5, type: 2}
+  - state: 24
+    stateClass: {fileID: 11400000, guid: 8cb6648b0d727d24a9b5f9fd884f1e7e, type: 2}
   - state: 3
     stateClass: {fileID: 11400000, guid: fcb2ef80c297522488e6deb4c31f1127, type: 2}
   - state: 4
@@ -36,6 +38,6 @@ MonoBehaviour:
   - state: 22
     stateClass: {fileID: 11400000, guid: 3a79c4be1364aa44c9a0abb9ede18e5d, type: 2}
   - state: 14
-    stateClass: {fileID: 11400000, guid: 3a79c4be1364aa44c9a0abb9ede18e5d, type: 2}
+    stateClass: {fileID: 11400000, guid: b1b5f9fbf7118974eb2e6430e97d1438, type: 2}
   - state: 23
     stateClass: {fileID: 11400000, guid: 3a79c4be1364aa44c9a0abb9ede18e5d, type: 2}

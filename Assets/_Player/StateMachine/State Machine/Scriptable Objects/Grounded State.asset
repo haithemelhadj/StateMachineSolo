@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   animationName: walking blend tree
-  walkMaxSpeed: 2.5
+  walkMaxSpeed: 4
   walkAcceleration: 80
   walkDeceleration: 200
-  runMaxSpeed: 8
+  runMaxSpeed: 16
   runAcceleration: 80
   runDeceleration: 200

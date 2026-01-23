@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LocomotionState : State
@@ -43,6 +42,7 @@ public class LocomotionState : State
     #region Move
     public void Move()
     {
+        if (!currentContext.canMove) return;
         if (currentContext.hInput != 0f)
         {
             currentContext.Rb.velocity = Vector3.MoveTowards(currentContext.Rb.velocity, new Vector3(currentContext.hInput * currentContext.currentMaxMoveSpeed, currentContext.Rb.velocity.y, 0f), currentContext.currentAcceleration * Time.deltaTime);
@@ -59,8 +59,10 @@ public class LocomotionState : State
     private void CheckFlip()
     {
         //if flip while moving fast, flip speed instantly to avoid sliding
-        if (Mathf.Sign(currentContext.Rb.velocity.x) != Mathf.Sign(currentContext.hInput) 
-            && (Time.time - lastTimeMoved <= 0.1f  && lastTimeMovedSign != Mathf.Sign(currentContext.hInput))
+        if (Mathf.Sign(currentContext.Rb.velocity.x) != Mathf.Sign(currentContext.hInput)
+            && (Time.time - lastTimeMoved <= 0.1f
+            && lastTimeMovedSign != Mathf.Sign(currentContext.hInput))
+            && Mathf.Abs(currentContext.Rb.velocity.x) >= 10f
             //&& Mathf.Abs(currentContext.Rb.velocity.x) >= currentContext.currentMaxMoveSpeed / 3
             )
         {
@@ -68,7 +70,8 @@ public class LocomotionState : State
             currentContext.Rb.velocity = new Vector3(currentMoveSpeed, currentContext.Rb.velocity.y, 0f);
             if ((stateMachine.currentState is GroundedState))
             {
-                currentContext.animatorController.PlayAnimation("MoveFlip");
+                //currentContext.animatorController.PlayAnimation("MoveFlip");
+                SwitchState(factory.GetState(_States.MovementFlip));
             }
 
             //### another way of doing it is to increase acceleration when flip is detected
@@ -99,12 +102,14 @@ public class LocomotionState : State
     #endregion
 
 
-    
+
     public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
+        if (currentContext.isInvunrable) return;
         if (other.gameObject.CompareTag("Attack"))
         {
+            currentContext.HitSource = other.gameObject;
             SwitchState(factory.GetState(_States.GetHit));
         }
     }

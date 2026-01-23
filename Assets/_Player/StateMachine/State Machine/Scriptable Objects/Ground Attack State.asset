@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ground Attack State
   m_EditorClassIdentifier: 
   duration: 0.5
-  animationName: Mele Grounded Atk1
+  animationName: Mele Grounded Atk2
   willCombo: 0

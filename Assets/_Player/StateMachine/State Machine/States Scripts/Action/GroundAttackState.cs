@@ -8,12 +8,21 @@ public class GroundAttackState : MeleBaseState
         base.CheckSwitchState();
         if (Time.time - enterTime >= duration)
         {
-            SwitchState(factory.GetState(_States.ExitAttack));
+            SwitchState(factory.GetState(_States.Grounded));
         }
         if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0.1f)
         {
             SwitchState(factory.GetState(_States.Fall));
         }
+
+        //if (Time.time - enterTime >= duration)
+        //{
+        //    SwitchState(factory.GetState(_States.ExitAttack));
+        //}
+        //if (!currentContext.isGrounded && currentContext.Rb.velocity.y < 0.1f)
+        //{
+        //    SwitchState(factory.GetState(_States.Fall));
+        //}
     }
 
     public override void OnEnter()
@@ -21,13 +30,17 @@ public class GroundAttackState : MeleBaseState
         base.OnEnter();
         //attack
         currentContext.attackHitBox.SetActive(true);
+        currentContext.canFlip = false;
+        currentContext.Rb.velocity = Vector2.zero;
 
     }
 
     public override void OnExit()
     {
         base.OnExit();
+        //currentContext.attackHitBox.SetActive(false);
         currentContext.attackHitBox.SetActive(false);
+        currentContext.canFlip = true;
 
     }
 
