@@ -156,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 11891804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.09, y: -3.36, z: 0}
+  m_LocalPosition: {x: 22.6, y: -5.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -218,6 +218,7 @@ MonoBehaviour:
     m_Bits: 192
   isHuggingWall: 0
   LastTimeWalled: 0
+  canMove: 1
   currentMoveSpeed: 0
   currentMaxMoveSpeed: 0
   currentAcceleration: 0
@@ -254,12 +255,15 @@ MonoBehaviour:
   damagingLayer:
     serializedVersion: 2
     m_Bits: 2048
+  HitSource: {fileID: 0}
   dmgAmount: 1
-  knockbackForce: 0
   lastTimeHit: 0
+  isInvunrable: 0
   getHitInvunDuration: 1
-  stopTimeOnHitDuration: 0.1
-  gameStopped: 0
+  knockbackForce: 10
+  isKnockedBack: 0
+  useVerticalKnockback: 1
+  verticalKnockbackMultiplier: 0.5
   maxHealth: 50
   currentHealth: 0
   respawnPoint: {fileID: 913861204}
@@ -841,7 +845,7 @@ Transform:
   m_GameObject: {fileID: 55271612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.09, y: -3.3599997, z: -10}
+  m_LocalPosition: {x: 22.6, y: -5.18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3250,7 +3254,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.09, y: -3.3599997, z: -10}
+  m_LocalPosition: {x: 22.6, y: -5.18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
